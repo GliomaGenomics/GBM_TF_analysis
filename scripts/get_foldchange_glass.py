@@ -10,7 +10,7 @@ import numpy as np
 
 data = pd.read_table('glass_data/gene_tpm_matrix_all_samples.tsv',sep='\t',header=0,index_col=0)
 patients= pd.read_table('glass_data/patients_allsuitable.txt',sep='\t', header=None)
-ens=pd.read_table('/resstore/b0135/Data/resources/gencode/ensembl_v75_geneidtoname.txt',sep='\t', header=None)
+ens=pd.read_table('downloaded_data/ensembl_v75_geneidtoname.txt',sep='\t', header=None)
 
 #read in dictionary of gene to ensids
 ensd={}
@@ -64,6 +64,6 @@ for patient in patients[0]:
     actual['genes']=data.index.str.split('.').str[0]
     absolute['values']=list(abs(np.log2((recu+0.01)/(prim+0.01))))
     actual['values']=list(np.log2((recu+0.01)/(prim+0.01)))
-    absolute.to_csv('/nobackup/medgnt/gsea/ranks/glass_absolute_log2fc/'+patient.replace('.','-')+'.rnk',sep='\t',header=False,index=False)
-    actual.to_csv('/nobackup/medgnt/gsea/ranks/glass_actual_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
+    absolute.to_csv('ranks/glass_absolute_log2fc/'+patient.replace('.','-')+'.rnk',sep='\t',header=False,index=False)
+    actual.to_csv('ranks/glass_actual_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
 

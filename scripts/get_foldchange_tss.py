@@ -8,21 +8,16 @@ Created on Wed Oct  7 11:50:55 2020
 import pandas as pd
 import numpy as np
 
-data = pd.read_table('/nobackup/medlste/data/RNAseq/PvR_consolidated/output/PvR_isoformfpkm_all.txt',sep='\t',header=0,index_col=0)
-met= pd.read_table('/nobackup/medlste/data/RNAseq/PvR_consolidated/MetaData.txt',sep='\t',header=0,index_col=2)
+data = pd.read_table('original_data/PvR_isoformfpkm_all.txt',sep='\t',header=0,index_col=0)
+met= pd.read_table('original_data/MetaData.txt',sep='\t',header=0,index_col=2)
 
 
 tssi={}
-with open('/nobackup/medgnt/gsea/transcript_to_tss_position.txt','r+') as file:
+with open('intermediate_files/transcript_to_tss_position.txt','r+') as file:
     for line in file:
         l=line.strip().split()
         tssi[l[0]]=l[1]
 
-#tssn={}
-#with open('/nobackup/medgnt/gsea/transcriptname_to_tss_position.txt','r+') as file:
-#    for line in file:
-#        l=line.strip().split()
-#        tssn[l[0]]=l[1]
 
 tss=[]
 dro=[]
@@ -88,23 +83,17 @@ for di in d:
             continue
         absolute=pd.DataFrame()
         actual=pd.DataFrame()
-        actual_muna=pd.DataFrame()
         absolute['genes']=d[di].index
         actual['genes']=d[di].index
-        actual_muna['genes']=d[di].index
         absolute['values']=list(abs(np.log2((recu+0.01)/(prim+0.01))))
         actual['values']=list(np.log2((recu+0.01)/(prim+0.01)))
-        actual_muna['values']=list(np.log2((recu+0.01)/(prim+0.01)))
 
         data.index=absolute.index
 
         absolute=absolute[data['ProportionAboveLQ_'+di].str.contains('True')]
         actual=actual[data['ProportionAboveLQ_'+di].str.contains('True')]
-        actual_muna['prim']=list(prim)
-        actual_muna['recu']=list(recu)
 
-        absolute.to_csv('/nobackup/medgnt/gsea/ranks/absolute_log2fc_tss_stringent/'+patient+'.rnk',sep='\t',header=False,index=False)
-        actual.to_csv('/nobackup/medgnt/gsea/ranks/actual_log2fc_tss_stringent/'+patient+'.rnk',sep='\t',header=False,index=False)
-        actual_muna.to_csv('/nobackup/medgnt/gsea/ranks/actual_muna_tss_stringent/'+patient+'.rnk',sep='\t',header=True,index=False)
-data.to_csv('/nobackup/medgnt/gsea/PvR_genefpkm_all_filter_tss_stringent.txt',sep='\t',header=True,index=True)
+        absolute.to_csv('ranks/absolute_log2fc_tss/'+patient+'.rnk',sep='\t',header=False,index=False)
+        actual.to_csv('ranks/actual_log2fc_tss/'+patient+'.rnk',sep='\t',header=False,index=False)
+#data.to_csv('PvR_genefpkm_all_filter_tss_stringent.txt',sep='\t',header=True,index=True)
 

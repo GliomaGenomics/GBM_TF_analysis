@@ -8,8 +8,8 @@ Created on Wed Oct  7 11:50:55 2020
 import pandas as pd
 import numpy as np
 
-data = pd.read_table('/nobackup/medlste/data/RNAseq/PvR_consolidated/output/PvR_genefpkm_all.txt',sep='\t',header=0,index_col=0)
-met= pd.read_table('/nobackup/medlste/data/RNAseq/PvR_consolidated/MetaData.txt',sep='\t',header=0,index_col=2)
+data = pd.read_table('original_data/PvR_genefpkm_all.txt',sep='\t',header=0,index_col=0)
+met= pd.read_table('original_data/MetaData.txt',sep='\t',header=0,index_col=2)
 
 del data['GeneName']
 del data['GeneType']
@@ -68,7 +68,7 @@ for di in d:
         actual['genes']=d[di].index.str.split('.').str[0]
         absolute['values']=list(abs(np.log2((recu+0.01)/(prim+0.01))))
         actual['values']=list(np.log2((recu+0.01)/(prim+0.01)))
-        absolute.to_csv('/nobackup/medgnt/gsea/ranks/absolute_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
-        actual.to_csv('/nobackup/medgnt/gsea/ranks/actual_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
-data.to_csv('/nobackup/medgnt/gsea/PvR_genefpkm_all_filter.txt',sep='\t',header=True,index=True)
+        absolute.to_csv('ranks/absolute_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
+        actual.to_csv('ranks/actual_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
+#data.to_csv('PvR_genefpkm_all_filter.txt',sep='\t',header=True,index=True)
 

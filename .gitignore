@@ -1,4 +1,6 @@
 original_data/*
+glass_data/gene_tpm_matrix_all_samples.tsv
 downloaded_data/*
 gsea_files/*
 gsea_outputs/*
+intermediate_files/*

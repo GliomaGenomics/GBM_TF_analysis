@@ -1,28 +1,41 @@
+# GBM_TF_analysis
 
-# Data sources
+## Data sources
 
-## downoaded_data
-'''
+### downoaded_data
+
+```
 #Download databases
+mkdir downloaded_data
 cd downloaded_data
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/gencode.v27.chr_patch_hapl_scaff.annotation.gtf.gz
 wget http://gtrd.biouml.org/downloads/19.10/chip-seq/Homo_sapiens_meta_clusters.interval.gz
 gunzip gencode.v27.chr_patch_hapl_scaff.annotation.gtf.gz
 gunzip Homo_sapiens_meta_clusters.interval.gz
 cd ..
-'''
+```
+downloaded_data also contains a file listing "{Gene IDs}\t{Gene names)\n" for ensembl v75. 
 
-## original_data 
+### original_data 
 Contains expression tables and metadata
 
-# Expression inputs for GSEA - in 'ranks' folder
+## glass_data
+This folder contains the gene_tpm_matrix_all_samples.tsv file from the GLASS resources on Synapse: https://www.synapse.org/#!Synapse:syn23548220
+
+patients_gbm_not_in_stead.txt contains a list of 54 patient barcodes for those with IDHwt (or IDH unknown) GBM at both primary and first recurrence, with RNA expression data available, and whose data aren't part of the stead cohort.
+
+Metadata is from clinical_surgeries_100521.tsv
+
+## Expression inputs for GSEA 
 
 get_foldchange.py and get_foldchange_tss.py were run on a previous smaller cohort to get filtered lists of genes and TSSs, separately for those samples processed with total RNA or mRNA libraries: filtered_genelist_mrna.txt,filtered_genelist_total.txt,filtered_tsslist_mrna.txt,filtered_tsslist_total.txt.
 get_foldchange_newrealease.py and get_foldchange_tss_newrelease.py were later run on the current cohort expression table using the same lists of genes and TSSs.
+The resulting inputs are in the 'ranks' folder.
 
 
-# Create files for running GSAE
+## Create files for running GSEA
 ```
+mkdir gsea_files
 SIZE=1000 #2000, 5000
 
 #Create promotor files:
@@ -52,18 +65,18 @@ grep 'JARID2' gsea_files/TSS_TFs_ENS_1000_GTRDv19_10_gencodev27.gmt > gsea_files
 
 ```
 
-# Run GSEA
+## Run GSEA
 
 ```
 for p in ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute -s ; done 
 for p in ranks/actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual -s ; done 
-for p in ranks/absolute_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_tss_stringent -s ; done 
-for p in ranks/actual_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_tss_stringent -s ; done 
+for p in ranks/absolute_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_tss -s ; done 
+for p in ranks/actual_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_tss -s ; done 
 for p in ranks/glass_absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_glass -s ; done 
 for p in ranks/glass_actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_glass -s ; done 
 ```
 
-# Process GSEA results
+## Process GSEA results
 
 ```
 #Remove unnecesary files
@@ -80,7 +93,7 @@ SETS="1000_classic_absolute 1000_weighted_actual 2000_classic_absolute 2000_weig
 
 ```
 
-# Get intermediate files
+## Get intermediate files
 ```
 awk -F'\t' '{SUM=($2+$3)/2; print($7"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_patch_hapl_scaff.annotation_PromotersTSS_1000.txt | sort -u > intermediate_files/transcript_to_tss_position.txt 
 awk -F'\t' '{SUM=($2+$3)/2; print($5"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_patch_hapl_scaff.annotation_PromotersTSS_1000.txt | sort -u > intermediate_files/gene_to_tss_position.txt 
