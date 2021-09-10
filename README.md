@@ -14,12 +14,12 @@ gunzip gencode.v27.chr_patch_hapl_scaff.annotation.gtf.gz
 gunzip Homo_sapiens_meta_clusters.interval.gz
 cd ..
 ```
-downloaded_data also contains a file listing "{Gene IDs}\t{Gene names)\n" for ensembl v75. 
+downloaded_data also contains a file listing "{Gene ID}\t{Gene name}\n" for each gene in ensembl v75. 
 
 ### original_data 
-Contains expression tables and metadata
+Contains stead cohort expression tables and metadata
 
-## glass_data
+### glass_data
 This folder contains the gene_tpm_matrix_all_samples.tsv file from the GLASS resources on Synapse: https://www.synapse.org/#!Synapse:syn23548220
 
 patients_gbm_not_in_stead.txt contains a list of 54 patient barcodes for those with IDHwt (or IDH unknown) GBM at both primary and first recurrence, with RNA expression data available, and whose data aren't part of the stead cohort.
@@ -65,15 +65,23 @@ grep 'JARID2' gsea_files/TSS_TFs_ENS_1000_GTRDv19_10_gencodev27.gmt > gsea_files
 
 ```
 
+## Get intermediate files
+```
+awk -F'\t' '{SUM=($2+$3)/2; print($7"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_patch_hapl_scaff.annotation_PromotersTSS_1000.txt | sort -u > intermediate_files/transcript_to_tss_position.txt 
+awk -F'\t' '{SUM=($2+$3)/2; print($5"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_patch_hapl_scaff.annotation_PromotersTSS_1000.txt | sort -u > intermediate_files/gene_to_tss_position.txt 
+```
+
+
 ## Run GSEA
 
 ```
-for p in ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute -s ; done 
-for p in ranks/actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual -s ; done 
-for p in ranks/absolute_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_tss -s ; done 
-for p in ranks/actual_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_tss -s ; done 
-for p in ranks/glass_absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_glass -s ; done 
-for p in ranks/glass_actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_glass -s ; done 
+for p in ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute -s ; done 
+for p in ranks/actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual -s ; done 
+for p in ranks/absolute_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute_tss/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_tss -s ; done 
+for p in ranks/actual_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual_tss/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_tss -s ; done 
+for p in ranks/glass_absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute_glass/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_glass -s ; done 
+for p in ranks/glass_actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual_glass/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_glass -s ; done 
+
 ```
 
 ## Process GSEA results
@@ -85,16 +93,30 @@ for dir in gsea_outputs/*/* ; do ls ${dir}/* | grep -E -v 'PCGF2|CBX2|CBX7|CBX8|
 for dir in gsea_outputs/*/* ; do rm -r ${dir}/edb ; done 
 rm -r temp 
 
+####################
 #Combine results and generate tables for normalised enrichment score, p-value and FDR
 SETS="1000_classic_absolute 1000_weighted_actual 2000_classic_absolute 2000_weighted_actual 5000_classic_absolute 5000_weighted_actual" 
 #SETS="1000_classic_absolute_tss_stringent 1000_weighted_actual_tss_stringent"
 #SETS="1000_classic_absolute_glass,1000_weighted_actual_glass"
 
 
+grep 'JARID2' gsea_outputs/outputs_actual_glass/*/gsea_report_for_na_*tsv > reports/outputs_actual_glass/JARID2_results.tsv
+
+```
+#######################
+
+##Get LE50 and LE70 genes
+```
+LIST="gbm_idhwt_rt_tmz_local"
+LIST="gbm_idhwt_treatment_not_rt+tmz+local"
+LIST="gbm_idhwt_notreatment"
+
+SET="actual"
+SET="actual_tss"
+
+SIZE="1000"
+
+while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
 ```
 
-## Get intermediate files
-```
-awk -F'\t' '{SUM=($2+$3)/2; print($7"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_patch_hapl_scaff.annotation_PromotersTSS_1000.txt | sort -u > intermediate_files/transcript_to_tss_position.txt 
-awk -F'\t' '{SUM=($2+$3)/2; print($5"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_patch_hapl_scaff.annotation_PromotersTSS_1000.txt | sort -u > intermediate_files/gene_to_tss_position.txt 
-```
+
