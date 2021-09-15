@@ -139,5 +139,3 @@ All contains all patients but with only the filtered mRNA genes.
 ```
 python scripts/get_foldchange_tables.py
 ```
-
-
