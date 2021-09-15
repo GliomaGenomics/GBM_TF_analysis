@@ -1,5 +1,9 @@
 # GBM_TF_analysis
 
+## Versions
+
+R:v3.6.1
+
 ## Data sources
 
 ### downoaded_data
@@ -105,7 +109,9 @@ grep 'JARID2' gsea_outputs/outputs_actual_glass/*/gsea_report_for_na_*tsv > repo
 ```
 #######################
 
-##Get LE50 and LE70 genes
+## Analysis
+
+### Get LE50 and LE70 genes
 ```
 LIST="gbm_idhwt_rt_tmz_local"
 LIST="gbm_idhwt_treatment_not_rt+tmz+local"
@@ -116,7 +122,22 @@ SET="actual_tss"
 
 SIZE="1000"
 
+#get le counts
 while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
+
+#calculate minimum number of patient leading edges needed for a gene to be classed as le50 of le70
+LE=50
+LE=70
+TOTAL=$(wc -l patient_lists/${LIST}.txt|cut -d' ' -f1)
+NUM=$(awk -v total=$TOTAL -v le=0.$LE 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_${SET}_${SIZE}_${LIST}.txt 
+
+```
+
+### Get filtered expression tables.
+Get filtered expression tables for mRNA, total_RNA, and all, containing the list of genes used for GSEA input. 
+All contains all patients but with only the filtered mRNA genes.
+```
+python scripts/get_foldchange_tables.py
 ```
 
 
