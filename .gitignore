@@ -6,3 +6,6 @@ gsea_outputs/*
 intermediate_files/*
 GSEA_4.1.0
 tables/*
+analysis/pca/*RData
+.RData
+.RHistory

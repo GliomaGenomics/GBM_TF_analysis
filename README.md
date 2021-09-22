@@ -98,14 +98,14 @@ for dir in gsea_outputs/*/* ; do rm -r ${dir}/edb ; done
 rm -r temp 
 
 ####################
-#Combine results and generate tables for normalised enrichment score, p-value and FDR
+### Combine results and generate tables for normalised enrichment score, p-value and FDR
 SETS="1000_classic_absolute 1000_weighted_actual 2000_classic_absolute 2000_weighted_actual 5000_classic_absolute 5000_weighted_actual" 
 #SETS="1000_classic_absolute_tss_stringent 1000_weighted_actual_tss_stringent"
 #SETS="1000_classic_absolute_glass,1000_weighted_actual_glass"
 
-
-grep 'JARID2' gsea_outputs/outputs_actual_glass/*/gsea_report_for_na_*tsv > reports/outputs_actual_glass/JARID2_results.tsv
-
+### Get NES (or ES if NES not available) scores for JARID2
+grep 'JARID2' gsea_outputs/outputs_actual/*_1000_*/gsea_report_for_na_*tsv | sed 's/_GTRD_1000_/\//' | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/outputs_actual/JARID2_results.tsv
+grep 'JARID2' gsea_outputs/outputs_actual_glass/*_1000_*/gsea_report_for_na_*tsv | sed 's/_GTRD_1000_/\//' | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/outputs_actual_glass/JARID2_results.tsv
 ```
 #######################
 
@@ -114,8 +114,6 @@ grep 'JARID2' gsea_outputs/outputs_actual_glass/*/gsea_report_for_na_*tsv > repo
 ### Get LE50 and LE70 genes
 ```
 LIST="gbm_idhwt_rt_tmz_local"
-LIST="gbm_idhwt_treatment_not_rt+tmz+local"
-LIST="gbm_idhwt_notreatment"
 
 SET="actual"
 SET="actual_tss"
@@ -138,4 +136,25 @@ Get filtered expression tables for mRNA, total_RNA, and all, containing the list
 All contains all patients but with only the filtered mRNA genes.
 ```
 python scripts/get_foldchange_tables.py
+```
+
+### Get gene lists
+```
+grep 'JARID2' gsea_files/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt | sed 's/\t/\n/g' | tail -n+3 > gene_lists/JARID2_bound_genes.txt 
+```
+
+### Run PCA
+
+```
+PATIENTS=gbm_idhwt_rt_tmz_local
+
+TABLE=log2fc_all
+TABLE=log2fc_primary
+TABLE=log2fc_recurrent
+
+SCALE=TRUE
+SCALE=FALSE
+
+Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --genes gene_lists/JARID2_bound_genes.txt --table tables/${TABLE}.txt --colour reports/outputs_actual/JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_JARID2_${TABLE}_${SCALE}
+Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --table tables/${TABLE}.txt --colour reports/outputs_actual/JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_${TABLE}_${SCALE}
 ```
