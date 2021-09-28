@@ -3,6 +3,7 @@
 ## Versions
 
 R:v3.6.1
+GSEA:v4.1.0
 
 ## Data sources
 
@@ -18,7 +19,9 @@ gunzip gencode.v27.chr_patch_hapl_scaff.annotation.gtf.gz
 gunzip Homo_sapiens_meta_clusters.interval.gz
 cd ..
 ```
-downloaded_data also contains a file listing "{Gene ID}\t{Gene name}\n" for each gene in ensembl v75. 
+downloaded_data also contains:
+* the "IlmnID, CHR_hg38, Start_hg38, End_hg38" columns from https://webdata.illumina.com/downloads/productfiles/methylationEPIC/infinium-methylationepic-v-1-0-b5-manifest-file-csv.zip, with the data starting on row 9: infinium-methylationepic-v-1-0-b5-manifest-file_extract.txt
+
 
 ### original_data 
 Contains stead cohort expression tables and metadata
@@ -34,6 +37,8 @@ Metadata is from clinical_surgeries_100521.tsv
 
 get_foldchange.py and get_foldchange_tss.py were run on a previous smaller cohort to get filtered lists of genes and TSSs, separately for those samples processed with total RNA or mRNA libraries: filtered_genelist_mrna.txt,filtered_genelist_total.txt,filtered_tsslist_mrna.txt,filtered_tsslist_total.txt.
 get_foldchange_newrealease.py and get_foldchange_tss_newrelease.py were later run on the current cohort expression table using the same lists of genes and TSSs.
+get_foldchange_glass.py is used to generate the glass data inputs.
+WARNING: get_foldchange_glass.py only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
 The resulting inputs are in the 'ranks' folder.
 
 
@@ -149,12 +154,21 @@ grep 'JARID2' gsea_files/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt | sed 's/\t/\n/g
 PATIENTS=gbm_idhwt_rt_tmz_local
 
 TABLE=log2fc_all
-TABLE=log2fc_primary
-TABLE=log2fc_recurrent
+TABLE=primary_all
+TABLE=recurrent_all
 
-SCALE=TRUE
+SCALE=TRUE #also centers 
 SCALE=FALSE
 
 Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --genes gene_lists/JARID2_bound_genes.txt --table tables/${TABLE}.txt --colour reports/outputs_actual/JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_JARID2_${TABLE}_${SCALE}
 Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --table tables/${TABLE}.txt --colour reports/outputs_actual/JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_${TABLE}_${SCALE}
+
+sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | head -n101 | tail -n+2 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_head100.txt
+sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | tail -n100 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_tail100.txt
+```
+
+### Plot heatmaps
+```
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
 ```

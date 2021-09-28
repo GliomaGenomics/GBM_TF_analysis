@@ -35,7 +35,7 @@ filter<-intersect(genes,colnames(datain))
 datain=datain[ , filter]
 }
 
-pca<- prcomp(datain, center = FALSE, scale= args$scale)
+pca<- prcomp(datain, center = args$scale, scale= args$scale)
 
 save(pca,file=(paste("analysis/pca/pca_",args$name,".RData", sep="")))
 
