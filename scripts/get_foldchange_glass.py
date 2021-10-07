@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 
 data = pd.read_table('glass_data/gene_tpm_matrix_all_samples.tsv',sep='\t',header=0,index_col=0)
-patients= pd.read_table('glass_data/patients_allsuitable.txt',sep='\t', header=None)
+patients= pd.read_table('patient_lists/glass_gbm_idhwt_or_unknown_notstead_rna.txt',sep='\t', header=None)
 ens=pd.read_table('downloaded_data/ensembl_v75_geneidtoname.txt',sep='\t', header=None)
 
 #read in dictionary of gene to ensids

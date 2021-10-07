@@ -1,0 +1,6 @@
+section('run_deseq2', description='')
+outputs('/nobackup/medgnt/logs/')
+options('V', 'cwd', 'notify')
+limits(h_rt='48:00:00', h_vmem='10G')
+command('Rscript scripts/deseq2.R', name='run_deseq2', test=True, log=True)
+

@@ -20,11 +20,12 @@ gunzip Homo_sapiens_meta_clusters.interval.gz
 cd ..
 ```
 downloaded_data also contains:
+* a file containing {ensembl_id}\t{gene_name}\n for ensembl v75 in order to convert the glass data to IDs: ensembl_v75_geneidtoname.txt
 * the "IlmnID, CHR_hg38, Start_hg38, End_hg38" columns from https://webdata.illumina.com/downloads/productfiles/methylationEPIC/infinium-methylationepic-v-1-0-b5-manifest-file-csv.zip, with the data starting on row 9: infinium-methylationepic-v-1-0-b5-manifest-file_extract.txt
 
 
 ### original_data 
-Contains stead cohort expression tables and metadata
+Contains stead cohort expression tables, count data and metadata
 
 ### glass_data
 This folder contains the gene_tpm_matrix_all_samples.tsv file from the GLASS resources on Synapse: https://www.synapse.org/#!Synapse:syn23548220
@@ -33,6 +34,19 @@ patients_gbm_not_in_stead.txt contains a list of 54 patient barcodes for those w
 
 Metadata is from clinical_surgeries_100521.tsv
 
+
+## Run DEA
+```
+qsubsec scripts/run_deseq2.qsubsec
+SIG=0.05
+SIG=0.01
+awk -F" " '{if($7!="NA") print}' deseq2/results.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2/background_filtered.txt
+```
+## GO enrichment analysis
+http://www.webgestalt.org/
+Method of interest: Over-Represenataion Analysis
+Significance Level: FDR
+Set deseq2/background_go_list.txt as reference gene list
 ## Expression inputs for GSEA 
 
 get_foldchange.py and get_foldchange_tss.py were run on a previous smaller cohort to get filtered lists of genes and TSSs, separately for those samples processed with total RNA or mRNA libraries: filtered_genelist_mrna.txt,filtered_genelist_total.txt,filtered_tsslist_mrna.txt,filtered_tsslist_total.txt.
@@ -119,9 +133,11 @@ grep 'JARID2' gsea_outputs/outputs_actual_glass/*_1000_*/gsea_report_for_na_*tsv
 ### Get LE50 and LE70 genes
 ```
 LIST="gbm_idhwt_rt_tmz_local"
+LIST="glass_gbm_idhwt_rt_tmz_local"
 
 SET="actual"
 SET="actual_tss"
+SET="actual_glass"
 
 SIZE="1000"
 
@@ -133,8 +149,8 @@ LE=50
 LE=70
 TOTAL=$(wc -l patient_lists/${LIST}.txt|cut -d' ' -f1)
 NUM=$(awk -v total=$TOTAL -v le=0.$LE 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_${SET}_${SIZE}_${LIST}.txt 
-
 ```
+
 
 ### Get filtered expression tables.
 Get filtered expression tables for mRNA, total_RNA, and all, containing the list of genes used for GSEA input. 
@@ -146,6 +162,7 @@ python scripts/get_foldchange_tables.py
 ### Get gene lists
 ```
 grep 'JARID2' gsea_files/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt | sed 's/\t/\n/g' | tail -n+3 > gene_lists/JARID2_bound_genes.txt 
+cut -f 1 original_data/PvR_genefpkm_all_LS_23062021.txt.txt | cut -d'.' -f1 | tail -n+2 > gene_lists/all_genes.txt
 ```
 
 ### Run PCA
@@ -165,10 +182,25 @@ Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --table tables/${
 
 sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | head -n101 | tail -n+2 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_head100.txt
 sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | tail -n100 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_tail100.txt
+cat analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_head100.txt analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_tail100.txt > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_headtail100.txt 
+sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | head -n1001 | tail -n+2 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_head1000.txt
 ```
 
 ### Plot heatmaps
 ```
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
 Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000
+```
+
+## Methylation
+```
+python scripts/get_probe_promotor_overlap.py
+cat gene_lists/JARID2_bound_genes.txt | while read line ; do printf "\n${line}\t" >> methylation/all_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/all_JARID2_bound_genes_probes.txt ; done
+cat analysis/leading_edge/le50_actual_glass_1000_glass_gbm_idhwt_rt_tmz_local.txt | while read line ; do printf "\n${line}\t" >> methylation/le50_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/le50_JARID2_bound_genes_probes.txt ; done
+cat analysis/leading_edge/le70_actual_glass_1000_glass_gbm_idhwt_rt_tmz_local.txt | while read line ; do printf "\n${line}\t" >> methylation/le70_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/le70_JARID2_bound_genes_probes.txt ; done
+cat gene_lists/all_genes.txt | while read line ; do printf "\n${line}\t" >> methylation/all_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/all_genes_probes.txt ; done
+qsubsec scripts/scripts/get_methylation_values.qsubsec
+#WARNING: the get_methylation_values.py script called by the above code only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
+
 ```

@@ -1,0 +1,6 @@
+section('get_methylation_values', description='')
+outputs('/nobackup/medgnt/logs/')
+options('V', 'cwd', 'notify')
+limits(h_rt='24:00:00', h_vmem='5G')
+command('python scripts/get_methylation_values.py', name='get_methylation_values', test=True, log=True)
+
