@@ -11,12 +11,12 @@ GSEA:v4.1.0
 
 ```
 #Download databases
-mkdir downloaded_data
 cd downloaded_data
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/gencode.v27.chr_patch_hapl_scaff.annotation.gtf.gz
 wget http://gtrd.biouml.org/downloads/19.10/chip-seq/Homo_sapiens_meta_clusters.interval.gz
 gunzip gencode.v27.chr_patch_hapl_scaff.annotation.gtf.gz
 gunzip Homo_sapiens_meta_clusters.interval.gz
+wget http://www.gsea-msigdb.org/gsea/msigdb/download_file.jsp?filePath=/msigdb/release/7.4/msigdb.v7.4.entrez.gmt
 cd ..
 ```
 downloaded_data also contains:
@@ -25,7 +25,7 @@ downloaded_data also contains:
 
 
 ### original_data 
-Contains stead cohort expression tables, count data and metadata
+Contains stead cohort expression tables, count data, batch-corrected-protein-coding-only count data and metadata
 
 ### glass_data
 This folder contains the gene_tpm_matrix_all_samples.tsv file from the GLASS resources on Synapse: https://www.synapse.org/#!Synapse:syn23548220
@@ -47,8 +47,8 @@ http://www.webgestalt.org/
 Method of interest: Over-Represenataion Analysis
 Significance Level: FDR
 Set deseq2/background_go_list.txt as reference gene list
-## Expression inputs for GSEA 
 
+## Expression inputs for GSEA 
 get_foldchange.py and get_foldchange_tss.py were run on a previous smaller cohort to get filtered lists of genes and TSSs, separately for those samples processed with total RNA or mRNA libraries: filtered_genelist_mrna.txt,filtered_genelist_total.txt,filtered_tsslist_mrna.txt,filtered_tsslist_total.txt.
 get_foldchange_newrealease.py and get_foldchange_tss_newrelease.py were later run on the current cohort expression table using the same lists of genes and TSSs.
 get_foldchange_glass.py is used to generate the glass data inputs.
@@ -118,14 +118,20 @@ rm -r temp
 
 ####################
 ### Combine results and generate tables for normalised enrichment score, p-value and FDR
-SETS="1000_classic_absolute 1000_weighted_actual 2000_classic_absolute 2000_weighted_actual 5000_classic_absolute 5000_weighted_actual" 
-#SETS="1000_classic_absolute_tss_stringent 1000_weighted_actual_tss_stringent"
-#SETS="1000_classic_absolute_glass,1000_weighted_actual_glass"
+SIZES="1000 2000 5000"
+SETS="outputs_actual outputs_actual_glass outputs_absolute outputs_absolute_glass outputs_actual_tss outputs_absolute_tss"
 
-### Get NES (or ES if NES not available) scores for JARID2
-grep 'JARID2' gsea_outputs/outputs_actual/*_1000_*/gsea_report_for_na_*tsv | sed 's/_GTRD_1000_/\//' | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/outputs_actual/JARID2_results.tsv
-grep 'JARID2' gsea_outputs/outputs_actual_glass/*_1000_*/gsea_report_for_na_*tsv | sed 's/_GTRD_1000_/\//' | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/outputs_actual_glass/JARID2_results.tsv
+### Get JARID2 NES or ES for all patients
+for SET in $SETS ; do for SIZE in 1000 ; do grep 'JARID2' gsea_outputs/${SET}/*_${SIZE}_*/gsea_report_for_na_*tsv | sed "s/_GTRD_${SIZE}_/\//" | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/jarid2_results/${SET}_${SIZE}_JARID2_results.tsv ; done ; done
+
+### Get tables for all patients and genes
+cat gsea_files/TFs_ENS_5000_GTRDv19_10_gencodev27.gmt | cut -f 1 > reports/all_tfs.txt
+for SET in $SETS ; do for SIZE in $SIZES ; do mkdir reports/${SET}_${SIZE} ; for f in gsea_outputs/${SET}/*_${SIZE}_* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> reports/${SET}_${SIZE}/${fi}_table.txt ; done ; done ; done
+
+
 ```
+
+
 #######################
 
 ## Analysis
@@ -177,8 +183,8 @@ TABLE=recurrent_all
 SCALE=TRUE #also centers 
 SCALE=FALSE
 
-Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --genes gene_lists/JARID2_bound_genes.txt --table tables/${TABLE}.txt --colour reports/outputs_actual/JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_JARID2_${TABLE}_${SCALE}
-Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --table tables/${TABLE}.txt --colour reports/outputs_actual/JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_${TABLE}_${SCALE}
+Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --genes gene_lists/JARID2_bound_genes.txt --table tables/${TABLE}.txt --colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_JARID2_${TABLE}_${SCALE}
+Rscript scripts/pca.R --patients patient_lists/${PATIENTS}.txt --table tables/${TABLE}.txt --colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --scale=${SCALE} --name ${PATIENTS}_${TABLE}_${SCALE}
 
 sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | head -n101 | tail -n+2 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_head100.txt
 sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | tail -n100 | cut -f1 -d" " > analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings_tail100.txt
@@ -188,9 +194,9 @@ sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | h
 
 ### Plot heatmaps
 ```
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt --table tables/log2fc_all.txt --nes_colour reports/outputs_actual/JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
+Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000
 ```
 
 ## Methylation
@@ -204,3 +210,5 @@ qsubsec scripts/scripts/get_methylation_values.qsubsec
 #WARNING: the get_methylation_values.py script called by the above code only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
 
 ```
+
+## UvD_deseq2
