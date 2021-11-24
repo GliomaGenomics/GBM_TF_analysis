@@ -1,0 +1,11 @@
+section('gsea_{GMT}_{RUN}', description='')
+outputs('/nobackup/medgnt/logs/')
+options('V', 'cwd', 'notify')
+limits(h_rt='48:00:00', h_vmem='15G')
+if '{GENES}'=='symbols':
+	command('mkdir gsea_uvd_outputs/{RUN} ; module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 100 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 10 -zip_report false -out gsea_uvd_outputs/{RUN} -gmx gene_sets/{GMT}.gmt -rnk deseq2_uvd/d_ranks.rnk -scoring_scheme weighted -rpt_label {GMT}_{RUN}_down', name='{GMT}_{RUN}', test=True, log=True)
+	command('mkdir gsea_uvd_outputs/{RUN} ; module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 100 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 10 -zip_report false -out gsea_uvd_outputs/{RUN} -gmx gene_sets/{GMT}.gmt -rnk deseq2_uvd/u_ranks.rnk -scoring_scheme weighted -rpt_label {GMT}_{RUN}_up', name='{GMT}_{RUN}', test=True, log=True)
+else:
+	command('mkdir gsea_uvd_outputs/{RUN} ; module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 10 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 10 -zip_report false -out gsea_uvd_outputs/{RUN} -gmx gene_sets/{GMT}.gmt -rnk deseq2_uvd/d_ranks_ens.rnk -scoring_scheme weighted -rpt_label {GMT}_{RUN}_down', name='{GMT}_{RUN}', test=True, log=True)
+	command('mkdir gsea_uvd_outputs/{RUN} ; module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 10 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 10 -zip_report false -out gsea_uvd_outputs/{RUN} -gmx gene_sets/{GMT}.gmt -rnk deseq2_uvd/u_ranks_ens.rnk -scoring_scheme weighted -rpt_label {GMT}_{RUN}_up', name='{GMT}_{RUN}', test=True, log=True)
+

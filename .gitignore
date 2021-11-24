@@ -10,3 +10,10 @@ reports/outputs*
 analysis/pca/*RData
 .RData
 .RHistory
+.Rhistory
+gsea_uvd_outputs/1000it/*
+gene_sets/*v7.4*
+gene_sets/TF*
+gsea_uvd_outputs/run*
+deseq2_uvd/*Rdata
+deseq2/*Rdata

@@ -21,6 +21,8 @@ cd ..
 ```
 downloaded_data also contains:
 * a file containing {ensembl_id}\t{gene_name}\n for ensembl v75 in order to convert the glass data to IDs: ensembl_v75_geneidtoname.txt
+* a file containing {gene_id}\t{gene_name}\n for gencode v27 in order to convert the stead data to names: gencode.v27_geneidtoname.txt
+* a file containing {gene_id}\t{hgnc_symbol}\n from https://biomart.genenames.org/martform/#!/default/HGNC?datasets=hgnc_gene_mart: gencode.v27_geneidtohgnc.txt
 * the "IlmnID, CHR_hg38, Start_hg38, End_hg38" columns from https://webdata.illumina.com/downloads/productfiles/methylationEPIC/infinium-methylationepic-v-1-0-b5-manifest-file-csv.zip, with the data starting on row 9: infinium-methylationepic-v-1-0-b5-manifest-file_extract.txt
 
 
@@ -34,6 +36,14 @@ patients_gbm_not_in_stead.txt contains a list of 54 patient barcodes for those w
 
 Metadata is from clinical_surgeries_100521.tsv
 
+### gene_sets
+Contains the following gene set lists from http://www.gsea-msigdb.org/gsea/downloads.jsp
+c2.cgp.v7.4.symbols.gmt
+c2.cp.v7.4.symbols.gmt
+c3.tft.v7.4.symbols.gmt
+c3.mir.mirdb.v7.4.symbols.gmt
+c5.go.bp.v7.4.symbols.gmt
+c5.go.mf.v7.4.symbols.gmt
 
 ## Run DEA
 ```
@@ -41,11 +51,17 @@ qsubsec scripts/run_deseq2.qsubsec
 SIG=0.05
 SIG=0.01
 awk -F" " '{if($7!="NA") print}' deseq2/results.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2/background_filtered.txt
+awk -F" " '{if($7!="NA") print}' deseq2_uvd/results_up.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2_uvd/background_filtered_up.txt
+awk -F" " '{if($7!="NA") print}' deseq2_uvd/results_down.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2_uvd/background_filtered_down.txt
+awk -v sig=${SIG} -F" " '{if($7<sig) print}' deseq2/results.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2/deg_${SIG}.txt
+awk -v sig=${SIG} -F" " '{if($7<sig) print}' deseq2_uvd/results_up.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2_uvd/deg_up_${SIG}.txt
+awk -v sig=${SIG} -F" " '{if($7<sig) print}' deseq2_uvd/results_down.txt | cut -d'"' -f2 | cut -d"." -f1 | tail -n+2 > deseq2_uvd/deg_down_${SIG}.txt
 ```
 ## GO enrichment analysis
 http://www.webgestalt.org/
 Method of interest: Over-Represenataion Analysis
 Significance Level: FDR
+Number visualised: 100
 Set deseq2/background_go_list.txt as reference gene list
 
 ## Expression inputs for GSEA 
@@ -116,7 +132,6 @@ for dir in gsea_outputs/*/* ; do ls ${dir}/* | grep -E -v 'PCGF2|CBX2|CBX7|CBX8|
 for dir in gsea_outputs/*/* ; do rm -r ${dir}/edb ; done 
 rm -r temp 
 
-####################
 ### Combine results and generate tables for normalised enrichment score, p-value and FDR
 SIZES="1000 2000 5000"
 SETS="outputs_actual outputs_actual_glass outputs_absolute outputs_absolute_glass outputs_actual_tss outputs_absolute_tss"
@@ -130,9 +145,6 @@ for SET in $SETS ; do for SIZE in $SIZES ; do mkdir reports/${SET}_${SIZE} ; for
 
 
 ```
-
-
-#######################
 
 ## Analysis
 
@@ -211,4 +223,36 @@ qsubsec scripts/scripts/get_methylation_values.qsubsec
 
 ```
 
-## UvD_deseq2
+## Run UvD DEA
+```
+qsubsec scripts/run_deseq2_uvd.qsubsec
+#plot results
+python scripts/plot_deseq2_ranks.py
+#get ranks based on both -log10(pvalue) and sign*-log10(pvalue) 
+#(duplicate gene values are calculated as the mean and therefore have diferent absolute values between these two methods, ie (-2+3)/2 vs. (2+3)/2) 
+python scripts/get_deseq2_ranks.py
+
+```
+
+## Run UvD GSEA
+```
+cp TFs_ENS_1000_GTRDv19_10_gencodev27.gmt gene_sets/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt
+qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=TFs_ENS_1000_GTRDv19_10_gencodev27_symbols,h.all.v7.4.symbols,c2.cgp.v7.4.symbols,c2.cp.v7.4.symbols,c3.mir.mirdb.v7.4.symbols,c3.tft.v7.4.symbols,c5.go.bp.v7.4.symbols,c5.go.mf.v7.4.symbols
+for f in gsea_uvd_outputs/run1/* ; do fi=$(basename ${f}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '==> ' | grep '[0123456789]'> gsea_uvd_outputs/reports/${fi}_table.txt ; done
+
+SETS="TFs_ENS_1000_GTRDv19_10_gencodev27_symbols h.all.v7.4.symbols,c2.cgp.v7.4.symbols c2.cp.v7.4.symbols c3.mir.mirdb.v7.4.symbols c3.tft.v7.4.symbols c5.go.bp.v7.4.symbols c5.go.mf.v7.4.symbols" 
+
+#Process results, either full or fast method.
+Rscript scripts/process_uvd_deseq2_results.R --gmt custom_gbm_gene_sets
+Rscript scripts/process_uvd_deseq2_results_fast.R --gmt custom_gbm_gene_sets
+
+#Plot results in a network
+#conda activate r4
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_fast.txt --sets Fiscon_EnrcihedInTumor-propagatingGBMCells_1,Codega_EnrichedInQuiescentVsActivatedNSCs_1,Nowakowski_NeuralDiferentiation_1,Hasel_AlteredInAstrocytesBySynapticActivity_1,DarmanisBarres_FetalNeuronsquiescent_1,Krishna_GBMFunctionalConnectivity,Fiscon_EnrcihedInTumor-propagatingGBMCells_2,Codega_EnrichedInQuiescentVsActivatedNSCs_2,Nowakowski_NeuralDiferentiation_2,Hasel_AlteredInAstrocytesBySynapticActivity_2,DarmanisBarres_FetalNeuronsquiescent_2 --name venn
+
+```
+
+
+
+
+

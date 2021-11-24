@@ -1,0 +1,279 @@
+Gene_set_name	Reference	Source	Notes
+Zhang-Barres_endothelial	Zhang_Neuron_2016	Puchalski_2018	-
+Zhang-Barres_fetalastrocytes	Zhang_Neuron_2016	Puchalski_2018	-
+Zhang-Barres_GBMcoreastrocytes	Zhang_Neuron_2016	Puchalski_2018	-
+Zhang-Barres_matureastrocytes	Zhang_Neuron_2016	Puchalski_2018	-
+Zhang-Barres_microgliamacrophages	Zhang_Neuron_2016	Puchalski_2018	-
+Zhang-Barres_neuron	Zhang_Neuron_2016	Puchalski_2018	-
+Zhang-Barres_oligodendrocytes	Zhang_Neuron_2016	Puchalski_2018	-
+Patel-Bernstein_anticellcycle	Patel_Science_2014	Puchalski_2018	-
+Patel-Bernstein_cellcycle	Patel_Science_2014	Puchalski_2018	-
+Patel-Bernstein_immune	Patel_Science_2014	Puchalski_2018	-
+Patel-Bernstein_hypoxia	Patel_Science_2014	Puchalski_2018	-
+Patel-Bernstein_stemness	Patel_Science_2014	Patel_Science_2014	Taken from figure 3B
+Darmanis-Barres_astrocytes	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_Endothelial	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_FetalNeuronsquiescent	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_FetalNeuronsreplicating	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_microglia	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_mixNeuronsAstrocytes	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_mixOPCOligNeurons	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_Neurons	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_Oligodendrocytes	Darmanis_PNAS_2015	Puchalski_2018	-	
+Darmanis-Barres_OPCs	Darmanis_PNAS_2015	Puchalski_2018	-
+Puchalski_IVYGAP_cellular_tumor	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-4
+Puchalski_IVYGAP_microvascular_proliferation	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>2, maxpadj<1E-7
+Puchalski_IVYGAP_pseudo-palisading_cells_around_necrosis	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-7
+Puchalski_IVYGAP_leading_edge	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>4, maxpadj<1E-7
+Hasel_AlteredInAstrocytesByNeurons	Hasel_2017_28462931	Hasel_2017_28462931	Astrocytic genes significantly altered by the presence of neurons. Mouse. From Supplementary Data 5 ncomms15132-s6.xlsx. Fold change <0.5 or >2, padj<1E-4.
+Hasel_AlteredInAstrocytesBySynapticActivity	Hasel_2017_28462931	Hasel_2017_28462931	Genes altered in astrocytes by synaptic activity. Mouse. From Supplementary Data 10 ncomms15132-s11.xlsx. Fold change <0.5 or >2, padj<1E-2.
+TheStemCellSignatureGenes	x	x	x
+Park_LongTermPotentiationInducedActivityRegulatedGenes	Park_2005_10.1074/jbc.M605876200	Park_2005_10.1074/jbc.M605876200	Genes with significant alterations in their expression levels at one or more experimental time points after long term potentiation. Mouse. Fold change <0.5 or >2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster1	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster2	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster3	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster4	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster5	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster6	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_cluster7	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
+Llorens-Bobadilla_AdultSvcNSCs_InjuryInduced	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Differentially Expressed Genes (FC > 2, padj < 0.1) in adult subventricular zone NSCs 48 hr after injury. Mouse. Table S4.
+Tardon_GBM_hypoxia	Tardon_2020_10.3390/biology9090264	Tardon_2020_10.3390/biology9090264	Differentially expressed genes in GBM cell lines for hypoxia vs physioxia. FigS1d.
+Tardon_GBM_hypoxia+hypoxia-responsive_element	Tardon_2020_10.3390/biology9090264	Tardon_2020_10.3390/biology9090264	Differentially expressed genes in GBM cell lines for hypoxia vs physioxia, that also contain a hypoxia-responsive element sequence. FigS1e.
+Codega_EnrichedInQuiescentVsActivatedNSCs	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Differentailly expressed genes enriched in qiescent vs actiavted adult neuronal stem cells. From Supplement-02,FC>2, padj<0.02
+Codega_EnrichedInActivatedVsQuiescentNSCs	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Differentailly expressed genes enriched in activated vs quiescent adult neuronal stem cells. From Supplement-02,FC>2, padj<0.02
+Codega_TFsForNeurogenesis	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Transcription factors previously identified as being important for neurogenesis. From Supplemental-05.
+Codega_FactorsAndMarkersForNeurogenesis	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Factors and markers previously identified as being important for neurogenesis.	From Supplemental-06.
+Fiscon_EnrcihedInDifferentiatedGBMCells	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Differentially expressed genes enriched in differentiated GBM cells vs tumour-propogating GBM cells from the Suva or Schulte dataset. padj<1E-4. Supplementary file 1.
+Fiscon_EnrcihedInTumor-propagatingGBMCells	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Differentially expressed genes enriched in tumour-propogating GBM cells vs differentiated GBM cells from the Suva or Schulte dataset. padj<1E-4. Supplementary file 1.
+Fiscon_SwitchgenesDown-regulatedFromStemToDiff	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Downregulated switch genes identified as being potentially involved in the transition from stem-like to differentiated state in GBM cells, based on the Suva or Schulte dataset. Supplementary file 5.
+Fiscon_SwitchgenesUp-regulatedFromStemToDiff	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Upregulated switch genes identified as being potentially involved in the transition from stem-like to differentiated state in GBM cells, based on the Suva or Schulte dataset. Supplementary file 5.
+Wang_MesVsProNeu	Wang_2019_10.1158/2159-8290.CD-19-0329	Wang_2019_10.1158/2159-8290.CD-19-0329	Diferential expression between proneural and mesenchymal on a single axis. FC>4. Supplemental Table S3.
+Wang_ProNeuVsMes	Wang_2019_10.1158/2159-8290.CD-19-0329	Wang_2019_10.1158/2159-8290.CD-19-0329	Diferential expression between proneural and mesenchymal on a single axis. FC<0.25. Supplemental Table S3.
+Richards_InjuryResponse	Richards_2021_10.1038/s43018-020-00154-9	Richards_2021_10.1038/s43018-020-00154-9	Differential expression between  Injury Response and Developmental clusters identified with bulk RNA-seq of GSC samples. FC<0.25, padj<1E-9. Supplementary Table 7. 
+Richards_Developmental	Richards_2021_10.1038/s43018-020-00154-9	Richards_2021_10.1038/s43018-020-00154-9	Differential expression between  Injury Response and Developmental clusters identified with bulk RNA-seq of GSC samples. FC>4, padj<1E-5. Supplementary Table 7. 
+Nowakowski_NeuralDiferentiation Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table8 DifferentiationSignature
+Nowakowski_Astrocyte    Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers. 
+Nowakowski_Choroid	   Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_EN-PFC1	   Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_EN-PFC2	   Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_EN-PFC3	   Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_EN-V1-1      Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_EN-V1-2	   Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_EN-V1-3	   Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_Endothelial  Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers. 
+Nowakowski_Glyc Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_IN-CTX-CGE1  Nowakowski_2017_10.1126/science.aap8809 Nowakowski_2017_10.1126/science.aap8809 Table 5 Cluster Markers.
+Nowakowski_nEN-early2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nEN-late	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nEN-early1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IN-STR	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IN-CTX-CGE2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IN-CTX-MGE1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IN-CTX-MGE2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IPC-div1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IPC-div2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IPC-nEN3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nIN1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nIN2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nIN3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nIN5	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_U4	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_Mural	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_U1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_Microglia	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_U3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_RG-early	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_U2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_oRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_tRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_vRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_RG-div1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_OPC	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_RG-div2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_MGE-RG1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_MGE-RG2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_MGE-div	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_MGE-IPC1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_MGE-IPC2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IPC-nEN2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_IPC-nEN1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_nIN4	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Nowakowski_MGE-IPC3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
+Zhong_Nature_2018_NPCs_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9	
+Zhong_Nature_2018_Excitatory_neurons_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
+Zhong_Nature_2018_Interneurons_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
+Zhong_Nature_2018_OPC_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
+Zhong_Nature_2018_Astrocytes_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9	
+Zhong_Nature_2018_Microglia_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
+Liddelow_Nature_2017_A1_reactive_astrocytes	Liddelow_Nature_2017	Richards_2021_10.1038/s43018-020-00154-9
+Liddelow_Nature_2017_A2_reactive_astrocytes	Liddelow_Nature_2017	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_MES2	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_MES1	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_AC	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_OPC	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_NPC1	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_NPC2	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_G1.S	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Neftel_Cell_2019_G2.M	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
+Hai_GBMConnectivity	Hai_biorxiv_2021_10.1101/2021.11.07.465791	Hai_biorxiv_2021_10.1101/2021.11.07.465791	A connectivity signature from single-cell RNA-sequenced (scRNA-Seq) xenografted primary glioblastoma cells. Supplementary Table 2. 
+Wang_ClassicalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
+Wang_MesenchymalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
+Wang_ProneuralGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
+Gorafano_GPM	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j. 
+Gorafano_MTC	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
+Gorafano_NEU	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
+Gorafano_PPR	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
+Liau_Cluster1DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
+Liau_Cluster2DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
+Liau_Cluster3DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
+Liau_Cluster4UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
+Liau_Cluster5UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
+Liau_Cluster6UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
+Eze_EarlyFirstTrimesterBrain	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 11. Early Versus Late Differential Gene Expression Differential gene expression was calculated between the early samples in the dataset (CS12-15) and the later samples in the dataset (CS19-22). FC>4
+Eze_LateFirstTrimesterBrain	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 11. Early Versus Late Differential Gene Expression Differential gene expression was calculated between the early samples in the dataset (CS12-15) and the later samples in the dataset (CS19-22). FC<0.25
+Eze_CorticalNeuronSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_CorticalNeuronSubcluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuronSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
+Eze_EarlyCorticalNeuron	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. differential expression was performed between older and younger neuronal populations across all subtypes. FC>2
+Eze_LateCorticalNeuron	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. differential expression was performed between older and younger neuronal populations across all subtypes. FC>2
+Eze_UltraEarlyCortexSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_UltraEarlyCortexSubcluster29	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
+Eze_CortexCluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster29	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster30	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster31	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster32	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster33	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster34	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster35	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster36	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster37	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster38	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster39	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster40	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster41	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster42	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster43	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster44	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster45	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster46	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster47	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster48	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster49	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster50	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster51	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster52	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster53	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster54	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster55	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster56	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster57	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster58	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster59	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster60	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_CortexCluster61	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
+Eze_ProgenitorSubclusterNew1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
+Eze_ProgenitorSubclusterNew2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
+Eze_ProgenitorSubclusterNew3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
+Eze_ProgenitorSubclusterNew4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
+Eze_ProgenitorSubclusterNew5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
+Eze_ProgenitorSubclusterNew6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
+Eze_ProgenitorSubclusterNew7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
+Eze_ProgenitorSubclusterNew8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
+Eze_ProgenitorSubclusterNew9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
+Krishna_GBMFunctionalConnectivity	Krishna_2021_10.1101/2021.02.18.431915	Krishna_2021_10.1101/2021.02.18.431915	Bulk RNA-sequencing from primary patient-derived High Functional Connectivity and Low Functional Connectivity tumor samples.

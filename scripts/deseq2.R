@@ -15,7 +15,12 @@ meta<-data.frame(condition=rep(c("primary","recurrent"),times=length(patients)),
 
 dds <- DESeqDataSetFromMatrix(countData = dat, colData = meta, design = ~ patient + condition)
 dds <- DESeq(dds)
+dds <- dds[rowSums(counts(dds)) >= 10,]
+
+save(dds,file="deseq2/dds.Rdata")
+
 res <- results( dds )
+res<-res[mcols(dds)$betaConv=='TRUE',]
 
 pdf("deseq2/plots.pdf")
 plotMA( res,ylim = c(-3, 3) )

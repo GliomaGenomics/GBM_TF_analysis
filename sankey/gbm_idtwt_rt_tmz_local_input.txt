@@ -1,0 +1,126 @@
+##https://www.sankeymatic.com/build/
+
+
+#input
+Mesenchymal P  [5] Classical R
+Mesenchymal P  [5] Proneural R
+Mesenchymal P [14] Mesenchymal R
+Classical P [28] Classical R
+Classical P [9] Proneural R
+Classical P [5] Mesenchymal R
+Proneural P [3] Classical R
+Proneural P [10] Proneural R
+Proneural P [5] Mesenchymal R
+
+#up
+Mesenchymal P  [2] Classical R
+Mesenchymal P  [5] Proneural R
+Mesenchymal P [7] Mesenchymal R
+Classical P [16] Classical R
+Classical P [8] Proneural R
+Classical P [1] Mesenchymal R
+Proneural P [2] Classical R
+Proneural P [8] Proneural R
+Proneural P [2] Mesenchymal R
+
+#down
+Mesenchymal P  [3] Classical R
+Mesenchymal P  [0] Proneural R
+Mesenchymal P [7] Mesenchymal R
+Classical P [12] Classical R
+Classical P [1] Proneural R
+Classical P [4] Mesenchymal R
+Proneural P [1] Classical R
+Proneural P [2] Proneural R
+Proneural P [3] Mesenchymal R
+
+#glass all
+Mesenchymal P  [0] Classical R
+Mesenchymal P  [2] Proneural R
+Mesenchymal P [2] Mesenchymal R
+Classical P [4] Classical R
+Classical P [3] Proneural R
+Classical P [1] Mesenchymal R
+Proneural P [2] Classical R
+Proneural P [6] Proneural R
+Proneural P [3] Mesenchymal R
+
+#glass up
+Mesenchymal P  [0] Classical R
+Mesenchymal P  [2] Proneural R
+Mesenchymal P [1] Mesenchymal R
+Classical P [2] Classical R
+Classical P [0] Proneural R
+Classical P [1] Mesenchymal R
+Proneural P [1] Classical R
+Proneural P [4] Proneural R
+Proneural P [3] Mesenchymal R
+
+#glass down
+Mesenchymal P  [0] Classical R
+Mesenchymal P  [0] Proneural R
+Mesenchymal P [1] Mesenchymal R
+Classical P [2] Classical R
+Classical P [3] Proneural R
+Classical P [0] Mesenchymal R
+Proneural P [1] Classical R
+Proneural P [2] Proneural R
+Proneural P [0] Mesenchymal R
+
+
+
+
+
+##svg code
+#all
+<svg id="sankey_svg" height="600" width="600" xmlns="http://www.w3.org/2000/svg" version="1.1"><title>Your Diagram Title</title><!-- Generated with SankeyMATIC on Wed Nov 17 2021 12:09:36 GMT+0000 (Greenwich Mean Time)--><g><rect width="100%" height="100%" fill="transparent"></rect><g transform="translate(12,12)"><g><path class="link" d="M10,90C288,90 288,90 566,90" style="fill: none; stroke-width: 180; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Classical P &#8594; Classical R:
+28</title></path><path class="link" d="M10,397.2857142857143C288,397.2857142857143 288,498.8571428571429 566,498.8571428571429" style="fill: none; stroke-width: 90; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Mesenchymal R:
+14</title></path><path class="link" d="M10,511.7142857142857C288,511.7142857142857 288,371.5714285714286 566,371.5714285714286" style="fill: none; stroke-width: 64.2857; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Proneural P &#8594; Proneural R:
+10</title></path><path class="link" d="M10,208.92857142857144C288,208.92857142857144 288,278.3571428571429 566,278.3571428571429" style="fill: none; stroke-width: 57.8571; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Classical P &#8594; Proneural R:
+9</title></path><path class="link" d="M10,304.07142857142856C288,304.07142857142856 288,196.07142857142858 566,196.07142857142858" style="fill: none; stroke-width: 32.1429; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Classical R:
+5</title></path><path class="link" d="M10,336.2142857142857C288,336.2142857142857 288,323.3571428571429 566,323.3571428571429" style="fill: none; stroke-width: 32.1429; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Proneural R:
+5</title></path><path class="link" d="M10,253.92857142857144C288,253.92857142857144 288,437.7857142857143 566,437.7857142857143" style="fill: none; stroke-width: 32.1429; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Classical P &#8594; Mesenchymal R:
+5</title></path><path class="link" d="M10,559.9285714285714C288,559.9285714285714 288,559.9285714285714 566,559.9285714285714" style="fill: none; stroke-width: 32.1429; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Proneural P &#8594; Mesenchymal R:
+5</title></path><path class="link" d="M10,469.92857142857144C288,469.92857142857144 288,221.78571428571428 566,221.78571428571428" style="fill: none; stroke-width: 19.2857; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Proneural P &#8594; Classical R:
+3</title></path></g><g><g class="node" transform="translate(0,288)"><rect height="154.28571428571428" width="10" id="r0" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 1; stroke-width: 0; stroke: rgb(15, 58, 88);"><title>Mesenchymal P:
+24</title></rect><text x="16" y="77.14285714285714" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Mesenchymal P: 24</text></g><g class="node" transform="translate(566,0)"><rect height="231.42857142857144" width="10" id="r1" shape-rendering="crispEdges" style="fill: rgb(174, 199, 232); fill-opacity: 1; stroke-width: 0; stroke: rgb(85, 97, 113);"><title>Classical R:
+36</title></rect><text x="-6" y="115.71428571428572" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Classical R: 36</text></g><g class="node" transform="translate(566,249.42857142857144)"><rect height="154.28571428571428" width="10" id="r2" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 1; stroke-width: 0; stroke: rgb(124, 62, 6);"><title>Proneural R:
+24</title></rect><text x="-6" y="77.14285714285714" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Proneural R: 24</text></g><g class="node" transform="translate(566,421.7142857142857)"><rect height="154.28571428571428" width="10" id="r3" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 1; stroke-width: 0; stroke: rgb(15, 58, 88);"><title>Mesenchymal R:
+24</title></rect><text x="-6" y="77.14285714285714" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Mesenchymal R: 24</text></g><g class="node" transform="translate(0,0)"><rect height="270" width="10" id="r4" shape-rendering="crispEdges" style="fill: rgb(174, 199, 232); fill-opacity: 1; stroke-width: 0; stroke: rgb(85, 97, 113);"><title>Classical P:
+42</title></rect><text x="16" y="135" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Classical P: 42</text></g><g class="node" transform="translate(0,460.2857142857143)"><rect height="115.71428571428572" width="10" id="r5" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 1; stroke-width: 0; stroke: rgb(124, 62, 6);"><title>Proneural P:
+18</title></rect><text x="16" y="57.85714285714286" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Proneural P: 18</text></g></g></g></g></svg>
+
+#Up
+<svg id="sankey_svg" height="600" width="600" xmlns="http://www.w3.org/2000/svg" version="1.1"><title>Your Diagram Title</title><!-- Generated with SankeyMATIC on Wed Nov 17 2021 12:21:36 GMT+0000 (Greenwich Mean Time)--><g><rect width="100%" height="100%" fill="transparent"></rect><g transform="translate(12,12)"><g><path class="link" d="M10,84.70588235294117C288,84.70588235294117 288,84.70588235294126 566,84.70588235294126" style="fill: none; stroke-width: 169.412; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Classical P &#8594; Classical R:
+16</title></path><path class="link" d="M10,211.76470588235293C288,211.76470588235293 288,272.1176470588236 566,272.1176470588236" style="fill: none; stroke-width: 84.7059; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Classical P &#8594; Proneural R:
+8</title></path><path class="link" d="M10,512.470588235294C288,512.470588235294 288,409.76470588235304 566,409.76470588235304" style="fill: none; stroke-width: 84.7059; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Proneural P &#8594; Proneural R:
+8</title></path><path class="link" d="M10,393.88235294117646C288,393.88235294117646 288,517.7647058823529 566,517.7647058823529" style="fill: none; stroke-width: 74.1176; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Mesenchymal R:
+7</title></path><path class="link" d="M10,330.3529411764706C288,330.3529411764706 288,340.9411764705883 566,340.9411764705883" style="fill: none; stroke-width: 52.9412; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Proneural R:
+5</title></path><path class="link" d="M10,293.2941176470588C288,293.2941176470588 288,180.00000000000009 566,180.00000000000009" style="fill: none; stroke-width: 21.1765; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Classical R:
+2</title></path><path class="link" d="M10,459.5294117647058C288,459.5294117647058 288,201.1764705882354 566,201.1764705882354" style="fill: none; stroke-width: 21.1765; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Proneural P &#8594; Classical R:
+2</title></path><path class="link" d="M10,565.4117647058823C288,565.4117647058823 288,565.4117647058824 566,565.4117647058824" style="fill: none; stroke-width: 21.1765; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Proneural P &#8594; Mesenchymal R:
+2</title></path><path class="link" d="M10,259.4117647058824C288,259.4117647058824 288,475.41176470588243 566,475.41176470588243" style="fill: none; stroke-width: 10.5882; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Classical P &#8594; Mesenchymal R:
+1</title></path></g><g><g class="node" transform="translate(0,282.70588235294116)"><rect height="148.23529411764704" width="10" id="r0" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 1; stroke-width: 0; stroke: rgb(15, 58, 88);"><title>Mesenchymal P:
+14</title></rect><text x="16" y="74.11764705882352" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Mesenchymal P: 14</text></g><g class="node" transform="translate(566,8.881784197001252e-14)"><rect height="211.76470588235293" width="10" id="r1" shape-rendering="crispEdges" style="fill: rgb(174, 199, 232); fill-opacity: 1; stroke-width: 0; stroke: rgb(85, 97, 113);"><title>Classical R:
+20</title></rect><text x="-6" y="105.88235294117646" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Classical R: 20</text></g><g class="node" transform="translate(566,229.764705882353)"><rect height="222.35294117647058" width="10" id="r2" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 1; stroke-width: 0; stroke: rgb(124, 62, 6);"><title>Proneural R:
+21</title></rect><text x="-6" y="111.17647058823529" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Proneural R: 21</text></g><g class="node" transform="translate(566,470.1176470588236)"><rect height="105.88235294117646" width="10" id="r3" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 1; stroke-width: 0; stroke: rgb(15, 58, 88);"><title>Mesenchymal R:
+10</title></rect><text x="-6" y="52.94117647058823" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Mesenchymal R: 10</text></g><g class="node" transform="translate(0,0)"><rect height="264.70588235294116" width="10" id="r4" shape-rendering="crispEdges" style="fill: rgb(174, 199, 232); fill-opacity: 1; stroke-width: 0; stroke: rgb(85, 97, 113);"><title>Classical P:
+25</title></rect><text x="16" y="132.35294117647058" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Classical P: 25</text></g><g class="node" transform="translate(0,448.9411764705882)"><rect height="127.05882352941177" width="10" id="r5" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 1; stroke-width: 0; stroke: rgb(124, 62, 6);"><title>Proneural P:
+12</title></rect><text x="16" y="63.529411764705884" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Proneural P: 12</text></g></g></g></g></svg>
+
+#Down
+<svg id="sankey_svg" height="600" width="600" xmlns="http://www.w3.org/2000/svg" version="1.1"><title>Your Diagram Title</title><!-- Generated with SankeyMATIC on Wed Nov 17 2021 12:24:31 GMT+0000 (Greenwich Mean Time)--><g><rect width="100%" height="100%" fill="transparent"></rect><g transform="translate(12,12)"><g><path class="link" d="M10,98.18181818181823C288,98.18181818181823 288,98.18181818181812 566,98.18181818181812" style="fill: none; stroke-width: 196.364; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Classical P &#8594; Classical R:
+12</title></path><path class="link" d="M10,402.5454545454546C288,402.5454545454546 288,402.54545454545445 566,402.54545454545445" style="fill: none; stroke-width: 114.545; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Mesenchymal R:
+7</title></path><path class="link" d="M10,229.09090909090915C288,229.09090909090915 288,312.5454545454545 566,312.5454545454545" style="fill: none; stroke-width: 65.4545; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Classical P &#8594; Mesenchymal R:
+4</title></path><path class="link" d="M10,320.7272727272728C288,320.7272727272728 288,220.90909090909088 566,220.90909090909088" style="fill: none; stroke-width: 49.0909; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Mesenchymal P &#8594; Classical R:
+3</title></path><path class="link" d="M10,518.7272727272727C288,518.7272727272727 288,484.3636363636363 566,484.3636363636363" style="fill: none; stroke-width: 49.0909; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;"><title>Proneural P &#8594; Mesenchymal R:
+3</title></path><path class="link" d="M10,559.6363636363637C288,559.6363636363637 288,559.6363636363636 566,559.6363636363636" style="fill: none; stroke-width: 32.7273; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Proneural P &#8594; Proneural R:
+2</title></path><path class="link" d="M10,270.00000000000006C288,270.00000000000006 288,535.090909090909 566,535.090909090909" style="fill: none; stroke-width: 16.3636; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;"><title>Classical P &#8594; Proneural R:
+1</title></path><path class="link" d="M10,486.00000000000006C288,486.00000000000006 288,253.63636363636357 566,253.63636363636357" style="fill: none; stroke-width: 16.3636; stroke: rgb(174, 199, 232); stroke-opacity: 0.4;"><title>Proneural P &#8594; Classical R:
+1</title></path></g><g><g class="node" transform="translate(0,296.18181818181824)"><rect height="163.63636363636363" width="10" id="r0" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 1; stroke-width: 0; stroke: rgb(15, 58, 88);"><title>Mesenchymal P:
+10</title></rect><text x="16" y="81.81818181818181" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Mesenchymal P: 10</text></g><g class="node" transform="translate(566,-7.105427357601002e-14)"><rect height="261.8181818181818" width="10" id="r1" shape-rendering="crispEdges" style="fill: rgb(174, 199, 232); fill-opacity: 1; stroke-width: 0; stroke: rgb(85, 97, 113);"><title>Classical R:
+16</title></rect><text x="-6" y="130.9090909090909" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Classical R: 16</text></g><g class="node" transform="translate(566,279.81818181818176)"><rect height="229.0909090909091" width="10" id="r2" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 1; stroke-width: 0; stroke: rgb(15, 58, 88);"><title>Mesenchymal R:
+14</title></rect><text x="-6" y="114.54545454545455" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Mesenchymal R: 14</text></g><g class="node" transform="translate(0,4.618527782440651e-14)"><rect height="278.1818181818182" width="10" id="r3" shape-rendering="crispEdges" style="fill: rgb(174, 199, 232); fill-opacity: 1; stroke-width: 0; stroke: rgb(85, 97, 113);"><title>Classical P:
+17</title></rect><text x="16" y="139.0909090909091" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Classical P: 17</text></g><g class="node" transform="translate(566,526.9090909090909)"><rect height="49.09090909090909" width="10" id="r4" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 1; stroke-width: 0; stroke: rgb(124, 62, 6);"><title>Proneural R:
+3</title></rect><text x="-6" y="24.545454545454547" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Proneural R: 3</text></g><g class="node" transform="translate(0,477.81818181818187)"><rect height="98.18181818181819" width="10" id="r5" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 1; stroke-width: 0; stroke: rgb(124, 62, 6);"><title>Proneural P:
+6</title></rect><text x="16" y="49.09090909090909" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Proneural P: 6</text></g></g></g></g></svg>
