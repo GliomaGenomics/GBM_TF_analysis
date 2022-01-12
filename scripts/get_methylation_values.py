@@ -1,8 +1,6 @@
 import pandas
-import seaborn as sns
-import matplotlib.pyplot as plt
 
-patients=list(pandas.read_table('patient_lists/glass_gbm_idhwt_rt_tmz_local_methylation.txt',header=None)[0])
+patients=list(pandas.read_table('patient_lists/glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt',header=None)[0])
 beta=pandas.read_table('original_data/beta.merged.tsv', header=0)
 
 all_pro_probes=[]
@@ -27,6 +25,12 @@ with open('methylation/le50_JARID2_bound_genes_probes.txt', 'r') as le50_genes:
         l=line.strip().split()
         if len(l)>1:
             le50_dict[l[0]]=l[1:]
+le70_dict={}
+with open('methylation/le70_JARID2_bound_genes_probes.txt', 'r') as le70_genes:
+    for line in le70_genes:
+        l=line.strip().split()
+        if len(l)>1:
+            le70_dict[l[0]]=l[1:]
 
 filt_beta=pandas.DataFrame()
 filt_beta['probeID']=beta['probeID']
@@ -51,13 +55,8 @@ vals['jar_prim']=[]
 vals['jar_recu']=[]
 vals['le50_prim']=[]
 vals['le50_recu']=[]
-name={}
-name['all_prim']='All genes in P'
-name['all_recu']='All genes in R'
-name['jar_prim']='JBS genes in P'
-name['jar_recu']='JBS genes in R'
-name['le50_prim']='LE50 genes in P'
-name['le50_recu']='LE50 genes in R'
+vals['le70_prim']=[]
+vals['le70_recu']=[]
 
 for gene in all_dict:
     probes=pandas.DataFrame({'probeID':all_dict[gene]})    
@@ -88,25 +87,13 @@ for gene in le50_dict:
             vals['le50_prim'].extend([sum(fpvals)/len(fpvals)])
             fpvals=list(fp[fp.columns[fp.columns.str.startswith(p+'-R1')][0]])
             vals['le50_recu'].extend([sum(fpvals)/len(fpvals)])
+for gene in le70_dict:
+    probes=pandas.DataFrame({'probeID':le70_dict[gene]})
+    fp=filt_beta.merge(probes, how='inner', on='probeID')
+    if fp.shape[0]>0:
+        for p in patients:
+            fpvals=list(fp[fp.columns[fp.columns.str.startswith(p+'-TP')][0]])
+            vals['le70_prim'].extend([sum(fpvals)/len(fpvals)])
+            fpvals=list(fp[fp.columns[fp.columns.str.startswith(p+'-R1')][0]])
+            vals['le70_recu'].extend([sum(fpvals)/len(fpvals)])
 
-import json
-json = json.dumps(vals)
-f = open("methylation/methylation_values.json","w")
-f.write(json)
-f.close()
-
-for i in vals:
-    print([i,len(vals[i])])
-
-line=["-","--","-","--","-","--"]
-col=['black','black','#2943ff','#2943ff','#81bbff','#81bbff']
-plt.figure()
-i=0
-for g in ['all_prim','all_recu','jar_prim','jar_recu','le50_prim','le50_recu']:
-    sns.distplot(vals[g], hist = False, kde = True,kde_kws = {'linewidth': 2,"linestyle":line[i]},label = name[g], color=col[i])
-    i+=1
-
-plt.legend()
-plt.xlabel('Promotor DNA methylation')
-plt.ylabel('Frequency')
-plt.savefig('methylation/methylation_plot.pdf')

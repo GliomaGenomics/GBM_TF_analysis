@@ -27,15 +27,19 @@ downloaded_data also contains:
 
 
 ### original_data 
-Contains stead cohort expression tables, count data, batch-corrected-protein-coding-only count data and metadata
+Contains stead cohort expression tables, count data, batch-corrected-protein-coding-only expression data and metadata
 
 ### glass_data
 This folder contains the gene_tpm_matrix_all_samples.tsv file from the GLASS resources on Synapse: https://www.synapse.org/#!Synapse:syn23548220
 
-patients_gbm_not_in_stead.txt contains a list of 54 patient barcodes for those with IDHwt (or IDH unknown) GBM at both primary and first recurrence, with RNA expression data available, and whose data aren't part of the stead cohort.
-
 Metadata is from clinical_surgeries_100521.tsv
 
+variants_titan_seg_filtered.txt: copy number data from variants_titan_seg (syn23554313) filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+stead_cna.txt, using:
+```
+while read line ; do cat variants_titan_seg.txt  | grep "${line}-TP" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
+while read line ; do cat variants_titan_seg.txt  | grep "${line}-R1" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
+cat variants_titan_seg_filtered_temp.txt | grep -v -E "TCGA-06-0125-TP-01-NB-01D-WXS|TCGA-06-0125-TP-02-NB-01D-WXS|TCGA-06-0125-R1-11-NB-01D-WXS|TCGA-06-0125-R1-02-NB-01D-WXS|GLSS-HK-0003-R1-01-NB-01D-WXS" > variants_titan_seg_filtered.txt
+```
 ### gene_sets
 Contains the following gene set lists from http://www.gsea-msigdb.org/gsea/downloads.jsp
 c2.cgp.v7.4.symbols.gmt
@@ -44,6 +48,16 @@ c3.tft.v7.4.symbols.gmt
 c3.mir.mirdb.v7.4.symbols.gmt
 c5.go.bp.v7.4.symbols.gmt
 c5.go.mf.v7.4.symbols.gmt
+
+## patient_lists
+WARNING: Many of the analyses rely on GLASS primary and recurrents being labelled as TP and R1. This is the case for patients inlcuded in the following lists but any alterations need checking.
+gbm_idhwt_rt_tmz_local.txt: Stead patients who's primary and first recurrent are GBM_IDHwt, local first recurrent, recieved rt+tmz.
+glass_gbm_idhwt.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, have RNA data available and not in the stead cohort.
+glass_gbm_idhwt_rt_tmz_local.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, local first recurrent, recieved rt+tmz, have RNA data available and not in the stead cohort.
+glass_gbm_idhwt_rt_tmz_local+stead.txt: As with glass_gbm_idhwt_rt_tmz_local.txt but with stead patients included.
+glass_gbm_idhwt_rt_tmz_local+stead_cna.txt: As with glass_gbm_idhwt_rt_tmz_local+stead.txt but only those with GLASS copy number alteration data available.
+glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt: As with glass_gbm_idhwt_rt_tmz_local.txt but with stead patients included and filtered for those with methylation data also available. 
+mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt: As with glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt but with stead IDs for stead patients.
 
 ## Run DEA
 ```
@@ -59,15 +73,23 @@ awk -v sig=${SIG} -F" " '{if($7<sig) print}' deseq2_uvd/results_down.txt | cut -
 ```
 ## GO enrichment analysis
 http://www.webgestalt.org/
+
 Method of interest: Over-Represenataion Analysis
+
 Significance Level: FDR
-Number visualised: 100
+
+Max set size: 1000
+
 Set deseq2/background_go_list.txt as reference gene list
+```
+Rscript scripts/plot_dotplot.R
+```
 
 ## Expression inputs for GSEA 
 get_foldchange.py and get_foldchange_tss.py were run on a previous smaller cohort to get filtered lists of genes and TSSs, separately for those samples processed with total RNA or mRNA libraries: filtered_genelist_mrna.txt,filtered_genelist_total.txt,filtered_tsslist_mrna.txt,filtered_tsslist_total.txt.
 get_foldchange_newrealease.py and get_foldchange_tss_newrelease.py were later run on the current cohort expression table using the same lists of genes and TSSs.
 get_foldchange_glass.py is used to generate the glass data inputs.
+cat ranks/glass_absolute_log2fc/TCGA-06-0125.rnk | cut -f 1 > ranks/filtered_genelist_glass.txt 
 WARNING: get_foldchange_glass.py only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
 The resulting inputs are in the 'ranks' folder.
 
@@ -138,6 +160,8 @@ SETS="outputs_actual outputs_actual_glass outputs_absolute outputs_absolute_glas
 
 ### Get JARID2 NES or ES for all patients
 for SET in $SETS ; do for SIZE in 1000 ; do grep 'JARID2' gsea_outputs/${SET}/*_${SIZE}_*/gsea_report_for_na_*tsv | sed "s/_GTRD_${SIZE}_/\//" | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/jarid2_results/${SET}_${SIZE}_JARID2_results.tsv ; done ; done
+#manually create reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+stead.tsv to include stead patient results as GLASS ids.
+
 
 ### Get tables for all patients and genes
 cat gsea_files/TFs_ENS_5000_GTRDv19_10_gencodev27.gmt | cut -f 1 > reports/all_tfs.txt
@@ -146,12 +170,22 @@ for SET in $SETS ; do for SIZE in $SIZES ; do mkdir reports/${SET}_${SIZE} ; for
 
 ```
 
+## cell lines
+```
+python script/process_cell_lines.py
+python script/process_cell_lines_control.py
+qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=A172_0,A172_1,A172_2,GBM63_0,GBM63_1,GBM63_2,A172_control
+
+```
+
+
 ## Analysis
 
 ### Get LE50 and LE70 genes
 ```
 LIST="gbm_idhwt_rt_tmz_local"
 LIST="glass_gbm_idhwt_rt_tmz_local"
+
 
 SET="actual"
 SET="actual_tss"
@@ -161,25 +195,40 @@ SIZE="1000"
 
 #get le counts
 while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
+#NOTE: This resulted in also counting genes in the Walton50,55,59 outputs when intending to look at genes in the Walton5 output. If rerunning, instead use the below code to fix:
+#while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}_*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
+ 
+
 
 #calculate minimum number of patient leading edges needed for a gene to be classed as le50 of le70
 LE=50
 LE=70
 TOTAL=$(wc -l patient_lists/${LIST}.txt|cut -d' ' -f1)
 NUM=$(awk -v total=$TOTAL -v le=0.$LE 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_${SET}_${SIZE}_${LIST}.txt 
+
+#methylation
+while read line ; do f=${line}; cat ./gsea_outputs/outputs_actual_glass/*${f}_*1000*/JARID2.tsv ./gsea_outputs/outputs_actual/*${f}_*1000*/JARID2.tsv | grep 'Yes' ; done <patient_lists/gbm_idhwt_rt_tmz_local_methylation+rna.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_methylation_1000_gbm_idhwt_rt_tmz_local_methylation+rna.txt
+LE=50
+LE=70
+TOTAL=$(wc -l patient_lists/mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt|cut -d' ' -f1)
+NUM=$(awk -v total=$TOTAL -v le=0.$LE 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_methylation_1000_mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_methylation_1000_mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt 
 ```
 
+### Sankey plots
+Data is in analysis/sankey/
+https://www.sankeymatic.com/build/ online generator used to create the plots.
 
 ### Get filtered expression tables.
 Get filtered expression tables for mRNA, total_RNA, and all, containing the list of genes used for GSEA input. 
 All contains all patients but with only the filtered mRNA genes.
 ```
 python scripts/get_foldchange_tables.py
+#GLASS tables already made with scripts/get_foldchange_glass.py.
 ```
 
 ### Get gene lists
 ```
-grep 'JARID2' gsea_files/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt | sed 's/\t/\n/g' | tail -n+3 > gene_lists/JARID2_bound_genes.txt 
+grep 'JARID2' gsea_files/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt | sed 's/\t/\n/g' | cut -d ' ' -f 2| tail -n+3 > gene_lists/JARID2_bound_genes.txt 
 cut -f 1 original_data/PvR_genefpkm_all_LS_23062021.txt.txt | cut -d'.' -f1 | tail -n+2 > gene_lists/all_genes.txt
 ```
 
@@ -215,8 +264,8 @@ Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analy
 ```
 python scripts/get_probe_promotor_overlap.py
 cat gene_lists/JARID2_bound_genes.txt | while read line ; do printf "\n${line}\t" >> methylation/all_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/all_JARID2_bound_genes_probes.txt ; done
-cat analysis/leading_edge/le50_actual_glass_1000_glass_gbm_idhwt_rt_tmz_local.txt | while read line ; do printf "\n${line}\t" >> methylation/le50_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/le50_JARID2_bound_genes_probes.txt ; done
-cat analysis/leading_edge/le70_actual_glass_1000_glass_gbm_idhwt_rt_tmz_local.txt | while read line ; do printf "\n${line}\t" >> methylation/le70_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/le70_JARID2_bound_genes_probes.txt ; done
+cat analysis/leading_edge/le50_methylation_1000_gbm_idhwt_rt_tmz_local_methylation+rna.txt | while read line ; do printf "\n${line}\t" >> methylation/le50_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/le50_JARID2_bound_genes_probes.txt ; done
+cat analysis/leading_edge/le70_methylation_1000_gbm_idhwt_rt_tmz_local_methylation+rna.txt | while read line ; do printf "\n${line}\t" >> methylation/le70_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/le70_JARID2_bound_genes_probes.txt ; done
 cat gene_lists/all_genes.txt | while read line ; do printf "\n${line}\t" >> methylation/all_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/all_genes_probes.txt ; done
 qsubsec scripts/scripts/get_methylation_values.qsubsec
 #WARNING: the get_methylation_values.py script called by the above code only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
@@ -237,22 +286,32 @@ python scripts/get_deseq2_ranks.py
 ## Run UvD GSEA
 ```
 cp TFs_ENS_1000_GTRDv19_10_gencodev27.gmt gene_sets/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt
-qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=TFs_ENS_1000_GTRDv19_10_gencodev27_symbols,h.all.v7.4.symbols,c2.cgp.v7.4.symbols,c2.cp.v7.4.symbols,c3.mir.mirdb.v7.4.symbols,c3.tft.v7.4.symbols,c5.go.bp.v7.4.symbols,c5.go.mf.v7.4.symbols
+SETS="TFs_ENS_1000_GTRDv19_10_gencodev27 custom_gbm_gene_sets" 
+for s in $SETS; do qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=$s GENES=IDs; done
+SETS="h.all.v7.4.symbols c2.cgp.v7.4.symbols c2.cp.v7.4.symbols c3.mir.mirdb.v7.4.symbols c3.tft.v7.4.symbols c5.go.bp.v7.4.symbols c5.go.mf.v7.4.symbols" 
+for s in $SETS; do qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=$s GENES=symbols; done
+
+SETS="TFs_ENS_1000_GTRDv19_10_gencodev27 custom_gbm_gene_sets h.all.v7.4.symbols c2.cgp.v7.4.symbols c2.cp.v7.4.symbols c3.mir.mirdb.v7.4.symbols c3.tft.v7.4.symbols c5.go.bp.v7.4.symbols c5.go.mf.v7.4.symbols" 
 for f in gsea_uvd_outputs/run1/* ; do fi=$(basename ${f}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '==> ' | grep '[0123456789]'> gsea_uvd_outputs/reports/${fi}_table.txt ; done
 
-SETS="TFs_ENS_1000_GTRDv19_10_gencodev27_symbols h.all.v7.4.symbols,c2.cgp.v7.4.symbols c2.cp.v7.4.symbols c3.mir.mirdb.v7.4.symbols c3.tft.v7.4.symbols c5.go.bp.v7.4.symbols c5.go.mf.v7.4.symbols" 
 
 #Process results, either full or fast method.
 Rscript scripts/process_uvd_deseq2_results.R --gmt custom_gbm_gene_sets
-Rscript scripts/process_uvd_deseq2_results_fast.R --gmt custom_gbm_gene_sets
+for s in $SETS; do qsubsec scripts/process_uvd_deseq2_results.qsubsec SET=$s ; done
 
 #Plot results in a network
 #conda activate r4
-Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_fast.txt --sets Fiscon_EnrcihedInTumor-propagatingGBMCells_1,Codega_EnrichedInQuiescentVsActivatedNSCs_1,Nowakowski_NeuralDiferentiation_1,Hasel_AlteredInAstrocytesBySynapticActivity_1,DarmanisBarres_FetalNeuronsquiescent_1,Krishna_GBMFunctionalConnectivity,Fiscon_EnrcihedInTumor-propagatingGBMCells_2,Codega_EnrichedInQuiescentVsActivatedNSCs_2,Nowakowski_NeuralDiferentiation_2,Hasel_AlteredInAstrocytesBySynapticActivity_2,DarmanisBarres_FetalNeuronsquiescent_2 --name venn
+#source activate
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_fast.txt --sets gsea_uvd_outputs/reports/custom_gbm_gene_sets_run1_fdr_0.25.txt --name custom_gbm_gene_sets_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsh.all.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/h.all.v7.4.symbols_run1_fdr_top10_up.txt --name h.all.v7.4.symbols_run1_up
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsh.all.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/h.all.v7.4.symbols_run1_fdr_top10_down.txt --name h.all.v7.4.symbols_run1_down
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc2.cgp.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c2.cgp.v7.4.symbols_run1_fdr_1_up.txt --name c2.cgp.v7.4.symbols_run1_up
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc2.cgp.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c2.cgp.v7.4.symbols_run1_fdr_1_down.txt --name c2.cgp.v7.4.symbols_run1_down
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc2.cp.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c2.cp.v7.4.symbols_run1_top10.txt --name c2.cp.v7.4.symbols_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc3.mir.mirdb.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c3.mir.mirdb.v7.4.symbols_run1_fdr_1.txt --name c3.mir.mirdb.v7.4.symbols_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc3.tft.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c3.tft.v7.4.symbols_run1_fdr_top5s.txt --name c3.tft.v7.4.symbols_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc5.go.bp.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c5.go.bp.v7.4.symbols_run1_fdr_1.txt --name c5.go.bp.v7.4.symbols_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc5.go.mf.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c5.go.mf.v7.4.symbols_run1_fdr_top10s.txt --name c5.go.mf.v7.4.symbols_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsTFs_ENS_1000_GTRDv19_10_gencodev27_fast.txt --sets gsea_uvd_outputs/reports/TFs_ENS_1000_GTRDv19_10_gencodev27_run1_fdr_0.25.txt --name TFs_ENS_1000_GTRDv19_10_gencodev_run1
 
 ```
-
-
-
-
-

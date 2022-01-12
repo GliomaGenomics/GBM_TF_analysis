@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 
 data = pd.read_table('glass_data/gene_tpm_matrix_all_samples.tsv',sep='\t',header=0,index_col=0)
-patients= pd.read_table('patient_lists/glass_gbm_idhwt_or_unknown_notstead_rna.txt',sep='\t', header=None)
+patients= pd.read_table('patient_lists/glass_gbm_idhwt.txt',sep='\t', header=None)
 ens=pd.read_table('downloaded_data/ensembl_v75_geneidtoname.txt',sep='\t', header=None)
 
 #read in dictionary of gene to ensids
@@ -53,6 +53,8 @@ for i in range(0,len(data)):
 data['ProportionAboveLQ']=ps
 data=data[data['ProportionAboveLQ'].str.contains('True')]
 
+log2fc=pd.DataFrame()
+log2fc['genes']=data.index
 
 for patient in patients[0]:
     patient=patient.replace('-','.')
@@ -67,3 +69,5 @@ for patient in patients[0]:
     absolute.to_csv('ranks/glass_absolute_log2fc/'+patient.replace('.','-')+'.rnk',sep='\t',header=False,index=False)
     actual.to_csv('ranks/glass_actual_log2fc/'+patient+'.rnk',sep='\t',header=False,index=False)
 
+    log2fc[patient]=list(np.log2((recu+0.01)/(prim+0.01)))
+log2fc.to_csv('tables/log2fc_glass.txt',sep='\t',header=True,index=False)

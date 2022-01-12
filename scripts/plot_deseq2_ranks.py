@@ -66,6 +66,8 @@ plt.xlabel('Down DEA pvalues')
 plt.ylabel('Up DEA pvalues')
 plt.show()
 
+plt.savefig('deseq2_uvd/pval_plot_LE.pdf')
+
 pc=pd.read_table('analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt',sep='\t', header=None)
 pc=list(pc[0])
 pc2=pd.read_table('analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head100.txt',sep='\t', header=None)
@@ -90,5 +92,5 @@ plt.xlabel('Down DEA pvalues')
 plt.ylabel('Up DEA pvalues')
 
 
-plt.savefig('deseq2_uvd/pval_plot.pdf')
+plt.savefig('deseq2_uvd/pval_plot_PC1.pdf')
 

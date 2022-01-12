@@ -8,7 +8,8 @@ genesets<-list()
 lines<-readLines(paste("gene_sets/",args$gmt,'.gmt',sep=""))
 l<-strsplit(lines,"\t")
 for (i in l){
-genesets[i[1]]<-list(i[3:length(i[i!= ""])])
+ii<-as.character(lapply(i, function(x) gsub(" ", "", x)))
+genesets[ii[1]]<-list(ii[3:length(ii[ii!= ""])])
 }
 
 deaup1<-read.table('deseq2_uvd/usign_ranks.rnk', header=FALSE, row.names=1)

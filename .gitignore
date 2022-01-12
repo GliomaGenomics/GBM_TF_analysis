@@ -1,3 +1,5 @@
+deseq2_uvd/*pdf
+
 original_data/*
 glass_data/gene_tpm_matrix_all_samples.tsv
 downloaded_data/*
@@ -17,3 +19,4 @@ gene_sets/TF*
 gsea_uvd_outputs/run*
 deseq2_uvd/*Rdata
 deseq2/*Rdata
+cell_lines/*

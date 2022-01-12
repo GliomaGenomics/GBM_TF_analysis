@@ -5,13 +5,16 @@ library(argparse)
 
 parser <- ArgumentParser(description='plot gsea results')
 parser$add_argument('--processed', dest='pro', type='character', help='processed deseq2 results')
-parser$add_argument('--sets', dest='sets', type='character', help='comma separated list of gene sets to plot')
+parser$add_argument('--sets', dest='sets', type='character', help='file with list of gene sets to plot')
 parser$add_argument('--name', dest='name', type='character', help='output name')
 args <- parser$parse_args()
 
 
 #read in processed
 res<-read.table(args$pro,header=TRUE,row.names=1,sep='\t')
+
+case<-row.names(res)
+names(case)<-toupper(row.names(res))
 
 
 deaup1<-read.table('deseq2_uvd/usign_ranks.rnk', header=FALSE)
@@ -28,19 +31,20 @@ geneListdown<-down$V2
 names(geneListup)<-up$V1
 names(geneListdown)<-down$V1
 
-gs<-strsplit(args$sets,",")
+
+gs<-scan(args$sets, what = character())
 gens=list()
-for(i in gs[[1]]){
-gens[i]<-list(strsplit(res[i,"genes"],", ")[[1]])
+for(i in gs){
+gens[case[i]]<-list(strsplit(res[case[i],"genes"],", ")[[1]])
 }
 
 set.seed(123)
 
 p1 <- cnetplot(gens, layout='kk',foldChange=geneListup,cex_label_category=1, cex_gene=1, color_category='#686868', node_label='category', colorEdge=FALSE, showCategory=50)+
-scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='white',high='red',limits = c(-2, 2),oob = scales::squish)+
+scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='gray95',high='red',limits = c(-2, 2),oob = scales::squish)+
 theme(legend.text = element_text(size=15),legend.title = element_text(size=15))
 p2 <- cnetplot(gens, layout='kk',foldChange=geneListdown,cex_label_category=1, cex_gene=1,color_category='#686868', node_label='category', colorEdge=FALSE, showCategory=50)+
-scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='white',high='red',limits = c(-2, 2),oob = scales::squish)+
+scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='gray95',high='red',limits = c(-2, 2),oob = scales::squish)+
 theme(legend.text = element_text(size=15),legend.title = element_text(size=15))
 
 ##set all nodes the same size (double vector)
