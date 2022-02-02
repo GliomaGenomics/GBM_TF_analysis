@@ -1,11 +1,13 @@
-#library(copynumber)
+library(copynumber)
 
 patients<-scan('patient_lists/glass_gbm_idhwt_rt_tmz_local+stead_cna.txt', what = character())
 meta<-read.delim('reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+stead.tsv', col.names=c('patient_id','value'), header=FALSE, row.names=1)
 
 datain<-read.table('copy_number/variants_titan_seg_filtered.txt', header=FALSE)
-colnames(datain)<-c("Sample","Chromosome","Start Position","End Position","Num markers","Seg.CN")
-datain$Sample<-substring(datain$Sample,1,15)
+colnames(datain)<-c("sample","chrom","start.pos","end.pos","n.probes","mean")
+datain$sampleID<-substring(datain$sample,1,15)
+datain$arm<-datain$sampleID
+datain<-datain[,c(7,2,8,3,4,5,6)]
 
 up_prim_pat<-c()
 down_prim_pat<-c()
@@ -22,10 +24,10 @@ down_recu_pat<-append(down_recu_pat,paste(p,'-R1',sep=''))
 }
 }
 
-up_prim<-datain[datain$Sample %in% up_prim_pat,]
-down_prim<-datain[datain$Sample %in% down_prim_pat,]
-up_recu<-datain[datain$Sample %in% up_recu_pat,]
-down_recu<-datain[datain$Sample %in% down_recu_pat,]
+up_prim<-datain[datain$sampleID %in% up_prim_pat,]
+down_prim<-datain[datain$sampleID %in% down_prim_pat,]
+up_recu<-datain[datain$sampleID %in% up_recu_pat,]
+down_recu<-datain[datain$sampleID %in% down_recu_pat,]
 
 write.table(up_prim,file="copy_number/up_prim_cn.txt",row.names = FALSE,quote = FALSE, sep='\t')
 write.table(up_recu,file="copy_number/up_recu_cn.txt",row.names = FALSE,quote = FALSE, sep='\t')
@@ -33,10 +35,14 @@ write.table(down_prim,file="copy_number/down_prim_cn.txt",row.names = FALSE,quot
 write.table(down_recu,file="copy_number/down_recu_cn.txt",row.names = FALSE,quote = FALSE, sep='\t')
 
 
-#thresh=0.1
-#pdf("copy_number/plotFreq.pdf")
-#plotFreq(up_prim,thres.gain=thresh,thres.loss=-thresh)
-#plotFreq(down_prim,thres.gain=thresh,thres.loss=-thresh)
-#plotFreq(up_recu,thres.gain=thresh,thres.loss=-thresh)
-#plotFreq(down_recu,thres.gain=thresh,thres.loss=-thresh)
-#dev.off()
+thresh=0.05
+pdf(paste("copy_number/plotFreq",thresh,".pdf",sep=""))
+plotFreq(up_prim,thres.gain=thresh,thres.loss=-thresh,xlab='up_prim',chrom=16)
+plotFreq(down_prim,thres.gain=thresh,thres.loss=-thresh,xlab='down_prim',chrom=16)
+plotFreq(up_recu,thres.gain=thresh,thres.loss=-thresh,xlab='up_recu',chrom=16)
+plotFreq(down_recu,thres.gain=thresh,thres.loss=-thresh,xlab='down_recu',chrom=16)
+plotAberration(up_prim,thres.gain=thresh,thres.loss=-thresh,xlab='up_prim',chrom=16)
+plotAberration(down_prim,thres.gain=thresh,thres.loss=-thresh,xlab='down_prim',chrom=16)
+plotAberration(up_recu,thres.gain=thresh,thres.loss=-thresh,xlab='up_recu',chrom=16)
+plotAberration(down_recu,thres.gain=thresh,thres.loss=-thresh,xlab='down_recu',chrom=16)
+dev.off()

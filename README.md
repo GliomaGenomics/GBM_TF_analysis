@@ -175,7 +175,22 @@ for SET in $SETS ; do for SIZE in $SIZES ; do mkdir reports/${SET}_${SIZE} ; for
 python script/process_cell_lines.py
 python script/process_cell_lines_control.py
 qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=A172_0,A172_1,A172_2,GBM63_0,GBM63_1,GBM63_2,A172_control
+qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=PDspheroids_1,PDspheroids_3
+qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=ME_48,ME_72
 
+
+Rscript scripts/plot_pca_cell_lines_log2fc_project.R
+
+TABLE=primary
+TABLE=recurrent
+TABLE=log2fc
+
+
+python scripts/merge.py --input tables/${TABLE}_all.txt,cell_lines/tables/${TABLE}_ME.txt,cell_lines/tables/${TABLE}_A172.txt,cell_lines/tables/${TABLE}_GBM63.txt,cell_lines/tables/${TABLE}_GBM63_CUTRUN.txt,cell_lines/tables/${TABLE}_PDspheroids.txt --output cell_lines/tables/${TABLE}_merged.txt
+
+Rscript scripts/pca.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --table cell_lines/tables/${TABLE}_merged.txt --categories cell_lines/pca/categories.txt --colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --scale=TRUE --name cell_lines_${TABLE} --label A172_0,A172_1,A172_2,GBM63_0,GBM63_1,GBM63_2,PDspheroids_1,PDspheroids_3,GBM63_CUTRUN_0,GBM63_CUTRUN_1,ME_48,ME_72
+
+Rscript scripts/heatmap_cell_lines.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table cell_lines/tables/log2fc_merged.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name cell_lines_le70
 ```
 
 
@@ -315,3 +330,6 @@ Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resul
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsTFs_ENS_1000_GTRDv19_10_gencodev27_fast.txt --sets gsea_uvd_outputs/reports/TFs_ENS_1000_GTRDv19_10_gencodev27_run1_fdr_0.25.txt --name TFs_ENS_1000_GTRDv19_10_gencodev_run1
 
 ```
+
+#Copy number
+Rscript scripts/plot_cn_freq.R
