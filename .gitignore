@@ -1,5 +1,6 @@
 deseq2_uvd/*pdf
 
+#copy_number/variants_titan_seg_filtered.txt
 original_data/*
 glass_data/gene_tpm_matrix_all_samples.tsv
 downloaded_data/*
