@@ -7,6 +7,7 @@ parser <- ArgumentParser(description='plot gsea results')
 parser$add_argument('--processed', dest='pro', type='character', help='processed deseq2 results')
 parser$add_argument('--sets', dest='sets', type='character', help='file with list of gene sets to plot')
 parser$add_argument('--name', dest='name', type='character', help='output name')
+parser$add_argument('--seed', dest='seed', type='character', help='seed for plot')
 args <- parser$parse_args()
 
 
@@ -38,7 +39,7 @@ for(i in gs){
 gens[case[i]]<-list(strsplit(res[case[i],"genes"],", ")[[1]])
 }
 
-set.seed(123)
+set.seed(args$seed)
 
 p1 <- cnetplot(gens, layout='kk',foldChange=geneListup,cex_label_category=1, cex_gene=1, color_category='#686868', node_label='category', colorEdge=FALSE, showCategory=50)+
 scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='gray95',high='red',limits = c(-2, 2),oob = scales::squish)+

@@ -3,7 +3,7 @@ library(copynumber)
 patients<-scan('patient_lists/glass_gbm_idhwt_rt_tmz_local+stead_cna.txt', what = character())
 meta<-read.delim('reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+stead.tsv', col.names=c('patient_id','value'), header=FALSE, row.names=1)
 
-datain<-read.table('copy_number/variants_titan_seg_filtered.txt', header=FALSE)
+datain<-read.table('glass_data/variants_titan_seg_filtered.txt', header=FALSE)
 colnames(datain)<-c("sample","chrom","start.pos","end.pos","n.probes","mean")
 datain$sampleID<-substring(datain$sample,1,15)
 datain$arm<-datain$sampleID

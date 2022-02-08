@@ -1,7 +1,7 @@
 import pandas
 
 patients=list(pandas.read_table('patient_lists/glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt',header=None)[0])
-beta=pandas.read_table('original_data/beta.merged.tsv', header=0)
+beta=pandas.read_table('glass_data/beta.merged.tsv', header=0)
 
 all_pro_probes=[]
 all_dict={}

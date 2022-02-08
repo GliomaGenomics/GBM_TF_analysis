@@ -30,18 +30,27 @@ downloaded_data also contains:
 Contains stead cohort expression tables, count data, batch-corrected-protein-coding-only expression data and metadata
 
 ### glass_data
-This folder contains the gene_tpm_matrix_all_samples.tsv file from the GLASS resources on Synapse: https://www.synapse.org/#!Synapse:syn23548220
-
-Metadata is from clinical_surgeries_100521.tsv
-
-variants_titan_seg_filtered.txt: copy number data from variants_titan_seg (syn23554313) filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+stead_cna.txt, using:
+This folder contains glass data from Synapse:
+* gene_tpm_matrix_all_samples.tsv: expression data from https://www.synapse.org/#!Synapse:syn23548220
+* beta.merged.tsv: methylation data
+* variants_anno_20201109.csv: annotations for point variants
+* variants_passgeno_20201109_filtered.csv: point variant data filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+stead.txt, using:
 ```
-while read line ; do cat variants_titan_seg.txt  | grep "${line}-TP" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
-while read line ; do cat variants_titan_seg.txt  | grep "${line}-R1" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
-cat variants_titan_seg_filtered_temp.txt | grep -v -E "TCGA-06-0125-TP-01-NB-01D-WXS|TCGA-06-0125-TP-02-NB-01D-WXS|TCGA-06-0125-R1-11-NB-01D-WXS|TCGA-06-0125-R1-02-NB-01D-WXS|GLSS-HK-0003-R1-01-NB-01D-WXS" > variants_titan_seg_filtered.txt
+while read line ; do cat glass_data/variants_passgeno_20201109.csv  | grep "${line}-TP" | grep 't' >> glass_data/variants_passgeno_20201109_filtered_temp.csv ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt
+while read line ; do cat glass_data/variants_passgeno_20201109.csv  | grep "${line}-R1" | grep 't' >> glass_data/variants_passgeno_20201109_filtered_temp.csv ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt
+#remove duplicate patients - preference for WXS with highest variant numbers over WGS or WXS with fewer variants
+cat glass_data/variants_passgeno_20201109_filtered_temp.csv | grep -v -E "TCGA-06-0125-R1-11D-WGS-MA69JO|TCGA-06-0125-R1-11D-WXS-8Q4RKD|GLSS-HK-0003-R1-01D-WGS-R7P485|TCGA-06-0125-TP-01D-WXS-Z67AVH|TCGA-06-0125-TP-01D-WGS-FZT8H0|GLSS-HK-0003-TP-01D-WGS-WAGBN9" > glass_data/variants_passgeno_20201109_filtered.csv
 ```
+* variants_titan_seg_filtered.txt: copy number data from variants_titan_seg (syn23554313) filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+stead_cna.txt, using:
+```
+while read line ; do cat glass_data/variants_titan_seg.txt  | grep "${line}-TP" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
+while read line ; do cat glass_data/variants_titan_seg.txt  | grep "${line}-R1" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
+#remove duplicate patients - preference for WGS over WXS
+cat glass_data/variants_titan_seg_filtered_temp.txt | grep -v -E "TCGA-06-0125-TP-01-NB-01D-WXS|TCGA-06-0125-TP-02-NB-01D-WXS|TCGA-06-0125-R1-11-NB-01D-WXS|TCGA-06-0125-R1-02-NB-01D-WXS|GLSS-HK-0003-R1-01-NB-01D-WXS" > glass_data/variants_titan_seg_filtered.txt
+```
+
 ### gene_sets
-Contains the following gene set lists from http://www.gsea-msigdb.org/gsea/downloads.jsp
+Contains the following gene set lists from http://www.gsea-msigdb.org/gsea/downloads.jsp:
 c2.cgp.v7.4.symbols.gmt
 c2.cp.v7.4.symbols.gmt
 c3.tft.v7.4.symbols.gmt
@@ -167,7 +176,7 @@ for SET in $SETS ; do for SIZE in 1000 ; do grep 'JARID2' gsea_outputs/${SET}/*_
 cat gsea_files/TFs_ENS_5000_GTRDv19_10_gencodev27.gmt | cut -f 1 > reports/all_tfs.txt
 for SET in $SETS ; do for SIZE in $SIZES ; do mkdir reports/${SET}_${SIZE} ; for f in gsea_outputs/${SET}/*_${SIZE}_* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> reports/${SET}_${SIZE}/${fi}_table.txt ; done ; done ; done
 
-
+Rscript scripts/gsea_violin_plots.py
 ```
 
 ## cell lines
@@ -211,6 +220,7 @@ SIZE="1000"
 #get le counts
 while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
 #NOTE: This resulted in also counting genes in the Walton50,55,59 outputs when intending to look at genes in the Walton5 output. If rerunning, instead use the below code to fix:
+#Run for tss:
 #while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}_*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
  
 
@@ -270,9 +280,12 @@ sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | h
 
 ### Plot heatmaps
 ```
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
-Rscript scripts/heatmap.R --patients patient_lists/${PATIENTS}.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000
+Rscript scripts/heatmap.R --patients patient_lists/gbm_idhwt_rt_tmz_local.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
+Rscript scripts/heatmap.R --patients patient_lists/gbm_idhwt_rt_tmz_local.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
+Rscript scripts/heatmap.R --patients patient_lists/gbm_idhwt_rt_tmz_local.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000
+Rscript scripts/heatmap.R --patients patient_lists/glass_gbm_idhwt_rt_tmz_local.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_glass.txt  --rna_colour original_data/library_types.txt --nes_colour reports/jarid2_results/outputs_actual_glass_1000_JARID2_results.tsv --name glass_gbm_idhwt_rt_tmz_local_le70
+
+
 ```
 
 ## Methylation
@@ -330,6 +343,16 @@ Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resul
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsTFs_ENS_1000_GTRDv19_10_gencodev27_fast.txt --sets gsea_uvd_outputs/reports/TFs_ENS_1000_GTRDv19_10_gencodev27_run1_fdr_0.25.txt --name TFs_ENS_1000_GTRDv19_10_gencodev_run1
 
 ```
+## Variants
+```
+# Glass copy number
 
-#Copy number
 Rscript scripts/plot_cn_freq.R
+
+# Glass point variants
+
+```
+#filter for deleterious
+grep -E 'DE_NOVO_START_IN_FRAME|DE_NOVO_START_OUT_FRAME|FRAME_SHIFT_DEL|FRAME_SHIFT_INS|IN_FRAME_DEL|IN_FRAME_INS|MISSENSE|NONSENSE|NONSTOP|START_CODON_DEL|START_CODON_INS|START_CODON_SNP' glass_data/variants_anno_20201109.csv > glass_data/variants_anno_20201109_deleterious.csv
+grep 'SILENT' glass_data/variants_anno_20201109.csv > glass_data/variants_anno_20201109_silent.csv
+```

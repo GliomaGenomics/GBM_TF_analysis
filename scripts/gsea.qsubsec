@@ -25,3 +25,7 @@ elif '{MODE}'=='absolute_glass':
     limits(h_rt='48:00:00', h_vmem='15G')
     command('module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 2000 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 15 -zip_report false -out gsea_outputs/outputs_absolute_glass -gmx gsea_files/TFs_ENS_{SIZE}_GTRDv19_10_gencodev27.gmt -rnk ranks/glass_absolute_log2fc/{PATIENT}.rnk -scoring_scheme classic -rpt_label {PATIENT}_GTRD_{SIZE}_classic_absolute_glass', name='classic_absolute_glass', test=True, log=True)
 
+elif '{MODE}'=='actual_tss_jarid2':
+    options('V', 'cwd', 'notify')
+    limits(h_rt='48:00:00', h_vmem='15G')
+    command('module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 2000 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 15 -zip_report false -out gsea_outputs/outputs_actual_tss_j -gmx gsea_files/TSS_TFs_ENS_{SIZE}_GTRDv19_10_gencodev27_JARID2_only.gmt -rnk ranks/actual_log2fc_tss/{PATIENT}.rnk -scoring_scheme weighted -rpt_label {PATIENT}_GTRD_{SIZE}_weighted_actual_tss', name='weighted_actual_tss', test=True, log=True)
