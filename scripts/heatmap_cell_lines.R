@@ -64,14 +64,14 @@ if( length(args$jarid2)!=0 ) {
         }
     }
 row_ha =rowAnnotation(JARID2_gene = jlist, col=list(JARID2_gene = c("No" = "grey80", "Yes" = "grey40")),show_annotation_name = FALSE)
-colnames(datain)<-NULL
+#colnames(datain)<-NULL
 rownames(datain)<-NULL
-ht=Heatmap(as.matrix(datain), show_column_dend = FALSE, clustering_method_rows = "complete", clustering_method_columns = "complete", column_split = upvdown, clustering_distance_rows = "pearson", clustering_distance_columns = "pearson", name = "Log2FC", bottom_annotation = column_ha, right_annotation = row_ha, col = circlize::colorRamp2(c(-1, 0, 1), c("steelblue2", "white", "indianred2")), heatmap_legend_param = list(labels = c("<-1", "", "0", "", ">1")),use_raster = TRUE,width = unit(8, "cm"), height = unit(10, "cm"))
+ht=Heatmap(as.matrix(datain), column_names_gp = grid::gpar(fontsize = 4), show_column_dend = FALSE, clustering_method_rows = "complete", clustering_method_columns = "complete", column_split = upvdown, clustering_distance_rows = "pearson", clustering_distance_columns = "pearson", name = "Log2FC", bottom_annotation = column_ha, right_annotation = row_ha, col = circlize::colorRamp2(c(-1, 0, 1), c("steelblue2", "white", "indianred2")), heatmap_legend_param = list(labels = c("<-1", "", "0", "", ">1")),use_raster = TRUE,width = unit(8, "cm"), height = unit(10, "cm"))
 
 } else {
-colnames(datain)<-NULL
+#colnames(datain)<-NULL
 rownames(datain)<-NULL
-ht=Heatmap(as.matrix(datain), show_column_dend = FALSE, clustering_method_rows = "complete", clustering_method_columns = "complete", column_split = upvdown, clustering_distance_rows = "pearson", clustering_distance_columns = "pearson", name = "Log2FC", bottom_annotation = column_ha, col = circlize::colorRamp2(c(-1, 0, 1), c("steelblue2", "white", "indianred2")), heatmap_legend_param = list(labels = c("<-1", "", "0","", ">1")),use_raster = TRUE,width = unit(8, "cm"), height = unit(10, "cm"))
+ht=Heatmap(as.matrix(datain), column_names_gp = grid::gpar(fontsize = 4),show_column_dend = FALSE, clustering_method_rows = "complete", clustering_method_columns = "complete", column_split = upvdown, clustering_distance_rows = "pearson", clustering_distance_columns = "pearson", name = "Log2FC", bottom_annotation = column_ha, col = circlize::colorRamp2(c(-1, 0, 1), c("steelblue2", "white", "indianred2")), heatmap_legend_param = list(labels = c("<-1", "", "0","", ">1")),use_raster = TRUE,width = unit(8, "cm"), height = unit(10, "cm"))
 }
 
 draw(ht,merge_legend = TRUE) #legend_grouping = "original")

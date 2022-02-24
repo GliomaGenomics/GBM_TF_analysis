@@ -14,7 +14,7 @@ Patel-Bernstein_stemness	Patel_Science_2014	Patel_Science_2014	Taken from figure
 Darmanis-Barres_astrocytes	Darmanis_PNAS_2015	Puchalski_2018	-
 Darmanis-Barres_Endothelial	Darmanis_PNAS_2015	Puchalski_2018	-
 Darmanis-Barres_FetalNeuronsquiescent	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_FetalNeuronsreplicating	Darmanis_PNAS_2015	Puchalski_2018	-
+Darmanis-Barres_FetalNeuronsReplicating	Darmanis_PNAS_2015	Puchalski_2018	-
 Darmanis-Barres_microglia	Darmanis_PNAS_2015	Puchalski_2018	-
 Darmanis-Barres_mixNeuronsAstrocytes	Darmanis_PNAS_2015	Puchalski_2018	-
 Darmanis-Barres_mixOPCOligNeurons	Darmanis_PNAS_2015	Puchalski_2018	-
@@ -118,10 +118,10 @@ Hai_GBMConnectivity	Hai_biorxiv_2021_10.1101/2021.11.07.465791	Hai_biorxiv_2021_
 Wang_ClassicalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
 Wang_MesenchymalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
 Wang_ProneuralGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
-Gorafano_GPM	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j. 
-Gorafano_MTC	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
-Gorafano_NEU	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
-Gorafano_PPR	Gorafano_2021_10.1038/s43018-020-00159-4	Gorafano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
+Garofano_GPM	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j. 
+Garofano_MTC	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
+Garofano_NEU	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
+Garofano_PPR	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
 Liau_Cluster1DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
 Liau_Cluster2DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
 Liau_Cluster3DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
@@ -276,10 +276,10 @@ Eze_ProgenitorSubclusterNew7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.103
 Eze_ProgenitorSubclusterNew8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
 Eze_ProgenitorSubclusterNew9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
 Krishna_GBMFunctionalConnectivity	Krishna_2021_10.1101/2021.02.18.431915	Krishna_2021_10.1101/2021.02.18.431915	Bulk RNA-sequencing from primary patient-derived High Functional Connectivity and Low Functional Connectivity tumor samples.
-MES_Ajaib	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the Stead bulk data and are tumour intrinsic. 
-AC_Ajaib	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
-OPC_Ajaib	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
-NPC_Ajaib	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
+Neftel_MES_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the Stead bulk data and are tumour intrinsic. 
+Neftel_AC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
+Neftel_OPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
+Neftel_NPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
 Allen_1_InhL1LAMP5NDNF	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
 Allen_10_InhL1PAX6GRIP2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
 Allen_100_ExcL6FEZF2TBC1D26	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
@@ -441,8 +441,8 @@ intermediate_progenitors_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
 IVY_CT	-	Larson_2021_10.15252/msb.202010105	-
 IVY_CTmvp	-	Larson_2021_10.15252/msb.202010105	-
 IVY_CTpan	-	Larson_2021_10.15252/msb.202010105	-
-IVY_IT	-	Larson_2021_10.15252/msb.202010105	-
-IVY_LE	-	Larson_2021_10.15252/msb.202010105	-
+IVY_Infiltrating	-	Larson_2021_10.15252/msb.202010105	-
+IVY_LeadingEdge	-	Larson_2021_10.15252/msb.202010105	-
 Johansson_PI_resistance_unpub	-	Larson_2021_10.15252/msb.202010105	-
 Kling_GBM_pheno_PMID_27667176	-	Larson_2021_10.15252/msb.202010105	-
 Larsson_state1_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-

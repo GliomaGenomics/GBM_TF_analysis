@@ -1,5 +1,4 @@
-deseq2_uvd/*pdf
-
+deseq2_uvd/
 original_data/*
 glass_data/*
 downloaded_data/*
@@ -20,3 +19,4 @@ gsea_uvd_outputs/run*
 deseq2_uvd/*Rdata
 deseq2/*Rdata
 cell_lines/*
+tissue_slices/*

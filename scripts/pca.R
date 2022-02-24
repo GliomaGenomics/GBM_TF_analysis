@@ -22,12 +22,12 @@ args$scale<-FALSE
 
 
 patients<-scan(args$patients, what = character())
-datain<-read.table(args$table, header=TRUE, row.names=1)
+datain<-read.table(args$table, header=TRUE, row.names=1, sep="\t", check=FALSE)
 datain=datain[ , as.vector(patients) ]
+datain <- datain[complete.cases(datain),]
 datain=t(datain)
 cn<-colnames(datain)
 colnames(datain)<-substr(cn,1,15)
-
 
 if( length(args$genes)!=0 )
 {
@@ -68,13 +68,14 @@ if( length(args$colour)!=0 )
 meta<-read.delim(args$colour, col.names=c('patient_id','value'), header=FALSE)
 meta<-meta[match(as.vector(patients), meta$patient_id),]
 
+
 xpc<-1
 for (ypc in c(2,3,4,5,6))
 {
 print(ggplot(as.data.frame(pca$x), aes(x=pca$x[,xpc], y=pca$x[,ypc])) +
   theme_classic() +
   labs(x = paste("PC",xpc,sep=""), y= paste("PC",ypc,sep=""))+
-  geom_point(aes(color = meta$value), size = 2.88, alpha=5/6) +
+  geom_point(aes(color = meta$value), size = 2.88, alpha=3/6) +
   scale_colour_gradient(low = "blue", high = "yellow")+
   geom_text_repel(aes(label=ifelse(names(pca$x[,1]) %in% labels,as.character(names(pca$x[,1])),'')),hjust=0,vjust=0, max.time=10, max.overlaps = Inf)+
   labs(color = "NES"))
@@ -102,6 +103,9 @@ write.table(pca$rotation[,1],file=paste("analysis/pca/pca_",args$name,"_PC1_load
 write.table(pca$rotation[,2],file=paste("analysis/pca/pca_",args$name,"_PC2_loadings.txt", sep=""))
 write.table(pca$rotation[,3],file=paste("analysis/pca/pca_",args$name,"_PC3_loadings.txt", sep=""))
 write.table(pca$rotation[,4],file=paste("analysis/pca/pca_",args$name,"_PC4_loadings.txt", sep=""))
+write.table(pca$rotation[,4],file=paste("analysis/pca/pca_",args$name,"_PC5_loadings.txt", sep=""))
+#save(pca,file=paste("analysis/pca/pca_",args$name,"_data.txt", sep=""))
+
 x<-pca$rotation[,1] 
 qqnorm(x)
 qqline(x, col = "red")   

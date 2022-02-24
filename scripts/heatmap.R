@@ -22,14 +22,9 @@ genes<-scan(args$genes, what = character())
 datain<-datain[row.names(datain) %in% noquote(genes),]
 }
 
-
-
 nes<-read.delim(args$nes_colour, col.names=c('patient_id','value'), header=FALSE)
 nes<-nes[match(as.vector(patients), nes$patient_id),]
 nes<-as.vector(nes$value)
-rna<-read.delim(args$rna_colour, col.names=c('patient_id','value'), header=FALSE)
-rna<-rna[match(as.vector(patients), rna$patient_id),]
-rna<-as.vector(rna$value)
 
 upvdown<-c()
 for(i in nes) {
@@ -40,11 +35,17 @@ upvdown<-append(upvdown,"Down")
 }
 }
 
-dim(as.matrix(datain))
-length(nes)
-length(rna)
+if( length(args$rna_colour)!=0 ) {
+rna<-read.delim(args$rna_colour, col.names=c('patient_id','value'), header=FALSE)
+rna<-rna[match(as.vector(patients), rna$patient_id),]
+rna<-as.vector(rna$value)
 col = list(Library_type = c("Unstranded_mRNA" = "palegreen3", "Stranded_mRNA" = "cyan4", "Stranded_Total" = "darkgreen"), JARID2_NES = circlize::colorRamp2(c(-2, 2), c("blue", "yellow")) )
 column_ha = HeatmapAnnotation(JARID2_NES = nes, Library_type = rna, col=col,show_annotation_name =FALSE)
+ } else {
+col = list(JARID2_NES = circlize::colorRamp2(c(-2, 2), c("blue", "yellow")) )
+column_ha = HeatmapAnnotation(JARID2_NES = nes, col=col,show_annotation_name =FALSE)
+}
+
 pdf(paste("analysis/heatmap/heatmap_",args$name,".pdf", sep=""))
 
 if( length(args$jarid2)!=0 ) {

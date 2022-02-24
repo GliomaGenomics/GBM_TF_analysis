@@ -1,4 +1,4 @@
-# GBM_TF_analysis
+ # GBM_TF_analysis
 
 ## Versions
 
@@ -24,10 +24,11 @@ downloaded_data also contains:
 * a file containing {gene_id}\t{gene_name}\n for gencode v27 in order to convert the stead data to names: gencode.v27_geneidtoname.txt
 * a file containing {gene_id}\t{hgnc_symbol}\n from https://biomart.genenames.org/martform/#!/default/HGNC?datasets=hgnc_gene_mart: gencode.v27_geneidtohgnc.txt
 * the "IlmnID, CHR_hg38, Start_hg38, End_hg38" columns from https://webdata.illumina.com/downloads/productfiles/methylationEPIC/infinium-methylationepic-v-1-0-b5-manifest-file-csv.zip, with the data starting on row 9: infinium-methylationepic-v-1-0-b5-manifest-file_extract.txt
-
+* hg38.fasta
 
 ### original_data 
 Contains stead cohort expression tables, count data, batch-corrected-protein-coding-only expression data and metadata
+Also contains JARID2promotersPeaks.bed which is a control where ChIP-seq was performed on a single recurrent sample using an anti-JARID2 antibody and input DNA which had been extracted and sheared but not immunoprecipitated.
 
 ### glass_data
 This folder contains glass data from Synapse:
@@ -176,30 +177,53 @@ for SET in $SETS ; do for SIZE in 1000 ; do grep 'JARID2' gsea_outputs/${SET}/*_
 cat gsea_files/TFs_ENS_5000_GTRDv19_10_gencodev27.gmt | cut -f 1 > reports/all_tfs.txt
 for SET in $SETS ; do for SIZE in $SIZES ; do mkdir reports/${SET}_${SIZE} ; for f in gsea_outputs/${SET}/*_${SIZE}_* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> reports/${SET}_${SIZE}/${fi}_table.txt ; done ; done ; done
 
+for SET in ${SETS} ; do for SIZE in ${SIZES} ; do python scripts/combine_patients.py --genes reports/all_tfs.txt --directory reports/${SET}_${SIZE} -output reports/combined/${SET}_${SIZE}  ;done ; done 
+
 Rscript scripts/gsea_violin_plots.py
 ```
 
-## cell lines
+## cell lines and tissue slices
 ```
+wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE179nnn/GSE179649/suppl/GSE179649_Neuro_Organo_kallisto_gene_tpm.csv.gz -P tissue_slices/downloaded_data/
+
 python script/process_cell_lines.py
-python script/process_cell_lines_control.py
-qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=A172_0,A172_1,A172_2,GBM63_0,GBM63_1,GBM63_2,A172_control
-qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=PDspheroids_1,PDspheroids_3
-qsubsec scripts/gsea_cell_lines.qsubsec SIZE=1000 MODE=absolute PATIENT=ME_48,ME_72
+python script/process_tissue_slices.py
 
-
-Rscript scripts/plot_pca_cell_lines_log2fc_project.R
+Rscript scripts/plot_pca_tissue_slices_log2fc_project.R
 
 TABLE=primary
 TABLE=recurrent
 TABLE=log2fc
 
+#python scripts/merge.py --input tables/${TABLE}_all.txt,cell_lines/tables/${TABLE}_ME.txt,cell_lines/tables/${TABLE}_A172.txt,cell_lines/tables/${TABLE}_GBM63.txt,cell_lines/tables/${TABLE}_GBM63_CUTRUN.txt,cell_lines/tables/${TABLE}_PDspheroids.txt --output cell_lines/tables/${TABLE}_merged.txt
+#Rscript scripts/pca.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --table cell_lines/tables/${TABLE}_merged.txt --categories cell_lines/pca/categories.txt --colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --scale=TRUE --name cell_lines_${TABLE} --label A172_0,A172_1,A172_2,GBM63_0,GBM63_1,GBM63_2,PDspheroids_1,PDspheroids_3,GBM63_CUTRUN_0,GBM63_CUTRUN_1,ME_48,ME_72
+#Rscript scripts/heatmap_cell_lines.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table cell_lines/tables/log2fc_merged.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name cell_lines_le70
 
-python scripts/merge.py --input tables/${TABLE}_all.txt,cell_lines/tables/${TABLE}_ME.txt,cell_lines/tables/${TABLE}_A172.txt,cell_lines/tables/${TABLE}_GBM63.txt,cell_lines/tables/${TABLE}_GBM63_CUTRUN.txt,cell_lines/tables/${TABLE}_PDspheroids.txt --output cell_lines/tables/${TABLE}_merged.txt
+#python scripts/merge.py --input tissue_slices/tables/${TABLE}_tissue_slices.txt,cell_lines/tables/${TABLE}_merged.txt --output tissue_slices/tables/${TABLE}_merged.txt
+#Rscript scripts/pca.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines+tissue_slices.txt --table tissue_slices/tables/${TABLE}_merged.txt --categories tissue_slices/pca/categories.txt --colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --scale=TRUE --name tissue_slices_${TABLE}
 
-Rscript scripts/pca.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --table cell_lines/tables/${TABLE}_merged.txt --categories cell_lines/pca/categories.txt --colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --scale=TRUE --name cell_lines_${TABLE} --label A172_0,A172_1,A172_2,GBM63_0,GBM63_1,GBM63_2,PDspheroids_1,PDspheroids_3,GBM63_CUTRUN_0,GBM63_CUTRUN_1,ME_48,ME_72
+for p in tissue_slices/ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk);qsubsec scripts/gsea_tissue_slices.qsubsec DIR=tissue_slices SIZE=1000 MODE=actual PATIENT=${pi} -s ; done
+for p in tissue_slices/ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk);qsubsec scripts/gsea_tissue_slices.qsubsec DIR=tissue_slices SIZE=1000 MODE=absolute PATIENT=${pi} -s ; done
+for p in cell_lines/ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk);qsubsec scripts/gsea_tissue_slices.qsubsec DIR=cell_lines SIZE=1000 MODE=actual PATIENT=${pi} -s ; done
+for p in cell_lines/ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk);qsubsec scripts/gsea_tissue_slices.qsubsec DIR=cell_lines SIZE=1000 MODE=absolute PATIENT=${pi} -s ; done
 
-Rscript scripts/heatmap_cell_lines.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table cell_lines/tables/log2fc_merged.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name cell_lines_le70
+for f in cell_lines/gsea_outputs/outputs_actual/* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> cell_lines/reports/outputs_actual/${fi}_table.txt ; done
+for f in cell_lines/gsea_outputs/outputs_absolute/* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> cell_lines/reports/outputs_absolute/${fi}_table.txt ; done
+for f in tissue_slices/gsea_outputs/outputs_actual/* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> tissue_slices/reports/outputs_actual/${fi}_table.txt ; done
+for f in tissue_slices/gsea_outputs/outputs_absolute/* ; do fi=$(basename ${f%_GTRD*}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '=='> tissue_slices/reports/outputs_absolute/${fi}_table.txt ; done
+
+python scripts/combine_patients.py --genes reports/all_tfs.txt --directory cell_lines/reports/outputs_actual --output cell_lines/reports/combined/cell_lines_actual
+python scripts/combine_patients.py --genes reports/all_tfs.txt --directory cell_lines/reports/outputs_absolute --output cell_lines/reports/combined/cell_lines_absolute 
+python scripts/combine_patients.py --genes reports/all_tfs.txt --directory tissue_slices/reports/outputs_actual --output tissue_slices/reports/combined/tissue_slices_actual 
+python scripts/combine_patients.py --genes reports/all_tfs.txt --directory tissue_slices/reports/outputs_absolute --output tissue_slices/reports/combined/tissue_slices_absolute
+
+
+
+```
+
+# Wang-Diaz comparison
+```
+python scripts/convert_names_to_ensids.py -i downloaded_data/NIHMS1579377-supplement-Supplemental_Table_S2.txt -o downloaded_data/NIHMS1579377-supplement-Supplemental_Table_S2_ens.txt
 ```
 
 
@@ -223,8 +247,6 @@ while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}*${SIZE}*
 #Run for tss:
 #while read line ; do f=${line}; cat ./gsea_outputs/outputs_${SET}/*${f}_*${SIZE}*/JARID2.tsv | grep 'Yes' ; done <patient_lists/${LIST}.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt
  
-
-
 #calculate minimum number of patient leading edges needed for a gene to be classed as le50 of le70
 LE=50
 LE=70
@@ -237,6 +259,12 @@ LE=50
 LE=70
 TOTAL=$(wc -l patient_lists/mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt|cut -d' ' -f1)
 NUM=$(awk -v total=$TOTAL -v le=0.$LE 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_methylation_1000_mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_methylation_1000_mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt 
+
+#inverse - genes not in the leading edge across patients
+while read line ; do f=${line}; cat ./gsea_outputs/outputs_actual/*${f}_*1000*/JARID2.tsv | grep 'No' ; done <patient_lists/gbm_idhwt_rt_tmz_local.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_actual_1000_gbm_idhwt_rt_tmz_local_inverse.txt
+TOTAL=$(wc -l patient_lists/gbm_idhwt_rt_tmz_local.txt|cut -d' ' -f1)
+NUM=$(awk -v total=$TOTAL -v le=1 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_actual_1000_gbm_idhwt_rt_tmz_local_inverse.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_actual_1000_gbm_idhwt_rt_tmz_local_inverse.txt 
+
 ```
 
 ### Sankey plots
@@ -283,7 +311,7 @@ sort analysis/pca/pca_${PATIENTS}_${TABLE}_${SCALE}_PC1_loadings.txt -g -k2  | h
 Rscript scripts/heatmap.R --patients patient_lists/gbm_idhwt_rt_tmz_local.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_le70
 Rscript scripts/heatmap.R --patients patient_lists/gbm_idhwt_rt_tmz_local.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_headtail100
 Rscript scripts/heatmap.R --patients patient_lists/gbm_idhwt_rt_tmz_local.txt --genes analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000.txt --table tables/log2fc_all.txt --nes_colour reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv --rna_colour original_data/library_types.txt --jarid2 gene_lists/JARID2_bound_genes.txt --name gbm_idhwt_rt_tmz_local_log2fc_all_FALSE_PC1_loadings_head1000
-Rscript scripts/heatmap.R --patients patient_lists/glass_gbm_idhwt_rt_tmz_local.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_glass.txt  --rna_colour original_data/library_types.txt --nes_colour reports/jarid2_results/outputs_actual_glass_1000_JARID2_results.tsv --name glass_gbm_idhwt_rt_tmz_local_le70
+Rscript scripts/heatmap.R --patients patient_lists/glass_gbm_idhwt_rt_tmz_local.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table tables/log2fc_glass.txt --nes_colour reports/jarid2_results/outputs_actual_glass_1000_JARID2_results.tsv --name glass_gbm_idhwt_rt_tmz_local_le70
 
 
 ```
@@ -312,6 +340,7 @@ python scripts/get_deseq2_ranks.py
 ```
 
 ## Run UvD GSEA
+#Some custom gene set names were modified after running GSEA. 
 ```
 cp TFs_ENS_1000_GTRDv19_10_gencodev27.gmt gene_sets/TFs_ENS_1000_GTRDv19_10_gencodev27.gmt
 SETS="TFs_ENS_1000_GTRDv19_10_gencodev27 custom_gbm_gene_sets" 
@@ -331,6 +360,7 @@ for s in $SETS; do qsubsec scripts/process_uvd_deseq2_results.qsubsec SET=$s ; d
 #conda activate r4
 #source activate
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_fast.txt --sets gsea_uvd_outputs/reports/custom_gbm_gene_sets_run1_fdr_0.25.txt --name custom_gbm_gene_sets_run1
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_fast.txt --sets gsea_uvd_outputs/reports/custom_gbm_gene_sets_run1_sub_interesting.txt --name custom_interesting
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsh.all.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/h.all.v7.4.symbols_run1_fdr_top10_up.txt --name h.all.v7.4.symbols_run1_up
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsh.all.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/h.all.v7.4.symbols_run1_fdr_top10_down.txt --name h.all.v7.4.symbols_run1_down
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsc2.cgp.v7.4.symbols_fast.txt --sets gsea_uvd_outputs/reports/c2.cgp.v7.4.symbols_run1_fdr_1_up.txt --name c2.cgp.v7.4.symbols_run1_up
@@ -355,4 +385,52 @@ Rscript scripts/plot_cn_freq.R
 #filter for deleterious
 grep -E 'DE_NOVO_START_IN_FRAME|DE_NOVO_START_OUT_FRAME|FRAME_SHIFT_DEL|FRAME_SHIFT_INS|IN_FRAME_DEL|IN_FRAME_INS|MISSENSE|NONSENSE|NONSTOP|START_CODON_DEL|START_CODON_INS|START_CODON_SNP' glass_data/variants_anno_20201109.csv > glass_data/variants_anno_20201109_deleterious.csv
 grep 'SILENT' glass_data/variants_anno_20201109.csv > glass_data/variants_anno_20201109_silent.csv
+python scripts/process_glass_variants.py 
 ```
+
+## Motif sequences
+### get sequences
+cat gsea_files/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27.txt | cut -f 11,16,17,18,33 | grep 'JARID2' > sequences/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27_JARID2.txt
+mv ./sequences/control_peaks.txt temp.txt ; cat analysis/leading_edge/le100_actual_1000_gbm_idhwt_rt_tmz_local_inverse.txt | while read line ; do grep $line sequences/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27_JARID2.txt >> ./sequences/control_peaks.txt ; done
+mv ./sequences/le70_peaks.txt temp.txt ; cat analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt | while read line ; do grep $line sequences/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27_JARID2.txt >> ./sequences/le70_peaks.txt ; done
+awk '{$3 = $3-=500 ; $4 = $4+=500}1' OFS='\t' ./sequences/le70_peaks.txt | sort -u > ./sequences/le70_sequence_positions.txt
+awk '{$3 = $3-=500 ; $4 = $4+=500}1' OFS='\t' ./sequences/control_peaks.txt | sort -u > ./sequences/control_sequence_positions.txt
+mv ./sequences/le70_sequences.fa temp.txt ; cat ./sequences/le70_sequence_positions_merged.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/le70_sequences.fa ; done
+mv ./sequences/control_sequences.fa temp.txt ; cat ./sequences/control_sequence_positions_merged.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/control_sequences.fa ; done
+awk '{$2 = $2-=500 ; $3 = $3+=500}1' OFS='\t'  original_data/JARID2promotersPeaks.bed | sort -u > ./sequences/JARID2promotersPeaks_sequence_positions.txt
+mv ./sequences/JARID2promotersPeaks_sequences.fa temp.txt ; cat ./sequences/JARID2promotersPeaks_sequence_positions.txt | while read line ; do c=$(echo $line | cut -f1 -d" ") ; s=$(echo $line | cut -f2 -d" ") ; e=$(echo $line | cut -f3 -d" ") ; r=${c}:${s}-${e}  ; samtools faidx downloaded_data/hg38.fasta $r  >>  ./sequences/JARID2promotersPeaks_sequences.fa ; done
+#merge did not make a difference for JARID2promotersPeaks
+
+### run meme
+#via https://meme-suite.org/meme/tools/meme
+
+#classical, 0 or 1 occurences per sequence
+meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod zoops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -markov_order 0
+
+#classical, any occurences per sequence
+meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod anr -nmotifs 5 -minw 6 -maxw 50 -objfun classic -revcomp -markov_order 0
+
+#discriminative, 0 or 1 occurences per sequence
+psp-gen -pos le70_sequences.fa -neg control_sequences.fa -dna -minw 6 -maxw 20
+meme le70_sequences.fa -dna -oc . -nostatus -time 14381 -mod zoops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -markov_order 0 -psp priors.psp
+
+#differential enrichment, 0 or 1 occurences per sequence
+meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod zoops -nmotifs 5 -minw 6 -maxw 50 -objfun de -neg control_sequences.fa -revcomp -markov_order 0
+
+
+
+
+
+#discriminative, 1 occurences per sequence
+psp-gen -pos le70_sequences.fa -neg control_sequences.fa -dna -minw 6 -maxw 20
+meme le70_sequences.fa -dna -oc . -nostatus -time 14381 -mod oops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -bfile promoter_markov.txt -psp priors.psp
+
+#discriminative, 0 or 1 occurences per sequence
+psp-gen -pos le70_sequences.fa -neg control_sequences.fa -dna -minw 6 -maxw 20
+meme le70_sequences.fa -dna -oc . -nostatus -time 14382 -mod zoops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -bfile promoter_markov.txt -psp priors.psp
+
+#differential enrichment, any number of occurences per sequence
+meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod anr -nmotifs 10 -minw 6 -maxw 50 -objfun de -neg control_sequences.fa -revcomp -bfile promoter_markov.txt
+#no significant results
+
+
