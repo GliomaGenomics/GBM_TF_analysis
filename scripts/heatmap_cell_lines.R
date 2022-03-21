@@ -12,9 +12,10 @@ parser$add_argument("--jarid2", help="list of JARID2 genes to colour genes by")
 parser$add_argument("--name", help="name for analysis outputs")
 args <- parser$parse_args()
 
-datain<-read.table(args$table, header=TRUE, row.names=1)
+datain<-read.table(args$table, header=TRUE, row.names=1,fill=TRUE)
 patients<-scan(args$patients, what = character())
 datain=datain[ , as.vector(patients) ]
+datain<-datain[ complete.cases(datain), ] 
 
 if( length(args$genes)!=0 )
 {

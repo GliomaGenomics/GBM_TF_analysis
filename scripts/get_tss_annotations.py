@@ -19,8 +19,6 @@ with open('intermediate_files/gene_to_tss_position.txt','r') as file:
         else:
             tss_gene[l[1]]=[l[0].split('.')[0]]
 
-print(stop)
-
 mrna=list(pd.read_table('ranks/filtered_genelist_mrna.txt',sep='\t', header=None,index_col=None)[0])
 total=list(pd.read_table('ranks/filtered_genelist_total.txt',sep='\t', header=None,index_col=None)[0])
 jbs=list(pd.read_table('gene_lists/JARID2_bound_genes.txt',sep='\t', header=None,index_col=None)[0])

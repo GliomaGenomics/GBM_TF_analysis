@@ -4,6 +4,10 @@ if '{MODE}'=='actual':
     options('V', 'cwd', 'notify')
     limits(h_rt='48:00:00', h_vmem='15G')
     command('module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 2000 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 15 -zip_report false -out {DIR}/gsea_outputs/outputs_actual -gmx gsea_files/TFs_ENS_{SIZE}_GTRDv19_10_gencodev27_JARID2_only.gmt -rnk {DIR}/ranks/actual_log2fc/{PATIENT}.rnk -scoring_scheme weighted -rpt_label {PATIENT}_GTRD_{SIZE}_weighted_actual', name='weighted_actual', test=True, log=True)
+if '{MODE}'=='actual_le50':
+    options('V', 'cwd', 'notify')
+    limits(h_rt='48:00:00', h_vmem='15G')
+    command('module load java/13.0.1 ; GSEA_4.1.0/gsea-cli.sh GSEAPreranked -norm meandiv -nperm 1000 -plot_top_x 2000 -create_svgs false -make_sets true -rnd_seed timestamp -set_max 50000 -set_min 15 -zip_report false -out {DIR}/gsea_outputs/outputs_actual -gmx gsea_files/TFs_ENS_{SIZE}_GTRDv19_10_gencodev27_JARID2_LE50_only.gmt -rnk {DIR}/ranks/actual_log2fc/{PATIENT}.rnk -scoring_scheme weighted -rpt_label {PATIENT}_GTRD_{SIZE}_weighted_actual', name='weighted_actual', test=True, log=True)
 elif '{MODE}'=='absolute':
     options('V', 'cwd', 'notify')
     limits(h_rt='48:00:00', h_vmem='15G')

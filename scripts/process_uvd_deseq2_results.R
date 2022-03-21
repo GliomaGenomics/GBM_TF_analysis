@@ -23,6 +23,7 @@ results<-data.frame(matrix(ncol = 6, nrow = 0))
 colnames(results)<-c("id","genes","up_values","down_values","length","proportion_different")
 
 for (id in names(genesets)){
+print(id)
 genes<-genesets[[id]]
 upvalues=c()
 upinup_upvalues=c()
@@ -44,25 +45,25 @@ if(!(is.na(deaup[i,]) & is.na(deadown[i,]))){
 upvalues<-append(upvalues,deaup[i,])
 downvalues<-append(downvalues,deadown[i,])
 genescheck<-append(genescheck,i)
-if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
-dif<-dif+1
-}
+#if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
+#dif<-dif+1
+#}
 
 if(deaup[i,]>0){
 upinup_upvalues<-append(upinup_upvalues,deaup[i,])
 upinup_downvalues<-append(upinup_downvalues,deadown[i,])
 upinup_genescheck<-append(upinup_genescheck, i)
-if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
-upinup_dif<-upinup_dif+1
-}
+#if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
+#upinup_dif<-upinup_dif+1
+#}
 
 }else{
 downinup_upvalues<-append(downinup_upvalues,deaup[i,])
 downinup_downvalues<-append(downinup_downvalues,deadown[i,])
 downinup_genescheck<-append(downinup_genescheck, i)
-if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
-downinup_dif<-downinup_dif+1
-}
+#if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
+#downinup_dif<-downinup_dif+1
+#}
 
 }
 }
@@ -71,7 +72,8 @@ downinup_dif<-downinup_dif+1
 len=length(genescheck)
 upinup_len=length(upinup_genescheck)
 downinup_len=length(downinup_genescheck)
-proportion<-dif/len
+#proportion<-dif/len
+proportion<-0
 upinup_proportion<-upinup_dif/upinup_len
 downinup_proportion<-downinup_dif/downinup_len
 genescheck<-paste(genescheck, collapse=", ")

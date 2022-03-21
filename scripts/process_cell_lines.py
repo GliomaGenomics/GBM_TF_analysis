@@ -73,7 +73,7 @@ for i in range(0,len(all_prim)):
     abover=all_recu.iloc[i][all_recu.iloc[i] >= lq[0]].count()
     totalr=all_recu.iloc[i].count()
     proportionr=abover/totalr
-    if proportionp >=1 or proportionr >=1:
+    if proportionp >=0.2 or proportionr >=0.2:
         ps.append('True_'+str(proportionp)+'_'+str(abovep)+'_'+str(totalp)+'_'+str(proportionr)+'_'+str(abover)+'_'+str(totalr))
     else:
         ps.append('False_'+str(proportionp)+'_'+str(abovep)+'_'+str(totalp)+'_'+str(proportionr)+'_'+str(abover)+'_'+str(totalr))

@@ -88,8 +88,8 @@ plt.scatter(x,y, c='grey',edgecolors='none',s=20,alpha=0.6, label='All genes',zo
 plt.scatter(x1,y1, c='red',edgecolors='none',s=20,alpha=0.6, label='PC1 top 1000 genes',zorder=10)
 plt.scatter(x2,y2, c='blue',edgecolors='none',s=20,alpha=0.6, label='PC1 top 100 genes',zorder=10)
 plt.legend()
-plt.xlabel('Down DEA pvalues')
-plt.ylabel('Up DEA pvalues')
+plt.xlabel('Down DEA -log10(pvalue)direction')
+plt.ylabel('Up DEA -log10(pvalue)direction')
 
 
 plt.savefig('deseq2_uvd/pval_plot_PC1.pdf')

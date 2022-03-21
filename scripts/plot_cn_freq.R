@@ -35,7 +35,7 @@ write.table(down_prim,file="copy_number/down_prim_cn.txt",row.names = FALSE,quot
 write.table(down_recu,file="copy_number/down_recu_cn.txt",row.names = FALSE,quote = FALSE, sep='\t')
 
 
-thresh=0.1
+thresh=0.05
 pdf(paste("copy_number/plotFreq",thresh,".pdf",sep=""))
 plotFreq(up_prim,thres.gain=thresh,thres.loss=-thresh,xlab='up_prim',chrom=6)
 plotFreq(down_prim,thres.gain=thresh,thres.loss=-thresh,xlab='down_prim',chrom=6)

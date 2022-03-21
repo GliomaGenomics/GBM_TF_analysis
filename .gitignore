@@ -16,6 +16,7 @@ gene_sets/*v7.4*
 gene_sets/TF*
 gsea_uvd_outputs/run*
 deseq2_uvd/*Rdata
+deseq2_uvd/processed*
 deseq2/*Rdata
 cell_lines/*
 tissue_slices/*

@@ -2,6 +2,7 @@ library(ggplot2)
 library(ggrepel)
 
 load('analysis/pca/pca_gbm_idhwt_rt_tmz_local_log2fc_all_FALSE.RData')
+#load('analysis/pca/pca_gbm_idhwt_rt_tmz_local_JARID2_log2fc_all_FALSE.RData')
 datat <- read.table("tissue_slices/tables/log2fc_tissue_slices.txt", header=TRUE, row.names=1,check.names=FALSE)
 tissue_slices<-colnames(datat)
 datac <- read.table("cell_lines/tables/log2fc_cell_lines.txt", header=TRUE, row.names=1,check.names=FALSE)
@@ -20,7 +21,7 @@ data[is.na(data)] <- 0
 new=t(data)
 
 patients<-scan('patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines+tissue_slices.txt', what = character())
-meta<-read.delim('reports/jarid2_results/outputs_actual_1000_JARID2_results.tsv', col.names=c('patient_id','value'), header=FALSE)
+meta<-read.delim('tissue_slices/reports/outputs_actual_1000_JARID2_results_cell_tissue.tsv', col.names=c('patient_id','value'), header=FALSE)
 meta<-meta[match(as.vector(patients), meta$patient_id),]
 cell_tissue<-append(cell_lines,tissue_slices)
 
@@ -41,7 +42,7 @@ ggplot(as.data.frame(pca$x), aes(x=pca$x[,1], y=pca$x[,2])) +
   labs(x = "PC1", y= "PC2")
 ggplot(as.data.frame(pca$x), aes(x=pca$x[,1], y=pca$x[,2])) +
   theme_classic() +
-  geom_point(aes(color = meta$value), size = 2.88, alpha=3/6) +
+  geom_point(aes(color = meta[match(row.names(pca$x),meta$patient_id),]$value), size = 2.88, alpha=3/6) +
   scale_colour_gradient(low = "blue", high = "yellow") +
   geom_text_repel(aes(label=ifelse(names(pca$x[,1]) %in% cell_tissue,as.character(names(pca$x[,1])),'')),hjust=0,vjust=0, max.time=10, max.overlaps = Inf) +
   labs(color = "NES") +
@@ -53,10 +54,17 @@ ggplot(as.data.frame(pca$x), aes(x=pca$x[,1], y=pca$x[,2])) +
   labs(x = "PC1", y= "PC2")
 ggplot(as.data.frame(pca$x), aes(x=pca$x[,1], y=pca$x[,2])) +
   theme_classic() +
-  geom_point(aes(color = meta$value), size = 2.88, alpha=3/6) +
+  geom_point(aes(shape = ifelse(names(pca$x[,1]) %in% cell_lines,"cell_line",ifelse(names(pca$x[,1]) %in% tissue_slices,"tissue_slices","sample")), color = meta[match(row.names(pca$x),meta$patient_id),]$value), size = 1.5, alpha=5/6) +
   scale_colour_gradient(low = "blue", high = "yellow") +
-  labs(color = "NES") +
+  labs(color = "NES",shape="sample") +
   labs(x = "PC1", y= "PC2")
+ggplot(as.data.frame(pca$x), aes(x=pca$x[,1], y=pca$x[,2])) +
+  theme_classic() +
+  geom_point(aes(shape = ifelse(names(pca$x[,1]) %in% cell_lines,"cell_line",ifelse(names(pca$x[,1]) %in% tissue_slices,"tissue_slices","sample")), color = meta[match(row.names(pca$x),meta$patient_id),]$value), size = 1, alpha=5/6) +
+  scale_colour_gradient(low = "blue", high = "yellow") +
+  labs(color = "NES",shape="sample") +
+  labs(x = "PC1", y= "PC2")+
+  xlim(-40,40)
 ggplot(as.data.frame(pca$x), aes(x=pca$x[,3], y=pca$x[,4])) +
   theme_classic() +
   geom_point(aes(colour = ifelse(names(pca$x[,1]) %in% cell_lines,"cell_line",ifelse(names(pca$x[,1]) %in% tissue_slices,"tissue_slices","sample"))), size = 2.88, alpha=5/6) +
@@ -64,7 +72,7 @@ ggplot(as.data.frame(pca$x), aes(x=pca$x[,3], y=pca$x[,4])) +
   labs(x = "PC3", y= "PC4")
 ggplot(as.data.frame(pca$x), aes(x=pca$x[,3], y=pca$x[,4])) +
   theme_classic() +
-  geom_point(aes(color = meta$value), size = 2.88, alpha=3/6) +
+  geom_point(aes(color = meta[match(row.names(pca$x),meta$patient_id),]$value), size = 2.88, alpha=3/6) +
   scale_colour_gradient(low = "blue", high = "yellow") +
   labs(color = "NES") +
   labs(x = "PC3", y= "PC4")
