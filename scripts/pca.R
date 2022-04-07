@@ -75,7 +75,7 @@ for (ypc in c(2,3,4,5,6))
 print(ggplot(as.data.frame(pca$x), aes(x=pca$x[,xpc], y=pca$x[,ypc])) +
   theme_classic() +
   labs(x = paste("PC",xpc,sep=""), y= paste("PC",ypc,sep=""))+
-  geom_point(aes(color = meta$value), size = 2.88, alpha=3/6) +
+  geom_point(aes(color = meta$value), size = 2.88, alpha=5/6) +
   scale_colour_gradient(low = "blue", high = "yellow")+
   geom_text_repel(aes(label=ifelse(names(pca$x[,1]) %in% labels,as.character(names(pca$x[,1])),'')),hjust=0,vjust=0, max.time=10, max.overlaps = Inf)+
   labs(color = "NES"))

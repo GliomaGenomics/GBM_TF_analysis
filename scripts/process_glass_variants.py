@@ -20,8 +20,8 @@ dataf=dataf.drop_duplicates()
 genes=pd.concat([datas['5_y'],dataf['5_y']]).unique()
  
 
-meta=pd.read_table('reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+stead.tsv', header=None, names = ['patient_id','value'],index_col=0)
-patients=pd.read_table('patient_lists/glass_gbm_idhwt_rt_tmz_local+stead_dna.txt', header=None, index_col=None)
+meta=pd.read_table('reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+dis.tsv', header=None, names = ['patient_id','value'],index_col=0)
+patients=pd.read_table('patient_lists/glass_gbm_idhwt_rt_tmz_local+dis_dna.txt', header=None, index_col=None)
 
 prim_up=[]
 recu_up=[]

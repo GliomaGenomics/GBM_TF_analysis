@@ -26,31 +26,31 @@ cd ..
 ```
 downloaded_data also contains:
 * a file containing {ensembl_id}\t{gene_name}\n for ensembl v75 in order to convert the glass data to IDs: ensembl_v75_geneidtoname.txt
-* a file containing {gene_id}\t{gene_name}\n for gencode v27 in order to convert the stead data to names: gencode.v27_geneidtoname.txt
+* a file containing {gene_id}\t{gene_name}\n for gencode v27 in order to convert the discovery data to names: gencode.v27_geneidtoname.txt
 * a file containing {gene_id}\t{hgnc_symbol}\n from https://biomart.genenames.org/martform/#!/default/HGNC?datasets=hgnc_gene_mart: gencode.v27_geneidtohgnc.txt
 * the "IlmnID, CHR_hg38, Start_hg38, End_hg38" columns from https://webdata.illumina.com/downloads/productfiles/methylationEPIC/infinium-methylationepic-v-1-0-b5-manifest-file-csv.zip, with the data starting on row 9: infinium-methylationepic-v-1-0-b5-manifest-file_extract.txt
 * hg38.fasta
 
 ### original_data 
-Contains stead cohort expression tables, count data, batch-corrected-protein-coding-only expression data and metadata
+Contains discovery cohort expression tables, count data, batch-corrected-protein-coding-only expression data and metadata
 Also contains JARID2promotersPeaks.bed which is a control where ChIP-seq was performed on a single recurrent sample using an anti-JARID2 antibody and input DNA which had been extracted and sheared but not immunoprecipitated.
 
 ### glass_data
-This folder contains glass data from Synapse:
+This folder contains glass validation data from Synapse:
 * gene_tpm_matrix_all_samples.tsv: expression data from https://www.synapse.org/#!Synapse:syn23548220
 * beta.merged.tsv: methylation data
 * variants_anno_20201109.csv: annotations for point variants
-* variants_passgeno_20201109_filtered.csv: point variant data filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+stead.txt, using:
+* variants_passgeno_20201109_filtered.csv: point variant data filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+dis.txt, using:
 ```
-while read line ; do cat glass_data/variants_passgeno_20201109.csv  | grep "${line}-TP" | grep 't' >> glass_data/variants_passgeno_20201109_filtered_temp.csv ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt
-while read line ; do cat glass_data/variants_passgeno_20201109.csv  | grep "${line}-R1" | grep 't' >> glass_data/variants_passgeno_20201109_filtered_temp.csv ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt
+while read line ; do cat glass_data/variants_passgeno_20201109.csv  | grep "${line}-TP" | grep 't' >> glass_data/variants_passgeno_20201109_filtered_temp.csv ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+dis.txt
+while read line ; do cat glass_data/variants_passgeno_20201109.csv  | grep "${line}-R1" | grep 't' >> glass_data/variants_passgeno_20201109_filtered_temp.csv ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+dis.txt
 #remove duplicate patients - preference for WXS with highest variant numbers over WGS or WXS with fewer variants
 cat glass_data/variants_passgeno_20201109_filtered_temp.csv | grep -v -E "TCGA-06-0125-R1-11D-WGS-MA69JO|TCGA-06-0125-R1-11D-WXS-8Q4RKD|GLSS-HK-0003-R1-01D-WGS-R7P485|TCGA-06-0125-TP-01D-WXS-Z67AVH|TCGA-06-0125-TP-01D-WGS-FZT8H0|GLSS-HK-0003-TP-01D-WGS-WAGBN9" > glass_data/variants_passgeno_20201109_filtered.csv
 ```
-* variants_titan_seg_filtered.txt: copy number data from variants_titan_seg (syn23554313) filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+stead_cna.txt, using:
+* variants_titan_seg_filtered.txt: copy number data from variants_titan_seg (syn23554313) filtered for primary and first recurrents of patients in glass_gbm_idhwt_rt_tmz_local+dis_cna.txt, using:
 ```
-while read line ; do cat glass_data/variants_titan_seg.txt  | grep "${line}-TP" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
-while read line ; do cat glass_data/variants_titan_seg.txt  | grep "${line}-R1" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+stead.txt 
+while read line ; do cat glass_data/variants_titan_seg.txt  | grep "${line}-TP" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+dis.txt 
+while read line ; do cat glass_data/variants_titan_seg.txt  | grep "${line}-R1" | cut -f 1,2,3,4,5,7 >> glass_data/variants_titan_seg_filtered_temp.txt ; done <patient_lists/glass_gbm_idhwt_rt_tmz_local+dis.txt 
 #remove duplicate patients - preference for WGS over WXS
 cat glass_data/variants_titan_seg_filtered_temp.txt | grep -v -E "TCGA-06-0125-TP-01-NB-01D-WXS|TCGA-06-0125-TP-02-NB-01D-WXS|TCGA-06-0125-R1-11-NB-01D-WXS|TCGA-06-0125-R1-02-NB-01D-WXS|GLSS-HK-0003-R1-01-NB-01D-WXS" > glass_data/variants_titan_seg_filtered.txt
 ```
@@ -66,13 +66,13 @@ c5.go.mf.v7.4.symbols.gmt
 
 ## patient_lists
 WARNING: Many of the analyses rely on GLASS primary and recurrents being labelled as TP and R1. This is the case for patients inlcuded in the following lists but any alterations need checking.
-gbm_idhwt_rt_tmz_local.txt: Stead patients who's primary and first recurrent are GBM_IDHwt, local first recurrent, recieved rt+tmz.
-glass_gbm_idhwt.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, have RNA data available and not in the stead cohort.
-glass_gbm_idhwt_rt_tmz_local.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, local first recurrent, recieved rt+tmz, have RNA data available and not in the stead cohort.
-glass_gbm_idhwt_rt_tmz_local+stead.txt: As with glass_gbm_idhwt_rt_tmz_local.txt but with stead patients included.
-glass_gbm_idhwt_rt_tmz_local+stead_cna.txt: As with glass_gbm_idhwt_rt_tmz_local+stead.txt but only those with GLASS copy number alteration data available.
-glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt: As with glass_gbm_idhwt_rt_tmz_local.txt but with stead patients included and filtered for those with methylation data also available. 
-mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt: As with glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt but with stead IDs for stead patients.
+gbm_idhwt_rt_tmz_local.txt: Discovery patients who's primary and first recurrent are GBM_IDHwt, local first recurrent, recieved rt+tmz.
+glass_gbm_idhwt.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, have RNA data available and not in the discovery cohort.
+glass_gbm_idhwt_rt_tmz_local.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, local first recurrent, recieved rt+tmz, have RNA data available and not in the discovery cohort.
+glass_gbm_idhwt_rt_tmz_local+dis.txt: As with glass_gbm_idhwt_rt_tmz_local.txt but with discovery patients included.
+glass_gbm_idhwt_rt_tmz_local+dis_cna.txt: As with glass_gbm_idhwt_rt_tmz_local+dis.txt but only those with GLASS copy number alteration data available.
+glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt: As with glass_gbm_idhwt_rt_tmz_local.txt but with discovery patients included and filtered for those with methylation data also available. 
+mixed_gbm_idhwt_rt_tmz_local_methylation+rna.txt: As with glass_gbm_idhwt_rt_tmz_local_methylation+rna.txt but with discovery IDs for discovery patients.
 
 ## Run DEA
 ```
@@ -181,7 +181,7 @@ SETS="outputs_actual outputs_actual_glass outputs_absolute outputs_absolute_glas
 
 #Get JARID2 NES or ES for all patients
 for SET in $SETS ; do for SIZE in 1000 ; do grep 'JARID2' gsea_outputs/${SET}/*_${SIZE}_*/gsea_report_for_na_*tsv | sed "s/_GTRD_${SIZE}_/\//" | tr '/' '\t' | cut -f 3,9,10 | awk '{ if ( $3=="---" ) {print $1"\t"$2} else {print $1"\t"$3} }' > reports/jarid2_results/${SET}_${SIZE}_JARID2_results.tsv ; done ; done
-#manually create reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+stead.tsv to include stead patient results as GLASS ids.
+#manually create reports/jarid2_results/outputs_actual_glass_1000_JARID2_results+dis.tsv to include discovery patient results as GLASS ids.
 
 
 #Get tables for all patients and genes
@@ -425,43 +425,12 @@ awk '{$2 = $2-=500 ; $3 = $3+=500}1' OFS='\t'  original_data/JARID2promotersPeak
 mv ./sequences/JARID2promotersPeaks_sequences.fa temp.txt ; cat ./sequences/JARID2promotersPeaks_sequence_positions.txt | while read line ; do c=$(echo $line | cut -f1 -d" ") ; s=$(echo $line | cut -f2 -d" ") ; e=$(echo $line | cut -f3 -d" ") ; r=${c}:${s}-${e}  ; samtools faidx downloaded_data/hg38.fasta $r  >>  ./sequences/JARID2promotersPeaks_sequences.fa ; done
 #merge did not make a difference for JARID2promotersPeaks
 
-### run meme
-#via https://meme-suite.org/meme/tools/meme
-
-#classical, 0 or 1 occurences per sequence
-meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod zoops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -markov_order 0
-
-#classical, any occurences per sequence
-meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod anr -nmotifs 5 -minw 6 -maxw 50 -objfun classic -revcomp -markov_order 0
-
-#discriminative, 0 or 1 occurences per sequence
-psp-gen -pos le70_sequences.fa -neg control_sequences.fa -dna -minw 6 -maxw 20
-meme le70_sequences.fa -dna -oc . -nostatus -time 14381 -mod zoops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -markov_order 0 -psp priors.psp
-
-#differential enrichment, 0 or 1 occurences per sequence
-meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod zoops -nmotifs 5 -minw 6 -maxw 50 -objfun de -neg control_sequences.fa -revcomp -markov_order 0
-
-
-
-
-
-#discriminative, 1 occurences per sequence
-psp-gen -pos le70_sequences.fa -neg control_sequences.fa -dna -minw 6 -maxw 20
-meme le70_sequences.fa -dna -oc . -nostatus -time 14381 -mod oops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -bfile promoter_markov.txt -psp priors.psp
-
-#discriminative, 0 or 1 occurences per sequence
-psp-gen -pos le70_sequences.fa -neg control_sequences.fa -dna -minw 6 -maxw 20
-meme le70_sequences.fa -dna -oc . -nostatus -time 14382 -mod zoops -nmotifs 10 -minw 6 -maxw 50 -objfun classic -revcomp -bfile promoter_markov.txt -psp priors.psp
-
-#differential enrichment, any number of occurences per sequence
-meme le70_sequences.fa -dna -oc . -nostatus -time 14400 -mod anr -nmotifs 10 -minw 6 -maxw 50 -objfun de -neg control_sequences.fa -revcomp -bfile promoter_markov.txt
-#no significant results
-```
-
 ### MEME-ChIP
+
 awk '{N=$3+$4 ; $3=int(N/2-250) ; $4=int(N/2+250)}1' OFS='\t' ./sequences/le70_peaks.txt | sort -u > ./sequences/le70_sequence_positions_meme-chip.txt
 awk '{N=$3+$4 ; $3=int(N/2-250) ; $4=int(N/2+250)}1' OFS='\t' ./sequences/control_peaks.txt | sort -u > ./sequences/control_sequence_positions_meme-chip.txt
 mv ./sequences/le70_sequences_meme-chip.fa temp.txt ; cat ./sequences/le70_sequence_positions_meme-chip.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/le70_sequences_meme-chip.fa ; done
 mv ./sequences/control_sequences_meme-chip.fa temp.txt ; cat ./sequences/control_sequence_positions_meme-chip.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/control_sequences_meme-chip.fa ; done
+```
 
 

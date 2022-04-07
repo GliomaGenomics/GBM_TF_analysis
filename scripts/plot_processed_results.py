@@ -43,10 +43,10 @@ set.seed(args$seed)
 
 p1 <- cnetplot(gens, layout='kk',foldChange=geneListup,cex_label_category=1, cex_gene=1, color_category='#686868', node_label='category', colorEdge=FALSE, showCategory=50)+
 scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='gray95',high='red',limits = c(-2, 2),oob = scales::squish)+
-theme(legend.text = element_text(size=15),legend.title = element_text(size=15))
+theme(legend.position = "none")
 p2 <- cnetplot(gens, layout='kk',foldChange=geneListdown,cex_label_category=1, cex_gene=1,color_category='#686868', node_label='category', colorEdge=FALSE, showCategory=50)+
 scale_color_gradient2(name='-log10(pval)direction', low='blue', mid='gray95',high='red',limits = c(-2, 2),oob = scales::squish)+
-theme(legend.text = element_text(size=15),legend.title = element_text(size=15))
+theme(legend.text = element_text(size=15),legend.title = element_text(size=15),legend.position =c(.9, .1))
 
 ##set all nodes the same size (double vector)
 p1[["layers"]][[2]][["data"]][["size"]]<-rep(c(100),each=length(p1[["layers"]][[2]][["data"]][["size"]]))

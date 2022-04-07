@@ -276,8 +276,8 @@ Eze_ProgenitorSubclusterNew7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.103
 Eze_ProgenitorSubclusterNew8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
 Eze_ProgenitorSubclusterNew9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
 Krishna_GBMFunctionalConnectivity	Krishna_2021_10.1101/2021.02.18.431915	Krishna_2021_10.1101/2021.02.18.431915	Bulk RNA-sequencing from primary patient-derived High Functional Connectivity and Low Functional Connectivity tumor samples.
-Neftel_MES_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the Stead bulk data and are tumour intrinsic. 
-Neftel_AC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
+Neftel_MES_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the discovery bulk data and are tumour intrinsic. 
+Neftel_AC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
 Neftel_OPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
 Neftel_NPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
 Allen_1_InhL1LAMP5NDNF	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
