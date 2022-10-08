@@ -21,9 +21,11 @@ args$scale<-FALSE
 }
 
 
-patients<-scan(args$patients, what = character())
+patients<-gsub('-','.',scan(args$patients, what = character()))
 datain<-read.table(args$table, header=TRUE, row.names=1, sep="\t", check=FALSE)
-datain=datain[ , as.vector(patients) ]
+print(colnames(datain))
+print(as.vector(patients))
+datain=datain[ , as.vector(gsub('-','.',patients)) ]
 datain <- datain[complete.cases(datain),]
 datain=t(datain)
 cn<-colnames(datain)
@@ -47,7 +49,7 @@ pca<- prcomp(datain, center = args$scale, scale= args$scale)
 
 save(pca,file=(paste("analysis/pca/pca_",args$name,".RData", sep="")))
 
-pdf(paste("analysis/pca/pca_",args$name,".pdf", sep=""))
+pdf(paste("analysis/pca/pca_",args$name,".pdf", sep=""),width=4,height=4)
 screeplot(pca, type = "l", npcs = 15, main = "Screeplot of the first 10 PCs")
 legend("topright", legend=c("Eigenvalue = 1"),
        col=c("red"), lty=5, cex=0.6)

@@ -1,4 +1,6 @@
+
 library(argparse)
+library(qvalue)
 
 parser <- ArgumentParser(description='process deseq2 results')
 parser$add_argument('--gmt', dest='gmt', type='character', help='gmt file')
@@ -8,8 +10,10 @@ genesets<-list()
 lines<-readLines(paste("gene_sets/",args$gmt,'.gmt',sep=""))
 l<-strsplit(lines,"\t")
 for (i in l){
-genesets[i[1]]<-list(i[3:length(i[i!= ""])])
+ii<-gsub(" ", "", i)
+genesets[ii[1]]<-list(ii[3:length(ii[ii!= ""])])
 }
+
 
 deaup1<-read.table('deseq2_uvd/usign_ranks.rnk', header=FALSE, row.names=1)
 deaup2<-read.table('deseq2_uvd/usign_ranks_ens.rnk', header=FALSE, row.names=1)
@@ -18,78 +22,56 @@ deadown1<-read.table('deseq2_uvd/dsign_ranks.rnk', header=FALSE, row.names=1)
 deadown2<-read.table('deseq2_uvd/dsign_ranks_ens.rnk', header=FALSE, row.names=1)
 deadown<-rbind(deadown1,deadown2)
 
-
-results<-data.frame(matrix(ncol = 6, nrow = 0))
-colnames(results)<-c("id","genes","up_values","down_values","length","proportion_different")
+up_gsea<-read.table(Sys.glob(file.path("gsea_uvd_outputs/reports/",paste(args$gmt,'_run1_up.*.txt',sep=""))),header=FALSE,row.names=NULL,fill=TRUE,sep="\t")
+up_gsea<-up_gsea[!is.na(up_gsea$V1),]
+row.names(up_gsea)<-up_gsea$V1
+down_gsea<-read.table(Sys.glob(file.path("gsea_uvd_outputs/reports/",paste(args$gmt,'_run1_down.*.txt',sep=""))),header=FALSE,row.names=NULL,fill=TRUE,sep="\t")
+down_gsea<-down_gsea[!is.na(down_gsea$V1),]
+row.names(down_gsea)<-down_gsea$V1
+results<-data.frame(matrix(ncol = 14, nrow = 0))
+colnames(results)<-c("id","gene_set","up_increasing","up_decreasing","up_stable","down_increasing","down_decreasing","down_stable","up_NES","up_FDR","down_NES","down_FDR","chi_squared_pval_2x2","chi_squared_pval_2x3")
 
 for (id in names(genesets)){
 print(id)
 genes<-genesets[[id]]
-upvalues=c()
-upinup_upvalues=c()
-downinup_upvalues=c()
-upinup_downvalues=c()
-downinup_downvalues=c()
-downvalues=c()
-genescheck=c()
-upinup_genescheck=c()
-downinup_genescheck=c()
-dif<-0
-upinup_dif<-0
-downinup_dif<-0
-
+upincreasing=c()
+updecreasing=c()
+upstable=c()
+downincreasing=c()
+downdecreasing=c()
+downstable=c()
 for (i in genes){
-if(!(is.na(deaup[i,]) & is.na(deadown[i,]))){
-
-
-upvalues<-append(upvalues,deaup[i,])
-downvalues<-append(downvalues,deadown[i,])
-genescheck<-append(genescheck,i)
-#if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
-#dif<-dif+1
-#}
-
-if(deaup[i,]>0){
-upinup_upvalues<-append(upinup_upvalues,deaup[i,])
-upinup_downvalues<-append(upinup_downvalues,deadown[i,])
-upinup_genescheck<-append(upinup_genescheck, i)
-#if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
-#upinup_dif<-upinup_dif+1
-#}
-
+if(is.na(deaup[i,])){
+upstable<-append(upstable,deaup[i,]) 
+}else if(deaup[i,]>1.3){
+upincreasing<-append(upincreasing,deaup[i,])
+}else if(deaup[i,]<(-1.3)){
+updecreasing<-append(updecreasing,deaup[i,])
 }else{
-downinup_upvalues<-append(downinup_upvalues,deaup[i,])
-downinup_downvalues<-append(downinup_downvalues,deadown[i,])
-downinup_genescheck<-append(downinup_genescheck, i)
-#if((deaup[i,]<1.3 & deadown[i,]>1.3 )|(deaup[i,]>1.3 & deadown[i,]<1.3)|(deaup[i,]< -1.3 & deadown[i,]> -1.3 )|(deaup[i,]> -1.3 & deadown[i,]< -1.3)){
-#downinup_dif<-downinup_dif+1
-#}
-
+upstable<-append(upstable,deaup[i,])   
+}
+if(is.na(deadown[i,])){
+downstable<-append(downstable,deadown[i,])   
+}else if(deadown[i,]>1.3){
+downincreasing<-append(downincreasing,deadown[i,])
+}else if(deadown[i,]<(-1.3)){
+downdecreasing<-append(downdecreasing,deadown[i,])
+}else{
+downstable<-append(downstable,deadown[i,])   
 }
 }
+if (sum(c(length(upincreasing),length(updecreasing),length(downincreasing),length(downdecreasing)))!=0){
+    pval_2x2<-chisq.test(matrix(c(length(upincreasing),length(updecreasing),length(downincreasing),length(downdecreasing)),ncol=2,byrow=TRUE))$p.value
+    pval_2x3<-chisq.test(matrix(c(length(upincreasing),length(updecreasing),length(upstable),length(downincreasing),length(downdecreasing),length(downstable)),ncol=3,byrow=TRUE))$p.value
+} else{
+    pval_2x2<-1
+    pval_2x3<-1
+}
+results[nrow(results) + 1,] = list(id,length(genes),length(upincreasing),length(updecreasing),length(upstable),length(downincreasing),length(downdecreasing),length(downstable),up_gsea[toupper(id),"V6"],up_gsea[toupper(id),"V8"],down_gsea[toupper(id),"V6"],down_gsea[toupper(id),"V8"],pval_2x2,pval_2x3)
 }
 
-len=length(genescheck)
-upinup_len=length(upinup_genescheck)
-downinup_len=length(downinup_genescheck)
-#proportion<-dif/len
-proportion<-0
-upinup_proportion<-upinup_dif/upinup_len
-downinup_proportion<-downinup_dif/downinup_len
-genescheck<-paste(genescheck, collapse=", ")
-upinup_genescheck<-paste(upinup_genescheck, collapse=", ")
-downinup_genescheck<-paste(downinup_genescheck, collapse=", ")
-upvalues<-paste(upvalues, collapse=", ")
-upinup_upvalues<-paste(upinup_upvalues, collapse=", ")
-downinup_upvalues<-paste(downinup_upvalues, collapse=", ")
-downvalues<-paste(downvalues, collapse=", ")
-upinup_downvalues<-paste(upinup_downvalues, collapse=", ")
-downinup_downvalues<-paste(downinup_downvalues, collapse=", ")
+results["chi_squared_FDR_2x2"]<-qvalue(results["chi_squared_pval_2x2"],pi0=1)$qvalues
+results["chi_squared_FDR_2x3"]<-qvalue(results["chi_squared_pval_2x3"],pi0=1)$qvalues
 
-results[nrow(results) + 1,] = list(id,genescheck,upvalues,downvalues,len,proportion)
-results[nrow(results) + 1,] = list(paste(id,'_1',sep=''),upinup_genescheck,upinup_upvalues,upinup_downvalues,upinup_len,upinup_proportion)
-results[nrow(results) + 1,] = list(paste(id,'_2',sep=''),downinup_genescheck,downinup_upvalues,downinup_downvalues,downinup_len,downinup_proportion)
-}
-
-write.table(results, file=paste('deseq2_uvd/processed_results',args$gmt,'.txt',sep=""), quote=FALSE, sep='\t',row.names=FALSE) 
+write.table(results, file=paste('deseq2_uvd/processed_gsea_results',args$gmt,'.txt',sep=""), quote=FALSE, sep='\t',row.names=FALSE) 
 

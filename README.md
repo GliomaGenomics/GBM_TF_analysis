@@ -1,7 +1,6 @@
 # GBM_TF_analysis
 
-#conda activate r4
-#source activate
+#conda activate env/r4
 
 
 ## Versions
@@ -63,6 +62,7 @@ c3.tft.v7.4.symbols.gmt
 c3.mir.mirdb.v7.4.symbols.gmt
 c5.go.bp.v7.4.symbols.gmt
 c5.go.mf.v7.4.symbols.gmt
+Also contains created custom gene sets.
 
 ## patient_lists
 WARNING: Many of the analyses rely on GLASS primary and recurrents being labelled as TP and R1. This is the case for patients inlcuded in the following lists but any alterations need checking.
