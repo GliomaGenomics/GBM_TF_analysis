@@ -1,0 +1,23 @@
+producer_class	xtools.gsea.GseaPreranked
+producer_timestamp	1654863548098
+param	rpt_label	A172_GAB_0_GTRD_1000_weighted_actual
+param	rnd_seed	timestamp
+param	set_min	15
+param	zip_report	false
+param	create_svgs	false
+param	scoring_scheme	weighted
+param	rnk	/resstore/b0135/Users/medgnt/GBM_TF_analysis/cell_lines/ranks/actual_log2fc/A172_GAB_0.rnk
+param	norm	meandiv
+param	out	/resstore/b0135/Users/medgnt/GBM_TF_analysis/cell_lines/gsea_outputs/outputs_actual
+param	mode	Max_probe
+param	include_only_symbols	true
+param	help	false
+param	set_max	50000
+param	gmx	gsea_files/TFs_ENS_1000_GTRDv19_10_gencodev27_JARID2_only.gmt
+param	make_sets	true
+param	plot_top_x	2000
+param	gui	false
+param	nperm	1000
+param	collapse	No_Collapse
+
+file	cell_lines/gsea_outputs/outputs_actual/A172_GAB_0_GTRD_1000_weighted_actual.GseaPreranked.1654863548098/index.html

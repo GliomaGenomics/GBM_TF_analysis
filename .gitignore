@@ -19,5 +19,6 @@ gsea_uvd_outputs/run*
 deseq2_uvd/*Rdata
 deseq2_uvd/processed*
 deseq2/*Rdata
-cell_lines/*
+cell_lines/raw_data/
+cell_lines/tables/
 tissue_slices/*

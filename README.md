@@ -7,7 +7,7 @@
 
 R:v4.1.0
 GSEA:v4.1.0
-DESeq2:v1.26.0
+DESeq2:1.34.0 (originally v1.26.0)
 
 ## Data sources
 
@@ -383,16 +383,25 @@ for s in $SETS; do qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=$s GENES=IDs; d
 SETS="h.all.v7.4.symbols c2.cgp.v7.4.symbols c2.cp.v7.4.symbols c3.mir.mirdb.v7.4.symbols c3.tft.v7.4.symbols c5.go.bp.v7.4.symbols c5.go.mf.v7.4.symbols" 
 for s in $SETS; do qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=$s GENES=symbols; done
 
-SETS="TFs_ENS_1000_GTRDv19_10_gencodev27 custom_gbm_gene_sets h.all.v7.4.symbols c2.cgp.v7.4.symbols c2.cp.v7.4.symbols c3.mir.mirdb.v7.4.symbols c3.tft.v7.4.symbols c5.go.bp.v7.4.symbols c5.go.mf.v7.4.symbols" 
+qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=gbm_invasive_unconnected GENES=IDs
+
+
 for f in gsea_uvd_outputs/run1/* ; do fi=$(basename ${f}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '==> ' | grep '[0123456789]'> gsea_uvd_outputs/reports/${fi}_table.txt ; done
 
+for f in gsea_uvd_outputs/run1/gbm_inv*3776* ; do fi=$(basename ${f}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '==> ' | grep '[0123456789]'> gsea_uvd_outputs/reports/${fi}_table.txt ; done
 
-#Process results, either full or fast method.
-Rscript scripts/process_uvd_deseq2_results.R --gmt custom_gbm_gene_sets
+
+
+#Process results to combine GSEA NES and FDR with chi squared of numbers of increasing or decreasing significant DEGs
 for s in $SETS; do qsubsec scripts/process_uvd_deseq2_results.qsubsec SET=$s ; done
 
 #Plot results in a network
-Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_fast.txt --sets gsea_uvd_outputs/reports/custom_gbm_gene_sets_run1_sub_interesting.txt --name custom_interesting
+Rscript scripts/process_uvd_deseq2_results_for_network.R --gmt custom_gbm_gene_sets
+Rscript scripts/process_uvd_deseq2_results_for_network.R --gmt h.all.v7.4.symbols
+
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultscustom_gbm_gene_sets_for_network.txt --sets gsea_uvd_outputs/reports/custom_gbm_gene_sets_run1_plot.txt --name custom_plot
+
+Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsh.all.v7.4.symbols_for_network.txt --sets gsea_uvd_outputs/reports/h.all.v7.4.symbols_run1_plot.txt --name hallmark_plot
 
 ```
 ## Variants
