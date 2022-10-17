@@ -229,10 +229,6 @@ python scripts/combine_patients.py --genes reports/all_tfs.txt --directory tissu
 
 ```
 
-# Wang-Diaz comparison
-```
-python scripts/convert_names_to_ensids.py -i downloaded_data/NIHMS1579377-supplement-Supplemental_Table_S2.txt -o downloaded_data/NIHMS1579377-supplement-Supplemental_Table_S2_ens.txt
-```
 
 
 ## Analysis
