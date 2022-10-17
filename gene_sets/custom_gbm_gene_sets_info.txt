@@ -1,30 +1,30 @@
-Gene_set_name	Reference	Source	Notes
-Zhang-Barres_endothelial	Zhang_Neuron_2016	Puchalski_2018	-
-Zhang-Barres_fetalastrocytes	Zhang_Neuron_2016	Puchalski_2018	-
-Zhang-Barres_GBMcoreastrocytes	Zhang_Neuron_2016	Puchalski_2018	-
-Zhang-Barres_matureastrocytes	Zhang_Neuron_2016	Puchalski_2018	-
-Zhang-Barres_microgliamacrophages	Zhang_Neuron_2016	Puchalski_2018	-
-Zhang-Barres_neuron	Zhang_Neuron_2016	Puchalski_2018	-
-Zhang-Barres_oligodendrocytes	Zhang_Neuron_2016	Puchalski_2018	-
-Patel-Bernstein_anticellcycle	Patel_Science_2014	Puchalski_2018	-
-Patel-Bernstein_cellcycle	Patel_Science_2014	Puchalski_2018	-
-Patel-Bernstein_immune	Patel_Science_2014	Puchalski_2018	-
-Patel-Bernstein_hypoxia	Patel_Science_2014	Puchalski_2018	-
-Patel-Bernstein_stemness	Patel_Science_2014	Patel_Science_2014	Taken from figure 3B
-Darmanis-Barres_astrocytes	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_Endothelial	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_FetalNeuronsquiescent	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_FetalNeuronsReplicating	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_microglia	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_mixNeuronsAstrocytes	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_mixOPCOligNeurons	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_Neurons	Darmanis_PNAS_2015	Puchalski_2018	-
-Darmanis-Barres_Oligodendrocytes	Darmanis_PNAS_2015	Puchalski_2018	-	
-Darmanis-Barres_OPCs	Darmanis_PNAS_2015	Puchalski_2018	-
-Puchalski_IVYGAP_cellular_tumor	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-4
-Puchalski_IVYGAP_microvascular_proliferation	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>2, maxpadj<1E-7
-Puchalski_IVYGAP_pseudo-palisading_cells_around_necrosis	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-7
-Puchalski_IVYGAP_leading_edge	Puchalski_2018	Puchalski_2018	from aaf2666_table-s3.xlsx, log2FC>4, maxpadj<1E-7
+Gene_set_name	Reference(PMID or DOI)	Source	Notes
+Zhang-Barres_endothelial	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Zhang-Barres_fetalastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Zhang-Barres_GBMcoreastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Zhang-Barres_matureastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Zhang-Barres_microgliamacrophages	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Zhang-Barres_neuron	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Zhang-Barres_oligodendrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
+Patel-Bernstein_anticellcycle	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
+Patel-Bernstein_cellcycle	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
+Patel-Bernstein_immune	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
+Patel-Bernstein_hypoxia	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
+Patel-Bernstein_stemness	Patel_Science_2014_10.1126/science.1254257	Patel_Science_2014_10.1126/science.1254257	Taken from figure 3B
+Darmanis-Barres_astrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_Endothelial	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_FetalNeuronsquiescent	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_FetalNeuronsReplicating	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_microglia	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_mixNeuronsAstrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_mixOPCOligNeurons	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_Neurons	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Darmanis-Barres_Oligodendrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_OPCs	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Puchalski_IVYGAP_cellular_tumor	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-4
+Puchalski_IVYGAP_microvascular_proliferation	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>2, maxpadj<1E-7
+Puchalski_IVYGAP_pseudo-palisading_cells_around_necrosis	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-7
+Puchalski_IVYGAP_leading_edge	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>4, maxpadj<1E-7
 Hasel_AlteredInAstrocytesByNeurons	Hasel_2017_28462931	Hasel_2017_28462931	Astrocytic genes significantly altered by the presence of neurons. Mouse. From Supplementary Data 5 ncomms15132-s6.xlsx. Fold change <0.5 or >2, padj<1E-4.
 Hasel_AlteredInAstrocytesBySynapticActivity	Hasel_2017_28462931	Hasel_2017_28462931	Genes altered in astrocytes by synaptic activity. Mouse. From Supplementary Data 10 ncomms15132-s11.xlsx. Fold change <0.5 or >2, padj<1E-2.
 Park_LongTermPotentiationInducedActivityRegulatedGenes	Park_2005_10.1074/jbc.M605876200	Park_2005_10.1074/jbc.M605876200	Genes with significant alterations in their expression levels at one or more experimental time points after long term potentiation. Mouse. Fold change <0.5 or >2.
@@ -278,8 +278,8 @@ Eze_ProgenitorSubclusterNew9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.103
 Krishna_GBMFunctionalConnectivity	Krishna_2021_10.1101/2021.02.18.431915	Krishna_2021_10.1101/2021.02.18.431915	Bulk RNA-sequencing from primary patient-derived High Functional Connectivity and Low Functional Connectivity tumor samples.
 Neftel_MES_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the discovery bulk data and are tumour intrinsic. 
 Neftel_AC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
-Neftel_OPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
-Neftel_NPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the Stead bulk data and are tumour intrinsic.
+Neftel_OPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
+Neftel_NPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
 Allen_1_InhL1LAMP5NDNF	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
 Allen_10_InhL1PAX6GRIP2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
 Allen_100_ExcL6FEZF2TBC1D26	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
