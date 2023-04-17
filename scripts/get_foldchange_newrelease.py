@@ -8,15 +8,20 @@ Created on Wed Oct  7 11:50:55 2020
 import pandas as pd
 import numpy as np
 
-data = pd.read_table('original_data/PvR_genefpkm_all_LS_23062021.txt.txt',sep='\t',header=0,index_col=0)
-met= pd.read_table('original_data/MetaData_LS_230621.txt',sep='\t',header=0,index_col=2)
+### additional 230621
+# data = pd.read_table('original_data/PvR_genefpkm_all_LS_23062021.txt.txt',sep='\t',header=0,index_col=0)
+# met= pd.read_table('original_data/MetaData_LS_230621.txt',sep='\t',header=0,index_col='Patient ID')
+
+### additional 020323
+data = pd.read_table('original_data/SingleRegion_all_geneFPKM.txt',sep='\t',header=0,index_col=0)
+met= pd.read_table('original_data/MetaData_020323.txt',sep='\t',header=0,index_col='Patient.ID')
+
+
 total_gene_list=pd.read_table('ranks/filtered_genelist_total.txt',sep='\t',header=None, index_col=0)
 mrna_gene_list=pd.read_table('ranks/filtered_genelist_mrna.txt',sep='\t',header=None, index_col=0)
 
-
 del data['GeneName']
 del data['GeneType']
-
 data_total = data.copy(deep=True)
 data_mrna = data.copy(deep=True)
 for c in data.columns:

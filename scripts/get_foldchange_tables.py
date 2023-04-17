@@ -8,8 +8,12 @@ Created on Wed Oct  7 11:50:55 2020
 import pandas as pd
 import numpy as np
 
-data = pd.read_table('original_data/PvR_genefpkm_all_LS_23062021.txt.txt',sep='\t',header=0,index_col=0)
-met= pd.read_table('original_data/MetaData_LS_230621.txt',sep='\t',header=0,index_col=2)
+# data = pd.read_table('original_data/PvR_genefpkm_all_LS_23062021.txt.txt',sep='\t',header=0,index_col=0)
+# met= pd.read_table('original_data/MetaData_LS_230621.txt',sep='\t',header=0,index_col='Patient ID')
+#additional 020323
+data = pd.read_table('original_data/SingleRegion_all_geneFPKM.txt',sep='\t',header=0,index_col=0)
+met= pd.read_table('original_data/MetaData_020323.txt',sep='\t',header=0,index_col='Patient.ID')
+
 total_gene_list=pd.read_table('ranks/filtered_genelist_total.txt',sep='\t',header=None, index_col=0)
 mrna_gene_list=pd.read_table('ranks/filtered_genelist_mrna.txt',sep='\t',header=None, index_col=0)
 
@@ -66,8 +70,12 @@ for di in d:
         log2fc[patient]=list(np.log2((recu+0.01)/(prim+0.01)))
         primout[patient]=list(prim)
         recuout[patient]=list(recu)
-    log2fc.to_csv('tables/log2fc_'+di+'.txt',sep='\t',header=True,index=False)
-    primout.to_csv('tables/primary_'+di+'.txt',sep='\t',header=True,index=False)
-    recuout.to_csv('tables/recurrent_'+di+'.txt',sep='\t',header=True,index=False)
+    # log2fc.to_csv('tables/log2fc_'+di+'.txt',sep='\t',header=True,index=False)
+    # primout.to_csv('tables/primary_'+di+'.txt',sep='\t',header=True,index=False)
+    # recuout.to_csv('tables/recurrent_'+di+'.txt',sep='\t',header=True,index=False)
+    #additional 020323
+    log2fc.to_csv('tables/log2fc_'+di+'_020323.txt',sep='\t',header=True,index=False)
+    primout.to_csv('tables/primary_'+di+'_020323.txt',sep='\t',header=True,index=False)
+    recuout.to_csv('tables/recurrent_'+di+'_020323.txt',sep='\t',header=True,index=False)
 
 

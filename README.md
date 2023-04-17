@@ -1,9 +1,16 @@
 # GBM_TF_analysis
 
-#conda activate env/r4
+## Notes
+
+* ANY ANALYSES BEYOND GSEA DO NOT INCLUDE THE MARCH 2023 DATA. THAT INCLUDES PROCESSING GSEA RESULTS INTO TABLES.
+* Gene IDs are from gencode v27.
+* GSEA actual is sometimes run only with the JARID2 gene set just to get the direction, and is much faster than running all the gene sets.
+
 
 
 ## Versions
+
+environment: conda activate env/r4
 
 R:v4.1.0
 GSEA:v4.1.0
@@ -33,6 +40,10 @@ downloaded_data also contains:
 ### original_data 
 Contains discovery cohort expression tables, count data, batch-corrected-protein-coding-only expression data and metadata
 Also contains JARID2promotersPeaks.bed which is a control where ChIP-seq was performed on a single recurrent sample using an anti-JARID2 antibody and input DNA which had been extracted and sheared but not immunoprecipitated.
+
+PvR_genefpkm_all_LS_23062021.txt.txt: original data
+SingleRegion_all_geneFPKM.txt: additional samples added March 2023. Inludes combined multiregion samples where fastq files were combined across regions.
+MultiRegion_all_geneFPKM.txt: Multiregion samples added March 2023. pa, pb, etc. represent multiple primary regions, and ra, rb, etc. represent multiple recurrent regions.
 
 ### glass_data
 This folder contains glass validation data from Synapse:
@@ -65,7 +76,8 @@ c5.go.mf.v7.4.symbols.gmt
 Also contains created custom gene sets.
 
 ## patient_lists
-WARNING: Many of the analyses rely on GLASS primary and recurrents being labelled as TP and R1. This is the case for patients inlcuded in the following lists but any alterations need checking.
+
+WARNING: Many of the analyses rely on GLASS primary and recurrents being labelled as TP and R1. This is the case for patients inlcuded in the following lists but any alterations need checking as GLASS has mistakes in the labelling for some samples.
 gbm_idhwt_rt_tmz_local.txt: Discovery patients who's primary and first recurrent are GBM_IDHwt, local first recurrent, recieved rt+tmz.
 glass_gbm_idhwt.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, have RNA data available and not in the discovery cohort.
 glass_gbm_idhwt_rt_tmz_local.txt: GLASS patients who's primary and first recurrent are GBM_IDHwt or GBM_IDHunknown, local first recurrent, recieved rt+tmz, have RNA data available and not in the discovery cohort.
@@ -101,11 +113,14 @@ Rscript scripts/plot_dotplot.R
 ```
 
 ## Expression inputs for GSEA 
+
 get_foldchange.py and get_foldchange_tss.py were run on a previous smaller cohort to get filtered lists of genes and TSSs, separately for those samples processed with total RNA or mRNA libraries: filtered_genelist_mrna.txt,filtered_genelist_total.txt,filtered_tsslist_mrna.txt,filtered_tsslist_total.txt.
-get_foldchange_newrealease.py and get_foldchange_tss_newrelease.py were later run on the current cohort expression table using the same lists of genes and TSSs.
-get_foldchange_glass.py is used to generate the glass data inputs.
-cat ranks/glass_absolute_log2fc/TCGA-06-0125.rnk | cut -f 1 > ranks/filtered_genelist_glass.txt 
-WARNING: get_foldchange_glass.py only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
+
+get_foldchange_newrealease.py and get_foldchange_tss_newrelease.py were later run on newer cohorts using the same lists of genes and TSSs.
+
+get_foldchange_glass.py is used to generate the glass data inputs. 
+WARNING: get_foldchange_glass.py currently only works if primary and recurrent barcodes are labelled as TP and R1 which is the case for the patients included, but is not guaranteed for other patients.
+
 The resulting inputs are in the 'ranks' folder.
 
 
@@ -152,12 +167,12 @@ awk -F'\t' '{SUM=($2+$3)/2; print($5"\t"$1":"SUM)}' gsea_files/gencode.v27.chr_p
 
 ```
 #TFs
-for p in ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute -s ; done 
-for p in ranks/actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual -s ; done 
-for p in ranks/absolute_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute_tss/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_tss -s ; done 
-for p in ranks/actual_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual_tss/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_tss -s ; done 
-for p in ranks/glass_absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute_glass/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_glass -s ; done 
-for p in ranks/glass_actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual_glass/${pi}*_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_glass -s ; done 
+for p in ranks/absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute/${pi}_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute -s ; done 
+for p in ranks/actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual/${pi}_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual -s ; done 
+for p in ranks/absolute_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute_tss/${pi}_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_tss -s ; done 
+for p in ranks/actual_log2fc_tss/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual_tss/${pi}_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_tss -s ; done 
+for p in ranks/glass_absolute_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_absolute_glass/${pi}_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=absolute_glass -s ; done 
+for p in ranks/glass_actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); [ ! -d gsea_outputs/outputs_actual_glass/${pi}_${SIZE}* ] && qsubsec scripts/gsea.qsubsec PATIENT=${pi} SIZE=${SIZE} MODE=actual_glass -s ; done 
 #c3.tft
 for f in ranks/absolute_log2fc/* ; do p=$(basename $f .rnk) ;python scripts/convert_ensids_to_names.py -i $f -o ranks/absolute_log2fc_names/${p}.rnk ; done
 for f in ranks/actual_log2fc/* ; do p=$(basename $f .rnk) ;python scripts/convert_ensids_to_names.py -i $f -o ranks/actual_log2fc_names/${p}.rnk ; done
@@ -167,6 +182,8 @@ for p in ranks/actual_log2fc/*.rnk ; do pi=$(basename $p .rnk); qsubsec scripts/
 ```
 
 ## Process GSEA results
+
+If GSEA runs ever need to be replicated exactly, set the seed as the time stamp indicated in the output directory name, eg "1646755863959".
 
 ```
 #Remove unnecesary files
@@ -225,8 +242,6 @@ python scripts/combine_patients.py --genes reports/all_tfs.txt --directory cell_
 python scripts/combine_patients.py --genes reports/all_tfs.txt --directory tissue_slices/reports/outputs_actual --output tissue_slices/reports/combined/tissue_slices_actual 
 python scripts/combine_patients.py --genes reports/all_tfs.txt --directory tissue_slices/reports/outputs_absolute --output tissue_slices/reports/combined/tissue_slices_absolute
 
-
-
 ```
 
 
@@ -257,7 +272,7 @@ LE=70
 TOTAL=$(wc -l patient_lists/${LIST}.txt|cut -d' ' -f1)
 NUM=$(awk -v total=$TOTAL -v le=0.$LE 'BEGIN {printf "%.0f", total*le}') ;awk -v  num=$NUM -F" " '{if ($1>=num) print}' analysis/leading_edge/counts_${SET}_${SIZE}_${LIST}.txt | awk '{print $(NF)}' > analysis/leading_edge/le${LE}_${SET}_${SIZE}_${LIST}.txt 
 
-#methylation
+#methylation patients
 while read line ; do f=${line}; cat ./gsea_outputs/outputs_actual_glass/*${f}_*1000*/JARID2.tsv ./gsea_outputs/outputs_actual/*${f}_*1000*/JARID2.tsv | grep 'Yes' ; done <patient_lists/gbm_idhwt_rt_tmz_local_methylation+rna.txt | cut -f 2 | sort | uniq -c > analysis/leading_edge/counts_methylation_1000_gbm_idhwt_rt_tmz_local_methylation+rna.txt
 LE=50
 LE=70
@@ -347,7 +362,7 @@ python scripts/merge.py -i cell_lines/tables/log2fc_cell_lines.txt,tables/log2fc
 Rscript scripts/heatmap_cell_lines.R --patients patient_lists/gbm_idhwt_rt_tmz_local_+_cell_lines.txt --genes analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt --table cell_lines/tables/log2fc_cell_lines_merged_with_patients.txt --nes_colour tissue_slices/reports/outputs_actual_1000_JARID2_results_cell_tissue.tsv --rna_colour original_data/library_types.txt --name cell_lines_le70
 ```
 
-## Methylation
+## Methylation analysis
 ```
 python scripts/get_probe_promotor_overlap.py
 cat gene_lists/JARID2_bound_genes.txt | while read line ; do printf "\n${line}\t" >> methylation/all_JARID2_bound_genes_probes.txt ; grep ${line} methylation/probe_promotor_overlap.txt | cut -f4 | tr "\n" "\t" >> methylation/all_JARID2_bound_genes_probes.txt ; done
@@ -381,11 +396,9 @@ for s in $SETS; do qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=$s GENES=symbol
 
 qsubsec scripts/gsea_uvd.qsubsec RUN=run1 GMT=gbm_invasive_unconnected GENES=IDs
 
-
 for f in gsea_uvd_outputs/run1/* ; do fi=$(basename ${f}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '==> ' | grep '[0123456789]'> gsea_uvd_outputs/reports/${fi}_table.txt ; done
 
 for f in gsea_uvd_outputs/run1/gbm_inv*3776* ; do fi=$(basename ${f}) ; tail ${f}/gsea_report_for_na_pos*tsv ${f}/gsea_report_for_na_neg*tsv -n +2 | grep -v '==> ' | grep '[0123456789]'> gsea_uvd_outputs/reports/${fi}_table.txt ; done
-
 
 
 #Process results to combine GSEA NES and FDR with chi squared of numbers of increasing or decreasing significant DEGs
@@ -400,7 +413,10 @@ Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resul
 Rscript scripts/plot_processed_results.py --processed deseq2_uvd/processed_resultsh.all.v7.4.symbols_for_network.txt --sets gsea_uvd_outputs/reports/h.all.v7.4.symbols_run1_plot.txt --name hallmark_plot
 
 ```
+
 ## Variants
+
+For getting variants in GLASS patients
 ```
 # Glass copy number
 
@@ -413,29 +429,3 @@ grep -E 'DE_NOVO_START_IN_FRAME|DE_NOVO_START_OUT_FRAME|FRAME_SHIFT_DEL|FRAME_SH
 grep 'SILENT' glass_data/variants_anno_20201109.csv > glass_data/variants_anno_20201109_silent.csv
 python scripts/process_glass_variants.py 
 ```
-
-## Motif sequences
-### MEME
-```
-#get sequences
-cat gsea_files/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27.txt | cut -f 11,16,17,18,33 | grep 'JARID2' > sequences/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27_JARID2.txt
-mv ./sequences/control_peaks.txt temp.txt ; cat analysis/leading_edge/le100_actual_1000_gbm_idhwt_rt_tmz_local_inverse.txt | while read line ; do grep $line sequences/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27_JARID2.txt >> ./sequences/control_peaks.txt ; done
-mv ./sequences/le70_peaks.txt temp.txt ; cat analysis/leading_edge/le70_actual_1000_gbm_idhwt_rt_tmz_local.txt | while read line ; do grep $line sequences/Min2Exp_OverlapTFpeaksAndPromoters_1000_GTRDv19_10_gencodev27_JARID2.txt >> ./sequences/le70_peaks.txt ; done
-awk '{$3 = $3-=500 ; $4 = $4+=500}1' OFS='\t' ./sequences/le70_peaks.txt | sort -u > ./sequences/le70_sequence_positions.txt
-awk '{$3 = $3-=500 ; $4 = $4+=500}1' OFS='\t' ./sequences/control_peaks.txt | sort -u > ./sequences/control_sequence_positions.txt
-python sequences/merge_peak_sequence_positions.py
-mv ./sequences/le70_sequences.fa temp.txt ; cat ./sequences/le70_sequence_positions_merged.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/le70_sequences.fa ; done
-mv ./sequences/control_sequences.fa temp.txt ; cat ./sequences/control_sequence_positions_merged.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/control_sequences.fa ; done
-awk '{$2 = $2-=500 ; $3 = $3+=500}1' OFS='\t'  original_data/JARID2promotersPeaks.bed | sort -u > ./sequences/JARID2promotersPeaks_sequence_positions.txt
-mv ./sequences/JARID2promotersPeaks_sequences.fa temp.txt ; cat ./sequences/JARID2promotersPeaks_sequence_positions.txt | while read line ; do c=$(echo $line | cut -f1 -d" ") ; s=$(echo $line | cut -f2 -d" ") ; e=$(echo $line | cut -f3 -d" ") ; r=${c}:${s}-${e}  ; samtools faidx downloaded_data/hg38.fasta $r  >>  ./sequences/JARID2promotersPeaks_sequences.fa ; done
-#merge did not make a difference for JARID2promotersPeaks
-
-### MEME-ChIP
-
-awk '{N=$3+$4 ; $3=int(N/2-250) ; $4=int(N/2+250)}1' OFS='\t' ./sequences/le70_peaks.txt | sort -u > ./sequences/le70_sequence_positions_meme-chip.txt
-awk '{N=$3+$4 ; $3=int(N/2-250) ; $4=int(N/2+250)}1' OFS='\t' ./sequences/control_peaks.txt | sort -u > ./sequences/control_sequence_positions_meme-chip.txt
-mv ./sequences/le70_sequences_meme-chip.fa temp.txt ; cat ./sequences/le70_sequence_positions_meme-chip.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/le70_sequences_meme-chip.fa ; done
-mv ./sequences/control_sequences_meme-chip.fa temp.txt ; cat ./sequences/control_sequence_positions_meme-chip.txt | while read line ; do g=$(echo $line | cut -f1 -d" " | cut -f1 -d".") ; c=$(echo $line | cut -f2 -d" ") ; s=$(echo $line | cut -f3 -d" ") ; e=$(echo $line | cut -f4 -d" ") ; r=${c}:${s}-${e} ; samtools faidx downloaded_data/hg38.fasta $r --mark-strand custom,_${g},_ >>  ./sequences/control_sequences_meme-chip.fa ; done
-```
-
-

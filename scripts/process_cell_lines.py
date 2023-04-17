@@ -4,9 +4,21 @@ import numpy as np
 all_prim=pd.DataFrame()
 all_recu=pd.DataFrame()
 
+data = pd.read_table('cell_lines/raw_data/M059K_GBM63ser_UvTFPKM.txt',sep='\t',header=0,index_col=0)
+data=data[data.index.str.contains('_PAR_Y')==False]
+data.index=[i[:15] for i in data.index]
+primary=pd.DataFrame(index=data.index)
+recurrent=pd.DataFrame(index=data.index)
+for ii in [2,3]:
+    primary['GBM63_ser_'+str(ii)]=data['GBM63_ser_Rep'+str(ii)+'_U']
+    recurrent['GBM63_ser_'+str(ii)]=data['GBM63_ser_Rep'+str(ii)+'_T']
+for ii in [1,2]:
+    primary['M059K_'+str(ii)]=data['M059K_Rep'+str(ii)+'_U']
+    recurrent['M059K'+'_'+str(ii)]=data['M059K_Rep'+str(ii)+'_T']
+all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
+all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
 for name in ['A172','GBM63']:
-
     data = pd.read_table('cell_lines/raw_data/'+name+'_U_CONvGAB_fpkm.txt',sep='\t',header=0,index_col=0)
     data=data[data.index.str.contains('_PAR_Y')==False]
     data.index=[i[:15] for i in data.index]
@@ -15,7 +27,6 @@ for name in ['A172','GBM63']:
     for ii in [0,1,2]:
         primary[name+'_CONGAB_'+str(ii)]=data['U_C_'+str(ii)]
         recurrent[name+'_CONGAB_'+str(ii)]=data['U_I_'+str(ii)]
-
     all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
     all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
@@ -27,7 +38,6 @@ for name in ['A172','GBM63']:
     for ii in [0,1,2]:
         primary[name+'_CONPTZ_'+str(ii)]=data['U_C_'+str(ii)]
         recurrent[name+'_CONPTZ_'+str(ii)]=data['U_I_'+str(ii)]
-
     all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
     all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
@@ -39,7 +49,6 @@ for name in ['A172','GBM63']:
     for ii in [0,1,2]:
         primary[name+'_GAB_'+str(ii)]=data['U_'+str(ii)]
         recurrent[name+'_GAB_'+str(ii)]=data['T_'+str(ii)]
-
     all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
     all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
@@ -51,7 +60,6 @@ for name in ['A172','GBM63']:
     for ii in [0,1,2]:
         primary[name+'_PTZ_'+str(ii)]=data['U_'+str(ii)]
         recurrent[name+'_PTZ_'+str(ii)]=data['T_'+str(ii)]
-
     all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
     all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
@@ -63,7 +71,6 @@ for name in ['A172','GBM63']:
     for ii in [0,1,2]:
         primary[name+'_'+str(ii)]=data[name+'_U_'+str(ii)]
         recurrent[name+'_'+str(ii)]=data[name+'_T_'+str(ii)]
-
     all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
     all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
     
@@ -75,7 +82,6 @@ recurrent=pd.DataFrame(index=data.index)
 for ii in [0,1]:
     primary['GBM63_CUTRUN'+'_'+str(ii)]=data['U_'+str(ii)]
     recurrent['GBM63_CUTRUN'+'_'+str(ii)]=data['T_'+str(ii)]
-
 all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
 all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
@@ -90,7 +96,6 @@ for i in ['1','3']:
     data.index=[i[:15] for i in data.index]
     primary['PDspheroids_'+i]=data.loc[:, data.columns.str.startswith('U')].mean(axis=1)
     recurrent['PDspheroids_'+i]=data.loc[:, data.columns.str.startswith('T')].mean(axis=1)
-
 all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
 all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
 
@@ -105,38 +110,11 @@ for i in ['48','72']:
     data.index=[i[:15] for i in data.index]
     primary['ME'+'_'+i]=data.loc[:, data.columns.str.startswith('ME'+i+'hrU')].mean(axis=1)
     recurrent['ME'+'_'+i]=data.loc[:, data.columns.str.startswith('ME'+i+'hrT')].mean(axis=1)
-
 print(primary.head())
 print(recurrent.head())
 
 all_prim=pd.merge(all_prim,primary, how = "outer",left_index=True, right_index=True)
 all_recu=pd.merge(all_recu,recurrent, how = "outer",left_index=True, right_index=True)
-
-
-#all_values=[]
-#for col in all_prim:
-#    all_values.extend(list(all_prim[col]))
-#for col in all_recu:
-#    all_values.extend(list(all_recu[col]))
-#all_values=pd.DataFrame(all_values)
-#lq=all_values[all_values >0].quantile(0.25)
-#print("lq="+str(lq))
-#ps=[]
-#for i in range(0,len(all_prim)):
-#    abovep=all_prim.iloc[i][all_prim.iloc[i] >= lq[0]].count()
-#    totalp=all_prim.iloc[i].count()
-#    proportionp=abovep/totalp
-#    abover=all_recu.iloc[i][all_recu.iloc[i] >= lq[0]].count()
-#    totalr=all_recu.iloc[i].count()
-#    proportionr=abover/totalr
-#    if proportionp >=0.2 or proportionr >=0.2:
-#        ps.append('True_'+str(proportionp)+'_'+str(abovep)+'_'+str(totalp)+'_'+str(proportionr)+'_'+str(abover)+'_'+str(totalr))
-#    else:
-#        ps.append('False_'+str(proportionp)+'_'+str(abovep)+'_'+str(totalp)+'_'+str(proportionr)+'_'+str(abover)+'_'+str(totalr))
-
-#psd=pd.DataFrame(ps,columns=['ps'])
-#all_prim=all_prim[list(psd['ps'].str.contains('True'))]
-#all_recu=all_recu[list(psd['ps'].str.contains('True'))]
 
 filt = pd.read_table('cell_lines/filtered_genes.txt',sep='\t',header=None,index_col=0)
 all_prim=pd.merge(all_prim,filt, how = "inner",left_index=True, right_index=True)
