@@ -6,7 +6,8 @@
 * Gene IDs are from gencode v27.
 * GSEA actual is sometimes run only with the JARID2 gene set just to get the direction, and is much faster than running all the gene sets.
 
-
+## License
+Creative Commons Attribution license 
 
 ## Versions
 
