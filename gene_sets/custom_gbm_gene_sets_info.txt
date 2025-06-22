@@ -1,584 +1,710 @@
-Gene_set_name	Reference(PMID or DOI)	Source	Notes
-Zhang-Barres_endothelial	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Zhang-Barres_fetalastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Zhang-Barres_GBMcoreastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Zhang-Barres_matureastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Zhang-Barres_microgliamacrophages	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Zhang-Barres_neuron	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Zhang-Barres_oligodendrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-
-Patel-Bernstein_anticellcycle	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
-Patel-Bernstein_cellcycle	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
-Patel-Bernstein_immune	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
-Patel-Bernstein_hypoxia	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-
-Patel-Bernstein_stemness	Patel_Science_2014_10.1126/science.1254257	Patel_Science_2014_10.1126/science.1254257	Taken from figure 3B
-Darmanis-Barres_astrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_Endothelial	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_FetalNeuronsquiescent	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_FetalNeuronsReplicating	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_microglia	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_mixNeuronsAstrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_mixOPCOligNeurons	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Darmanis-Barres_Neurons	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
+Gene_set_name	Reference(PMID or DOI)	Source	Notes	
+Zhang-Barres_endothelial	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Zhang-Barres_fetalastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Zhang-Barres_GBMcoreastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Zhang-Barres_matureastrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Zhang-Barres_microgliamacrophages	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Zhang-Barres_neuron	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Zhang-Barres_oligodendrocytes	Zhang_Neuron_2016_10.1016/j.neuron.2015.11.013	Puchalski_2018_10.1126/science.aaf2666	-	
+Patel-Bernstein_anticellcycle	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-	
+Patel-Bernstein_cellcycle	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-	
+Patel-Bernstein_immune	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-	
+Patel-Bernstein_hypoxia	Patel_Science_2014_10.1126/science.1254257	Puchalski_2018_10.1126/science.aaf2666	-	
+Patel-Bernstein_stemness	Patel_Science_2014_10.1126/science.1254257	Patel_Science_2014_10.1126/science.1254257	Taken from figure 3B	
+Darmanis-Barres_astrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_Endothelial	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_FetalNeuronsquiescent	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_FetalNeuronsReplicating	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_microglia	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_mixNeuronsAstrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_mixOPCOligNeurons	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Darmanis-Barres_Neurons	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
 Darmanis-Barres_Oligodendrocytes	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
-Darmanis-Barres_OPCs	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-
-Puchalski_IVYGAP_cellular_tumor	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-4
-Puchalski_IVYGAP_microvascular_proliferation	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>2, maxpadj<1E-7
-Puchalski_IVYGAP_pseudo-palisading_cells_around_necrosis	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-7
-Puchalski_IVYGAP_leading_edge	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	from aaf2666_table-s3.xlsx, log2FC>4, maxpadj<1E-7
-Hasel_AlteredInAstrocytesByNeurons	Hasel_2017_28462931	Hasel_2017_28462931	Astrocytic genes significantly altered by the presence of neurons. Mouse. From Supplementary Data 5 ncomms15132-s6.xlsx. Fold change <0.5 or >2, padj<1E-4.
-Hasel_AlteredInAstrocytesBySynapticActivity	Hasel_2017_28462931	Hasel_2017_28462931	Genes altered in astrocytes by synaptic activity. Mouse. From Supplementary Data 10 ncomms15132-s11.xlsx. Fold change <0.5 or >2, padj<1E-2.
-Park_LongTermPotentiationInducedActivityRegulatedGenes	Park_2005_10.1074/jbc.M605876200	Park_2005_10.1074/jbc.M605876200	Genes with significant alterations in their expression levels at one or more experimental time points after long term potentiation. Mouse. Fold change <0.5 or >2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster1	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster2	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster3	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster4	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster5	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster6	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_cluster7	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.
-Llorens-Bobadilla_AdultSvcNSCs_InjuryInduced	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Differentially Expressed Genes (FC > 2, padj < 0.1) in adult subventricular zone NSCs 48 hr after injury. Mouse. Table S4.
-Tardon_GBM_hypoxia	Tardon_2020_10.3390/biology9090264	Tardon_2020_10.3390/biology9090264	Differentially expressed genes in GBM cell lines for hypoxia vs physioxia. FigS1d.
-Tardon_GBM_hypoxia+hypoxia-responsive_element	Tardon_2020_10.3390/biology9090264	Tardon_2020_10.3390/biology9090264	Differentially expressed genes in GBM cell lines for hypoxia vs physioxia, that also contain a hypoxia-responsive element sequence. FigS1e.
-Codega_EnrichedInQuiescentVsActivatedNSCs	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Differentailly expressed genes enriched in qiescent vs actiavted adult neuronal stem cells. From Supplement-02,FC>2, padj<0.02
-Codega_EnrichedInActivatedVsQuiescentNSCs	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Differentailly expressed genes enriched in activated vs quiescent adult neuronal stem cells. From Supplement-02,FC>2, padj<0.02
-Codega_TFsForNeurogenesis	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Transcription factors previously identified as being important for neurogenesis. From Supplemental-05.
+Darmanis-Barres_OPCs	Darmanis_PNAS_2015_10.1073/pnas.1507125112	Puchalski_2018_10.1126/science.aaf2666	-	
+Puchalski_IVYGAP_cellular_tumor	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	"from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-4"	
+Puchalski_IVYGAP_microvascular_proliferation	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	"from aaf2666_table-s3.xlsx, log2FC>2, maxpadj<1E-7"	
+Puchalski_IVYGAP_pseudo-palisading_cells_around_necrosis	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	"from aaf2666_table-s3.xlsx, log2FC>1, maxpadj<1E-7"	
+Puchalski_IVYGAP_leading_edge	Puchalski_2018_10.1126/science.aaf2666	Puchalski_2018_10.1126/science.aaf2666	"from aaf2666_table-s3.xlsx, log2FC>4, maxpadj<1E-7"	
+Hasel_AlteredInAstrocytesByNeurons	Hasel_2017_28462931	Hasel_2017_28462931	"Astrocytic genes significantly altered by the presence of neurons. Mouse. From Supplementary Data 5 ncomms15132-s6.xlsx. Fold change <0.5 or >2, padj<1E-4."	
+Hasel_AlteredInAstrocytesBySynapticActivity	Hasel_2017_28462931	Hasel_2017_28462931	"Genes altered in astrocytes by synaptic activity. Mouse. From Supplementary Data 10 ncomms15132-s11.xlsx. Fold change <0.5 or >2, padj<1E-2."	
+Park_LongTermPotentiationInducedActivityRegulatedGenes	Park_2005_10.1074/jbc.M605876200	Park_2005_10.1074/jbc.M605876200	Genes with significant alterations in their expression levels at one or more experimental time points after long term potentiation. Mouse. Fold change <0.5 or >2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster1	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster2	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster3	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster4	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster5	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster6	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_cluster7	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Genes associated with clusters in adult subventricular zone neuronal stem cells trhough PCA. Mouse. Table S2.	
+Llorens-Bobadilla_AdultSvcNSCs_InjuryInduced	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	Llorens-Bobadilla_2015_10.1016/j.stem.2015.07.002	"Differentially Expressed Genes (FC > 2, padj < 0.1) in adult subventricular zone NSCs 48 hr after injury. Mouse. Table S4."	
+Tardon_GBM_hypoxia	Tardon_2020_10.3390/biology9090264	Tardon_2020_10.3390/biology9090264	Differentially expressed genes in GBM cell lines for hypoxia vs physioxia. FigS1d.	
+Tardon_GBM_hypoxia+hypoxia-responsive_element	Tardon_2020_10.3390/biology9090264	Tardon_2020_10.3390/biology9090264	"Differentially expressed genes in GBM cell lines for hypoxia vs physioxia, that also contain a hypoxia-responsive element sequence. FigS1e."	
+Codega_EnrichedInQuiescentVsActivatedNSCs	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	"Differentailly expressed genes enriched in qiescent vs actiavted adult neuronal stem cells. From Supplement-02,FC>2, padj<0.02"	
+Codega_EnrichedInActivatedVsQuiescentNSCs	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	"Differentailly expressed genes enriched in activated vs quiescent adult neuronal stem cells. From Supplement-02,FC>2, padj<0.02"	
+Codega_TFsForNeurogenesis	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Transcription factors previously identified as being important for neurogenesis. From Supplemental-05.	
 Codega_FactorsAndMarkersForNeurogenesis	Codega_2014_10.1016/j.neuron.2014.02.039	Codega_2014_10.1016/j.neuron.2014.02.039	Factors and markers previously identified as being important for neurogenesis.	From Supplemental-06.
-Fiscon_EnrcihedInDifferentiatedGBMCells	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Differentially expressed genes enriched in differentiated GBM cells vs tumour-propogating GBM cells from the Suva or Schulte dataset. padj<1E-4. Supplementary file 1.
-Fiscon_EnrcihedInTumor-propagatingGBMCells	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Differentially expressed genes enriched in tumour-propogating GBM cells vs differentiated GBM cells from the Suva or Schulte dataset. padj<1E-4. Supplementary file 1.
-Fiscon_SwitchgenesDown-regulatedFromStemToDiff	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Downregulated switch genes identified as being potentially involved in the transition from stem-like to differentiated state in GBM cells, based on the Suva or Schulte dataset. Supplementary file 5.
-Fiscon_SwitchgenesUp-regulatedFromStemToDiff	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Upregulated switch genes identified as being potentially involved in the transition from stem-like to differentiated state in GBM cells, based on the Suva or Schulte dataset. Supplementary file 5.
-Wang_MesVsProNeu	Wang_2019_10.1158/2159-8290.CD-19-0329	Wang_2019_10.1158/2159-8290.CD-19-0329	Diferential expression between proneural and mesenchymal on a single axis. FC>4. Supplemental Table S3.
-Wang_ProNeuVsMes	Wang_2019_10.1158/2159-8290.CD-19-0329	Wang_2019_10.1158/2159-8290.CD-19-0329	Diferential expression between proneural and mesenchymal on a single axis. FC<0.25. Supplemental Table S3.
-Richards_InjuryResponse	Richards_2021_10.1038/s43018-020-00154-9	Richards_2021_10.1038/s43018-020-00154-9	Differential expression between  Injury Response and Developmental clusters identified with bulk RNA-seq of GSC samples. FC<0.25, padj<1E-9. Supplementary Table 7. 
-Richards_Developmental	Richards_2021_10.1038/s43018-020-00154-9	Richards_2021_10.1038/s43018-020-00154-9	Differential expression between  Injury Response and Developmental clusters identified with bulk RNA-seq of GSC samples. FC>4, padj<1E-5. Supplementary Table 7. 
-Nowakowski_NeuralDiferentiation	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table8 DifferentiationSignature  
-Nowakowski_Astrocyte	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers. 
-Nowakowski_Choroid	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_EN-PFC1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_EN-PFC2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_EN-PFC3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_EN-V1-1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_EN-V1-2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_EN-V1-3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_Endothelial	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers. 
-Nowakowski_Glyc	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IN-CTX-CGE1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nEN-early2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nEN-late	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nEN-early1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IN-STR	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IN-CTX-CGE2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IN-CTX-MGE1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IN-CTX-MGE2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IPC-div1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IPC-div2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IPC-nEN3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nIN1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nIN2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nIN3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nIN5	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_U4	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_Mural	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_U1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_Microglia	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_U3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_RG-early	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_U2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_oRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_tRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_vRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_RG-div1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_OPC	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_RG-div2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_MGE-RG1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_MGE-RG2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_MGE-div	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_MGE-IPC1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_MGE-IPC2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IPC-nEN2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_IPC-nEN1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_nIN4	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Nowakowski_MGE-IPC3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.
-Zhong_Nature_2018_NPCs_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9	
-Zhong_Nature_2018_Excitatory_neurons_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
-Zhong_Nature_2018_Interneurons_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
-Zhong_Nature_2018_OPC_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
-Zhong_Nature_2018_Astrocytes_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9	
-Zhong_Nature_2018_Microglia_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9
-Liddelow_Nature_2017_A1_reactive_astrocytes	Liddelow_Nature_2017	Richards_2021_10.1038/s43018-020-00154-9
-Liddelow_Nature_2017_A2_reactive_astrocytes	Liddelow_Nature_2017	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_MES2	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_MES1	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_AC	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_OPC	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_NPC1	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_NPC2	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_G1.S	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Neftel_Cell_2019_G2.M	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9
-Hai_GBMConnectivity	Hai_biorxiv_2021_10.1101/2021.11.07.465791	Hai_biorxiv_2021_10.1101/2021.11.07.465791	A connectivity signature from single-cell RNA-sequenced (scRNA-Seq) xenografted primary glioblastoma cells. Supplementary Table 2. 
-Wang_ClassicalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
-Wang_MesenchymalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
-Wang_ProneuralGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.
-Garofano_GPM	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j. 
-Garofano_MTC	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
-Garofano_NEU	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
-Garofano_PPR	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.
-Liau_Cluster1DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
-Liau_Cluster2DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
-Liau_Cluster3DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
-Liau_Cluster4UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
-Liau_Cluster5UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
-Liau_Cluster6UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A
-Eze_EarlyFirstTrimesterBrain	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 11. Early Versus Late Differential Gene Expression Differential gene expression was calculated between the early samples in the dataset (CS12-15) and the later samples in the dataset (CS19-22). FC>4
-Eze_LateFirstTrimesterBrain	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 11. Early Versus Late Differential Gene Expression Differential gene expression was calculated between the early samples in the dataset (CS12-15) and the later samples in the dataset (CS19-22). FC<0.25
-Eze_CorticalNeuronSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_CorticalNeuronSubcluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuronSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2
-Eze_EarlyCorticalNeuron	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. differential expression was performed between older and younger neuronal populations across all subtypes. FC>2
-Eze_LateCorticalNeuron	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. differential expression was performed between older and younger neuronal populations across all subtypes. FC>2
-Eze_UltraEarlyCortexSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_UltraEarlyCortexSubcluster29	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2
-Eze_CortexCluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster29	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster30	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster31	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster32	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster33	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster34	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster35	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster36	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster37	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster38	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster39	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster40	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster41	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster42	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster43	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster44	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster45	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster46	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster47	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster48	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster49	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster50	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster51	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster52	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster53	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster54	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster55	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster56	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster57	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster58	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster59	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster60	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_CortexCluster61	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2
-Eze_ProgenitorSubclusterNew1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
-Eze_ProgenitorSubclusterNew2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
-Eze_ProgenitorSubclusterNew3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
-Eze_ProgenitorSubclusterNew4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
-Eze_ProgenitorSubclusterNew5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
-Eze_ProgenitorSubclusterNew6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
-Eze_ProgenitorSubclusterNew7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
-Eze_ProgenitorSubclusterNew8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2
-Eze_ProgenitorSubclusterNew9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1
-Krishna_GBMFunctionalConnectivity	Krishna_2021_10.1101/2021.02.18.431915	Krishna_2021_10.1101/2021.02.18.431915	Bulk RNA-sequencing from primary patient-derived High Functional Connectivity and Low Functional Connectivity tumor samples.
-Neftel_MES_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the discovery bulk data and are tumour intrinsic. 
-Neftel_AC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
-Neftel_OPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
-Neftel_NPC_sub	10.1016/j.cell.2019.06.024,Ajaib_unpublished	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.
-Allen_1_InhL1LAMP5NDNF	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_10_InhL1PAX6GRIP2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_100_ExcL6FEZF2TBC1D26	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_101_ExcL6FEZF2KRT17	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_102_ExcL3_5FEZF2ONECUT1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_103_ExcL3_5FEZF2DCN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_104_ExcL5FEZF2MORN2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_105_ExcL5FEZF2SCN7A	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_106_ExcL5_6FEZF2CABP7	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_107_ExcL5FEZF2DYRK2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_108_ExcL5_6FEZF2MYBPHL	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_109_ExcL5_6FEZF2CYP26B1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_11_InhL1_6VIPRCN1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_110_ExcL5_6FEZF2RSAD2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_111_AstroL1_6FGFR3ETNPPL	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_112_AstroL1FGFR3MT1G	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_113_AstroL1FGFR3FOS	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_114_OPCL1_6MYT1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_115_OligoL4_6MOBPCOL18A1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_116_OligoL4_6OPALIN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_12_InhL1_3PAX6NABP1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_13_InhL1VIPPRSS8	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_14_InhL1VIPTNFAIP8L3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_15_InhL1ADARB2ADAM33	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_16_InhL1SSTCXCL14	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_17_InhL1ADARB2DISP2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_18_InhL1VIPSOX11	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_19_InhL1_5VIPKCNJ2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_2_InhL1LAMP5GGT8P	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_20_InhL1_6VIPPENK	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_21_InhL1_6VIPRGS16	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_22_InhL2_6VIPVIP	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_23_InhL3_6VIPKCTD13	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_24_InhL1VIPPCDH20	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_25_InhL1_2VIPPPAPDC1A	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_26_InhL2_4VIPDSEL	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_27_InhL2_5VIPTOX2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_28_InhL1_3VIPZNF322P1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_29_InhL3VIPCBLN1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_3_InhL1_4LAMP5DUSP4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_30_InhL1_3VIPGGH	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_31_InhL1_3VIPACHE	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_32_InhL1_2VIPRPL41P3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_33_InhL1_3VIPSSTR1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_34_InhL1_3VIPCCDC184	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_35_InhL2_4VIPLGI2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_36_InhL1_4VIPCHRNA2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_37_InhL6SSTNPY	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_38_InhL5_6SSTISOC1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_39_InhL5_6SSTKLHL14	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_4_InhL6LAMP5C1QL2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_40_InhL4_6SSTMTHFD2P6	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_41_InhL3_5SSTMAFB	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_42_InhL4_5PVALBTRIM67	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_43_InhL5_6SSTTH	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_44_InhL6LHX6GLP1R	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_45_InhL5_6PVALBFAM150B	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_46_InhL2_4SSTAHR	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_47_InhL1_2PVALBTAC1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_48_InhL1_3PVALBWFDC2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_49_InhL2_4PVALBC8orf4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_5_InhL1_6LAMP5CA13	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_50_InhL5PVALBCNTNAP3P2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_51_InhL5_6PVALBSTON2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_52_InhL3_4PVALBHOMER3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_53_InhL1_6PVALBSCUBE3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_54_InhL3_6PVALBMFI2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_55_ExcL2_4RORBGRIK1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_56_ExcL3_4RORBRPS3P6	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_57_ExcL4RORBBHLHE22	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_58_ExcL4RORBCCDC168	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_59_ExcL4RORBCACNG5	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_6_InhL5_6LAMP5SFTA3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_60_ExcL4_5RORBASCL1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_61_ExcL4_5RORBAIM2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_62_ExcL3LINC00507CTXN3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_63_ExcL3THEMISPLA2G7	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_64_ExcL3_5THEMISELOF1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_65_ExcL2_3LINC00507RPL9P17	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_66_ExcL3LINC00507PSRC1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_67_ExcL3_5LINC00507SLN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_68_ExcL3RORBCARTPT	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_69_ExcL3_4RORBFOLH1B	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_7_InhL1_2PAX6SCGN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_70_ExcL3_4RORBPRSS12	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_71_ExcL3_4RORBSEMA6D	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_72_ExcL3_5RORBHSPB3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_73_ExcL5_6THEMISOR1J1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_74_ExcL6THEMISEGR3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_75_ExcL5_6THEMISTMEM233	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_76_ExcL6THEMISLINC00343	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_77_ExcL3_5RORBCMAHP	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_78_ExcL3_5RORBCD24	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_79_ExcL4_5RORBLCN15	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_8_InhL6LAMP5ANKRD20A11P	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_80_ExcL3_5THEMISUBE2F	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_81_ExcL5RORBSNHG7	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_82_ExcL4_5RORBRPL31P31	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_83_ExcL4_5RORBHNRNPA1P46	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_84_ExcL4_5RORBLINC01474	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_85_ExcL4_6RORBHPCA	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_86_ExcL5_6RORBLINC00320	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_87_ExcL5RORBLINC01202	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_88_ExcL6THEMISC6orf48	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_89_ExcL5_6THEMISGPR21	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_9_InhL1PAX6CA4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_90_ExcL5_6THEMISTHTPA	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_91_ExcL5_6THEMISIL7R	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_92_ExcL6FEZF2VWA2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_93_ExcL5_6FEZF2ANKRD20A1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_94_ExcL6FEZF2FAM95C	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_95_ExcL6FEZF2CPZ	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_96_ExcL6FEZF2P4HA3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_97_ExcL6FEZF2SLITRK6	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_98_ExcL6FEZF2TBCC	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Allen_99_ExcL6FEZF2ETV4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv
-Almstedt_11q_msigdb	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_17q_msigdb	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_1p36	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_ALK	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_core_diff	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_NHR_diff	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_risk	-	Larson_2021_10.15252/msb.202010105	-
-Almstedt_VGR_diff	-	Larson_2021_10.15252/msb.202010105	-
-Anastassiou_multicancer_invasiveness_PMID_22208948	-	Larson_2021_10.15252/msb.202010105	-
-angiogenesis_GO_0001525	-	Larson_2021_10.15252/msb.202010105	-
-Astrocytes_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-Darmanis_periphery_PMID_29091775	-	Larson_2021_10.15252/msb.202010105	-
-dePreter_high_NB_risk	-	Larson_2021_10.15252/msb.202010105	-
-dePreter_low_NB_risk	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_G1	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_G2.M	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_lateG1	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_lowRNA	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_M.earlyG1	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_Neural.G0	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_S.G2	-	Larson_2021_10.15252/msb.202010105	-
-Feldman_2020_S	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_alcoholaddiction_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_alcoholaddiction_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_autism_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_autism_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_bipolar_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_bipolar_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_depression_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_depression_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_IBD_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_IBD_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_schizophrenia_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Gandal_schizophrenia_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-
-Garofano_Iavarone_GPM_subtype	-	Larson_2021_10.15252/msb.202010105	-
-Garofano_Iavarone_List_of_neural_progenitor_marker_genes	-	Larson_2021_10.15252/msb.202010105	-
-Garofano_Iavarone_MTC_subtype	-	Larson_2021_10.15252/msb.202010105	-
-Garofano_Iavarone_NEU_subtype	-	Larson_2021_10.15252/msb.202010105	-
-Garofano_Iavarone_PPR_subtype	-	Larson_2021_10.15252/msb.202010105	-
-Glioma_stemness_PMID_29276782	-	Larson_2021_10.15252/msb.202010105	-
-Immature_neurons_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-intermediate_progenitors_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-IVY_CT	-	Larson_2021_10.15252/msb.202010105	-
-IVY_CTmvp	-	Larson_2021_10.15252/msb.202010105	-
-IVY_CTpan	-	Larson_2021_10.15252/msb.202010105	-
-IVY_Infiltrating	-	Larson_2021_10.15252/msb.202010105	-
-IVY_LeadingEdge	-	Larson_2021_10.15252/msb.202010105	-
-Johansson_PI_resistance_unpub	-	Larson_2021_10.15252/msb.202010105	-
-Kling_GBM_pheno_PMID_27667176	-	Larson_2021_10.15252/msb.202010105	-
-Larsson_state1_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-
-Larsson_state5_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-
-Larsson_state3_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-
-Larsson_state2_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-
-Larsson_state6_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-
-Larsson_state4_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-
-Mature_neurons_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-Mature_oligodendrocytes_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-Microglia_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-Neuroepithelial_cells_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-Oligodendrocyte_precursor_cells_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-outerRadialGlia	-	Larson_2021_10.15252/msb.202010105	-
-parada_T1_DN_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.
-parada_T1_UP_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.
-parada_T2_DN_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.
-parada_T2_UP_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.
-Pollen_outerRadialGlia_PMID_26406371	-	Larson_2021_10.15252/msb.202010105	-
-Radial_Glia_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2008_astrocyte	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2008_oligodendrocyte	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2009_neuron	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2010_astro_young	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2011_astro_mature	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2012_OPC	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2013_OL_myel	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2014_MOG_pos	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2015_astro_in_vivo	-	Larson_2021_10.15252/msb.202010105	-
-richards_Cahoy_JNeurosci_2016_cultured_astroglia	-	Larson_2021_10.15252/msb.202010105	-
-richards_InHouse_BulkRNAseq_2019_DevelopmentalGSC	-	Larson_2021_10.15252/msb.202010105	-
-richards_InHouse_BulkRNAseq_2019_InjuryResponseGSC	-	Larson_2021_10.15252/msb.202010105	-
-richards_Liddelow_Nature_2017_A1_reactive_astrocytes	-	Larson_2021_10.15252/msb.202010105	-
-richards_Liddelow_Nature_2017_A2_reactive_astrocytes	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_AC	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_G1_S	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_G2_M	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_MES1	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_MES2	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_NPC1	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_NPC2	-	Larson_2021_10.15252/msb.202010105	-
-richards_Neftel_Cell_2019_OPC	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_Astrocyte_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_Choroid_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_EN_PFC1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_EN_PFC2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_EN_PFC3_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_EN_V1_1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_EN_V1_2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_EN_V1_3_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_Endothelial_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_Glyc_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IN_CTX_CGE1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IN_CTX_CGE2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IN_CTX_MGE1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IN_CTX_MGE2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IN_STR_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IPC_div1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IPC_div2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IPC_nEN1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IPC_nEN1_upreg-1	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_IPC_nEN3_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_MGE_div_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_MGE_IPC1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_MGE_IPC2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_MGE_IPC3_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_MGE_RG1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_MGE_RG2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_Microglia_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_Mural_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nEN_early1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nEN_early2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nEN_late_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nIN1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nIN2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nIN3_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nIN4_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_nIN5_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_OPC_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_oRG_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_RG_div1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_RG_div2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_RG_early_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_tRG_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_U1_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_U2_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_U3_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_U4_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Nowakowski_Science_2017_vRG_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Verhaak_CancerCell_2010_Classical	-	Larson_2021_10.15252/msb.202010105	-
-richards_Verhaak_CancerCell_2010_Mesenchymal	-	Larson_2021_10.15252/msb.202010105	-
-richards_Verhaak_CancerCell_2010_Neural	-	Larson_2021_10.15252/msb.202010105	-
-richards_Verhaak_CancerCell_2010_Proneural	-	Larson_2021_10.15252/msb.202010105	-
-richards_Zhong_Nature_2018_Astrocytes_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Zhong_Nature_2018_Excitatory_neurons_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Zhong_Nature_2018_Interneurons_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Zhong_Nature_2018_Microglia_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Zhong_Nature_2018_NPCs_upreg	-	Larson_2021_10.15252/msb.202010105	-
-richards_Zhong_Nature_2018_OPC_upreg	-	Larson_2021_10.15252/msb.202010105	-
-Rosen_Krona_TI_unpubl	-	Larson_2021_10.15252/msb.202010105	-
-Schwann_cells_RNAscope	-	Larson_2021_10.15252/msb.202010105	-
-Segerman_Multitherapy_resistance_fig5A_PMID_27974212	-	Larson_2021_10.15252/msb.202010105	-
-Seurat_cellcycle	-	Larson_2021_10.15252/msb.202010105	-
-Singh_SOX2_downregulated_transcripts_PMID_28122245	-	Larson_2021_10.15252/msb.202010105	-
-Singh_SOX2_upregulated_transcripts_PMID_28122245	-	Larson_2021_10.15252/msb.202010105	-
-suva_ac_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_g1s_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_g2m_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_mes1_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_mes2_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_npc1_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_npc2_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-suva_opc_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-
-TF_census_Taipale	-	Larson_2021_10.15252/msb.202010105	-
-TIISig_PMID_32649888	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from distinct cells of origin.
-TISig_PMID_32649888	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from distinct cells of origin.
-VanGroningen_ADRN	-	Larson_2021_10.15252/msb.202010105	-
-VanGroningen_MES	-	Larson_2021_10.15252/msb.202010105	-
-Wang_classical_PMID_28697342	-	Larson_2021_10.15252/msb.202010105	-
-Wang_mesenchymal_PMID_28697342	-	Larson_2021_10.15252/msb.202010105	-
-Wang_proneural_PMID_28697342	-	Larson_2021_10.15252/msb.202010105	-
-Weng_iOL_PMID_30982771	-	Larson_2021_10.15252/msb.202010105	-
-Weng_priOPC_PMID_30982771	-	Larson_2021_10.15252/msb.202010105	-
-Weng_stemness_PMID_30982771	-	Larson_2021_10.15252/msb.202010105	-
-Zhang_astrocyte_PMID_25186741	-	Larson_2021_10.15252/msb.202010105	-
-Zhang_neuron_PMID_25186741	-	Larson_2021_10.15252/msb.202010105	-
-Zhang_opc_PMID_25186741	-	Larson_2021_10.15252/msb.202010105	-
-Shi_Post-MitoticCells_GanglionicEminences	Shi_2021_10.1126/science.abj6641	Shi_2021_10.1126/science.abj6641	Genes that best distinguish dividing progenitors from postmitotic cells in the ganglionic eminences. Table S4: DEGs between progenitors and postmitotic cells in the human ganglionic eminences.
-Shi_Progenitor_GanglionicEminences	Shi_2021_10.1126/science.abj6641	Shi_2021_10.1126/science.abj6642	Genes that best distinguish dividing progenitors from postmitotic cells in the ganglionic eminences. Table S4: DEGs between progenitors and postmitotic cells in the human ganglionic eminences.
-Shi_CGE	Shi_2021_10.1126/science.abj6643	Shi_2021_10.1126/science.abj6641	Caudal ganglionic eminences. DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_Endothelial	Shi_2021_10.1126/science.abj6644	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_ExcitatoryIPC	Shi_2021_10.1126/science.abj6645	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_ExcitatoryNeurons	Shi_2021_10.1126/science.abj6646	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_LGE	Shi_2021_10.1126/science.abj6647	Shi_2021_10.1126/science.abj6641	Lateral ganglionic eminences. DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_MGE	Shi_2021_10.1126/science.abj6648	Shi_2021_10.1126/science.abj6641	Medial ganglionic eminences. DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_Microglia	Shi_2021_10.1126/science.abj6649	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_OPC	Shi_2021_10.1126/science.abj6650	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_Progenitor	Shi_2021_10.1126/science.abj6651	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
-Shi_ThalamicNeurons	Shi_2021_10.1126/science.abj6652	Shi_2021_10.1126/science.abj6641	DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types.
+Fiscon_EnrcihedInDifferentiatedGBMCells	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Differentially expressed genes enriched in differentiated GBM cells vs tumour-propogating GBM cells from the Suva or Schulte dataset. padj<1E-4. Supplementary file 1.	
+Fiscon_EnrcihedInTumor-propagatingGBMCells	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	Differentially expressed genes enriched in tumour-propogating GBM cells vs differentiated GBM cells from the Suva or Schulte dataset. padj<1E-4. Supplementary file 1.	
+Fiscon_SwitchgenesDown-regulatedFromStemToDiff	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	"Downregulated switch genes identified as being potentially involved in the transition from stem-like to differentiated state in GBM cells, based on the Suva or Schulte dataset. Supplementary file 5."	
+Fiscon_SwitchgenesUp-regulatedFromStemToDiff	Fiscon_2018_10.1038/s41598-018-26081-5	Fiscon_2018_10.1038/s41598-018-26081-5	"Upregulated switch genes identified as being potentially involved in the transition from stem-like to differentiated state in GBM cells, based on the Suva or Schulte dataset. Supplementary file 5."	
+Wang_MesVsProNeu	Wang_2019_10.1158/2159-8290.CD-19-0329	Wang_2019_10.1158/2159-8290.CD-19-0329	Diferential expression between proneural and mesenchymal on a single axis. FC>4. Supplemental Table S3.	
+Wang_ProNeuVsMes	Wang_2019_10.1158/2159-8290.CD-19-0329	Wang_2019_10.1158/2159-8290.CD-19-0329	Diferential expression between proneural and mesenchymal on a single axis. FC<0.25. Supplemental Table S3.	
+Richards_InjuryResponse	Richards_2021_10.1038/s43018-020-00154-9	Richards_2021_10.1038/s43018-020-00154-9	"Differential expression between  Injury Response and Developmental clusters identified with bulk RNA-seq of GSC samples. FC<0.25, padj<1E-9. Supplementary Table 7. "	
+Richards_Developmental	Richards_2021_10.1038/s43018-020-00154-9	Richards_2021_10.1038/s43018-020-00154-9	"Differential expression between  Injury Response and Developmental clusters identified with bulk RNA-seq of GSC samples. FC>4, padj<1E-5. Supplementary Table 7. "	
+Nowakowski_NeuralDiferentiation	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table8 DifferentiationSignature  	
+Nowakowski_Astrocyte	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers. 	
+Nowakowski_Choroid	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_EN-PFC1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_EN-PFC2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_EN-PFC3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_EN-V1-1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_EN-V1-2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_EN-V1-3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_Endothelial	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers. 	
+Nowakowski_Glyc	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IN-CTX-CGE1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nEN-early2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nEN-late	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nEN-early1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IN-STR	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IN-CTX-CGE2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IN-CTX-MGE1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IN-CTX-MGE2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IPC-div1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IPC-div2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IPC-nEN3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nIN1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nIN2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nIN3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nIN5	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_U4	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_Mural	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_U1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_Microglia	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_U3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_RG-early	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_U2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_oRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_tRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_vRG	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_RG-div1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_OPC	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_RG-div2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_MGE-RG1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_MGE-RG2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_MGE-div	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_MGE-IPC1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_MGE-IPC2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IPC-nEN2	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_IPC-nEN1	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_nIN4	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Nowakowski_MGE-IPC3	Nowakowski_2017_10.1126/science.aap8809	Nowakowski_2017_10.1126/science.aap8809	Table 5 Cluster Markers.	
+Zhong_Nature_2018_NPCs_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9		
+Zhong_Nature_2018_Excitatory_neurons_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9		
+Zhong_Nature_2018_Interneurons_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9		
+Zhong_Nature_2018_OPC_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9		
+Zhong_Nature_2018_Astrocytes_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9		
+Zhong_Nature_2018_Microglia_upreg	Zhong_Nature_2018	Richards_2021_10.1038/s43018-020-00154-9		
+Liddelow_Nature_2017_A1_reactive_astrocytes	Liddelow_Nature_2017	Richards_2021_10.1038/s43018-020-00154-9		
+Liddelow_Nature_2017_A2_reactive_astrocytes	Liddelow_Nature_2017	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_MES2	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_MES1	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_AC	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_OPC	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_NPC1	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_NPC2	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_G1.S	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Neftel_Cell_2019_G2.M	Neftel_Cell_2019	Richards_2021_10.1038/s43018-020-00154-9		
+Hai_GBMConnectivity	Hai_biorxiv_2021_10.1101/2021.11.07.465791	Hai_biorxiv_2021_10.1101/2021.11.07.465791	A connectivity signature from single-cell RNA-sequenced (scRNA-Seq) xenografted primary glioblastoma cells. Supplementary Table 2. 	
+Wang_ClassicalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.	
+Wang_MesenchymalGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.	
+Wang_ProneuralGBMsubtype	Wang_2017_10.1016/j.ccell.2017.06.003	Wang_2017_10.1016/j.ccell.2017.06.003	Table S1.	
+Garofano_GPM	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j. 	
+Garofano_MTC	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.	
+Garofano_NEU	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.	
+Garofano_PPR	Garofano_2021_10.1038/s43018-020-00159-4	Garofano_2021_10.1038/s43018-020-00159-4	Pathway analysis subtype. Supplementary table 6j.	
+Liau_Cluster1DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A	
+Liau_Cluster2DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A	
+Liau_Cluster3DownregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A	
+Liau_Cluster4UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A	
+Liau_Cluster5UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A	
+Liau_Cluster6UpregulatedInPersisters	Liau_2017_10.1016/j.stem.2016.11.003	Liau_2017_10.1016/j.stem.2016.11.003	Supplementary Table 2. Differentially Expressed Gene Clusters from Figure 2A	
+Eze_EarlyFirstTrimesterBrain	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 11. Early Versus Late Differential Gene Expression Differential gene expression was calculated between the early samples in the dataset (CS12-15) and the later samples in the dataset (CS19-22). FC>4	
+Eze_LateFirstTrimesterBrain	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development.Supplementary Table 11. Early Versus Late Differential Gene Expression Differential gene expression was calculated between the early samples in the dataset (CS12-15) and the later samples in the dataset (CS19-22). FC<0.25	
+Eze_CorticalNeuronSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_CorticalNeuronSubcluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuronSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. Early Cortical Neuron Subclustering. FC>2	
+Eze_EarlyCorticalNeuron	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. differential expression was performed between older and younger neuronal populations across all subtypes. FC>2	
+Eze_LateCorticalNeuron	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 7. differential expression was performed between older and younger neuronal populations across all subtypes. FC>2	
+Eze_UltraEarlyCortexSubcluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_UltraEarlyCortexSubcluster29	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	"scRNA of early human brain development.Supplementary Table 9. Ultra Early Cortex Cluster Markers The earliest cortical samples (CS12, CS13) in the dataset were subclustered to look for unique populations within these least characterized timepoints. FC>2"	
+Eze_CortexCluster1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster10	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster11	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster12	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster13	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster14	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster15	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster16	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster17	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster18	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster19	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster20	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster21	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster22	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster23	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster24	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster25	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster26	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster27	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster28	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster29	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster30	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster31	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster32	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster33	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster34	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster35	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster36	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster37	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster38	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster39	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster40	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster41	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster42	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster43	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster44	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster45	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster46	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster47	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster48	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster49	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster50	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster51	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster52	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster53	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster54	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster55	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster56	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster57	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster58	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster59	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster60	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_CortexCluster61	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 6. Cortex Clustermarkers. FC>2	
+Eze_ProgenitorSubclusterNew1	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2	
+Eze_ProgenitorSubclusterNew2	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2	
+Eze_ProgenitorSubclusterNew3	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2	
+Eze_ProgenitorSubclusterNew4	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1	
+Eze_ProgenitorSubclusterNew5	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2	
+Eze_ProgenitorSubclusterNew6	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2	
+Eze_ProgenitorSubclusterNew7	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1	
+Eze_ProgenitorSubclusterNew8	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>2	
+Eze_ProgenitorSubclusterNew9	Eze_2021_10.1038/s41593-020-00794-1	Eze_2021_10.1038/s41593-020-00794-1	scRNA of early human brain development. Supplementary Table 8. Progenitor Subclustered Cluster Markers. FC>1	
+Krishna_GBMFunctionalConnectivity	Krishna_2021_10.1101/2021.02.18.431915	Krishna_2021_10.1101/2021.02.18.431915	Bulk RNA-sequencing from primary patient-derived High Functional Connectivity and Low Functional Connectivity tumor samples.	
+Neftel_MES_sub	"10.1016/j.cell.2019.06.024,Ajaib_unpublished"	Ajaib_unpublished	Taken from the neftel signatures but filtered for thsoe that are good markers in the discovery bulk data and are tumour intrinsic. 	
+Neftel_AC_sub	"10.1016/j.cell.2019.06.024,Ajaib_unpublished"	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.	
+Neftel_OPC_sub	"10.1016/j.cell.2019.06.024,Ajaib_unpublished"	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.	
+Neftel_NPC_sub	"10.1016/j.cell.2019.06.024,Ajaib_unpublished"	Ajaib_unpublished	Taken from the neftel signatures but filtered for those that are good markers in the discovery bulk data and are tumour intrinsic.	
+Allen_1_InhL1LAMP5NDNF	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_10_InhL1PAX6GRIP2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_100_ExcL6FEZF2TBC1D26	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_101_ExcL6FEZF2KRT17	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_102_ExcL3_5FEZF2ONECUT1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_103_ExcL3_5FEZF2DCN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_104_ExcL5FEZF2MORN2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_105_ExcL5FEZF2SCN7A	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_106_ExcL5_6FEZF2CABP7	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_107_ExcL5FEZF2DYRK2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_108_ExcL5_6FEZF2MYBPHL	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_109_ExcL5_6FEZF2CYP26B1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_11_InhL1_6VIPRCN1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_110_ExcL5_6FEZF2RSAD2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_111_AstroL1_6FGFR3ETNPPL	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_112_AstroL1FGFR3MT1G	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_113_AstroL1FGFR3FOS	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_114_OPCL1_6MYT1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_115_OligoL4_6MOBPCOL18A1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_116_OligoL4_6OPALIN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_12_InhL1_3PAX6NABP1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_13_InhL1VIPPRSS8	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_14_InhL1VIPTNFAIP8L3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_15_InhL1ADARB2ADAM33	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_16_InhL1SSTCXCL14	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_17_InhL1ADARB2DISP2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_18_InhL1VIPSOX11	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_19_InhL1_5VIPKCNJ2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_2_InhL1LAMP5GGT8P	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_20_InhL1_6VIPPENK	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_21_InhL1_6VIPRGS16	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_22_InhL2_6VIPVIP	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_23_InhL3_6VIPKCTD13	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_24_InhL1VIPPCDH20	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_25_InhL1_2VIPPPAPDC1A	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_26_InhL2_4VIPDSEL	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_27_InhL2_5VIPTOX2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_28_InhL1_3VIPZNF322P1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_29_InhL3VIPCBLN1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_3_InhL1_4LAMP5DUSP4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_30_InhL1_3VIPGGH	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_31_InhL1_3VIPACHE	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_32_InhL1_2VIPRPL41P3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_33_InhL1_3VIPSSTR1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_34_InhL1_3VIPCCDC184	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_35_InhL2_4VIPLGI2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_36_InhL1_4VIPCHRNA2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_37_InhL6SSTNPY	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_38_InhL5_6SSTISOC1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_39_InhL5_6SSTKLHL14	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_4_InhL6LAMP5C1QL2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_40_InhL4_6SSTMTHFD2P6	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_41_InhL3_5SSTMAFB	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_42_InhL4_5PVALBTRIM67	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_43_InhL5_6SSTTH	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_44_InhL6LHX6GLP1R	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_45_InhL5_6PVALBFAM150B	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_46_InhL2_4SSTAHR	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_47_InhL1_2PVALBTAC1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_48_InhL1_3PVALBWFDC2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_49_InhL2_4PVALBC8orf4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_5_InhL1_6LAMP5CA13	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_50_InhL5PVALBCNTNAP3P2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_51_InhL5_6PVALBSTON2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_52_InhL3_4PVALBHOMER3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_53_InhL1_6PVALBSCUBE3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_54_InhL3_6PVALBMFI2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_55_ExcL2_4RORBGRIK1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_56_ExcL3_4RORBRPS3P6	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_57_ExcL4RORBBHLHE22	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_58_ExcL4RORBCCDC168	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_59_ExcL4RORBCACNG5	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_6_InhL5_6LAMP5SFTA3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_60_ExcL4_5RORBASCL1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_61_ExcL4_5RORBAIM2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_62_ExcL3LINC00507CTXN3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_63_ExcL3THEMISPLA2G7	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_64_ExcL3_5THEMISELOF1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_65_ExcL2_3LINC00507RPL9P17	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_66_ExcL3LINC00507PSRC1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_67_ExcL3_5LINC00507SLN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_68_ExcL3RORBCARTPT	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_69_ExcL3_4RORBFOLH1B	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_7_InhL1_2PAX6SCGN	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_70_ExcL3_4RORBPRSS12	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_71_ExcL3_4RORBSEMA6D	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_72_ExcL3_5RORBHSPB3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_73_ExcL5_6THEMISOR1J1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_74_ExcL6THEMISEGR3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_75_ExcL5_6THEMISTMEM233	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_76_ExcL6THEMISLINC00343	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_77_ExcL3_5RORBCMAHP	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_78_ExcL3_5RORBCD24	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_79_ExcL4_5RORBLCN15	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_8_InhL6LAMP5ANKRD20A11P	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_80_ExcL3_5THEMISUBE2F	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_81_ExcL5RORBSNHG7	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_82_ExcL4_5RORBRPL31P31	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_83_ExcL4_5RORBHNRNPA1P46	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_84_ExcL4_5RORBLINC01474	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_85_ExcL4_6RORBHPCA	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_86_ExcL5_6RORBLINC00320	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_87_ExcL5RORBLINC01202	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_88_ExcL6THEMISC6orf48	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_89_ExcL5_6THEMISGPR21	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_9_InhL1PAX6CA4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_90_ExcL5_6THEMISTHTPA	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_91_ExcL5_6THEMISIL7R	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_92_ExcL6FEZF2VWA2	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_93_ExcL5_6FEZF2ANKRD20A1	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_94_ExcL6FEZF2FAM95C	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_95_ExcL6FEZF2CPZ	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_96_ExcL6FEZF2P4HA3	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_97_ExcL6FEZF2SLITRK6	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_98_ExcL6FEZF2TBCC	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Allen_99_ExcL6FEZF2ETV4	-	Larson_2021_10.15252/msb.202010105	https://idk-etl-prod-download-bucket.s3.amazonaws.com/aibs_human_ctx_smart-seq/metadata.csv	
+Almstedt_11q_msigdb	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_17q_msigdb	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_1p36	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_ALK	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_core_diff	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_NHR_diff	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_risk	-	Larson_2021_10.15252/msb.202010105	-	
+Almstedt_VGR_diff	-	Larson_2021_10.15252/msb.202010105	-	
+Anastassiou_multicancer_invasiveness_PMID_22208948	-	Larson_2021_10.15252/msb.202010105	-	
+angiogenesis_GO_0001525	-	Larson_2021_10.15252/msb.202010105	-	
+Astrocytes_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+Darmanis_periphery_PMID_29091775	-	Larson_2021_10.15252/msb.202010105	-	
+dePreter_high_NB_risk	-	Larson_2021_10.15252/msb.202010105	-	
+dePreter_low_NB_risk	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_G1	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_G2.M	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_lateG1	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_lowRNA	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_M.earlyG1	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_Neural.G0	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_S.G2	-	Larson_2021_10.15252/msb.202010105	-	
+Feldman_2020_S	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_alcoholaddiction_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_alcoholaddiction_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_autism_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_autism_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_bipolar_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_bipolar_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_depression_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_depression_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_IBD_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_IBD_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_schizophrenia_dn_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Gandal_schizophrenia_up_PMID29439242	-	Larson_2021_10.15252/msb.202010105	-	
+Garofano_Iavarone_GPM_subtype	-	Larson_2021_10.15252/msb.202010105	-	
+Garofano_Iavarone_List_of_neural_progenitor_marker_genes	-	Larson_2021_10.15252/msb.202010105	-	
+Garofano_Iavarone_MTC_subtype	-	Larson_2021_10.15252/msb.202010105	-	
+Garofano_Iavarone_NEU_subtype	-	Larson_2021_10.15252/msb.202010105	-	
+Garofano_Iavarone_PPR_subtype	-	Larson_2021_10.15252/msb.202010105	-	
+Glioma_stemness_PMID_29276782	-	Larson_2021_10.15252/msb.202010105	-	
+Immature_neurons_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+intermediate_progenitors_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+IVY_CT	-	Larson_2021_10.15252/msb.202010105	-	
+IVY_CTmvp	-	Larson_2021_10.15252/msb.202010105	-	
+IVY_CTpan	-	Larson_2021_10.15252/msb.202010105	-	
+IVY_Infiltrating	-	Larson_2021_10.15252/msb.202010105	-	
+IVY_LeadingEdge	-	Larson_2021_10.15252/msb.202010105	-	
+Johansson_PI_resistance_unpub	-	Larson_2021_10.15252/msb.202010105	-	
+Kling_GBM_pheno_PMID_27667176	-	Larson_2021_10.15252/msb.202010105	-	
+Larsson_state1_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-	
+Larsson_state5_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-	
+Larsson_state3_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-	
+Larsson_state2_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-	
+Larsson_state6_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-	
+Larsson_state4_pmid34528760	-	Larson_2021_10.15252/msb.202010105	-	
+Mature_neurons_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+Mature_oligodendrocytes_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+Microglia_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+Neuroepithelial_cells_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+Oligodendrocyte_precursor_cells_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+outerRadialGlia	-	Larson_2021_10.15252/msb.202010105	-	
+parada_T1_DN_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.	
+parada_T1_UP_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.	
+parada_T2_DN_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.	
+parada_T2_UP_26461091	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from functionally independent pools of adult CNS progenitors.	
+Pollen_outerRadialGlia_PMID_26406371	-	Larson_2021_10.15252/msb.202010105	-	
+Radial_Glia_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2008_astrocyte	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2008_oligodendrocyte	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2009_neuron	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2010_astro_young	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2011_astro_mature	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2012_OPC	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2013_OL_myel	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2014_MOG_pos	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2015_astro_in_vivo	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Cahoy_JNeurosci_2016_cultured_astroglia	-	Larson_2021_10.15252/msb.202010105	-	
+richards_InHouse_BulkRNAseq_2019_DevelopmentalGSC	-	Larson_2021_10.15252/msb.202010105	-	
+richards_InHouse_BulkRNAseq_2019_InjuryResponseGSC	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Liddelow_Nature_2017_A1_reactive_astrocytes	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Liddelow_Nature_2017_A2_reactive_astrocytes	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_AC	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_G1_S	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_G2_M	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_MES1	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_MES2	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_NPC1	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_NPC2	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Neftel_Cell_2019_OPC	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_Astrocyte_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_Choroid_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_EN_PFC1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_EN_PFC2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_EN_PFC3_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_EN_V1_1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_EN_V1_2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_EN_V1_3_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_Endothelial_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_Glyc_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IN_CTX_CGE1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IN_CTX_CGE2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IN_CTX_MGE1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IN_CTX_MGE2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IN_STR_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IPC_div1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IPC_div2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IPC_nEN1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IPC_nEN1_upreg-1	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_IPC_nEN3_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_MGE_div_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_MGE_IPC1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_MGE_IPC2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_MGE_IPC3_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_MGE_RG1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_MGE_RG2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_Microglia_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_Mural_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nEN_early1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nEN_early2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nEN_late_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nIN1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nIN2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nIN3_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nIN4_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_nIN5_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_OPC_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_oRG_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_RG_div1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_RG_div2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_RG_early_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_tRG_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_U1_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_U2_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_U3_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_U4_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Nowakowski_Science_2017_vRG_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Verhaak_CancerCell_2010_Classical	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Verhaak_CancerCell_2010_Mesenchymal	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Verhaak_CancerCell_2010_Neural	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Verhaak_CancerCell_2010_Proneural	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Zhong_Nature_2018_Astrocytes_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Zhong_Nature_2018_Excitatory_neurons_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Zhong_Nature_2018_Interneurons_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Zhong_Nature_2018_Microglia_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Zhong_Nature_2018_NPCs_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+richards_Zhong_Nature_2018_OPC_upreg	-	Larson_2021_10.15252/msb.202010105	-	
+Rosen_Krona_TI_unpubl	-	Larson_2021_10.15252/msb.202010105	-	
+Schwann_cells_RNAscope	-	Larson_2021_10.15252/msb.202010105	-	
+Segerman_Multitherapy_resistance_fig5A_PMID_27974212	-	Larson_2021_10.15252/msb.202010105	-	
+Seurat_cellcycle	-	Larson_2021_10.15252/msb.202010105	-	
+Singh_SOX2_downregulated_transcripts_PMID_28122245	-	Larson_2021_10.15252/msb.202010105	-	
+Singh_SOX2_upregulated_transcripts_PMID_28122245	-	Larson_2021_10.15252/msb.202010105	-	
+suva_ac_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_g1s_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_g2m_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_mes1_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_mes2_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_npc1_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_npc2_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+suva_opc_PMID_31327527	-	Larson_2021_10.15252/msb.202010105	-	
+TF_census_Taipale	-	Larson_2021_10.15252/msb.202010105	-	
+TIISig_PMID_32649888	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from distinct cells of origin.	
+TISig_PMID_32649888	-	Larson_2021_10.15252/msb.202010105	2 GBM subtypes arising from distinct cells of origin.	
+VanGroningen_ADRN	-	Larson_2021_10.15252/msb.202010105	-	
+VanGroningen_MES	-	Larson_2021_10.15252/msb.202010105	-	
+Wang_classical_PMID_28697342	-	Larson_2021_10.15252/msb.202010105	-	
+Wang_mesenchymal_PMID_28697342	-	Larson_2021_10.15252/msb.202010105	-	
+Wang_proneural_PMID_28697342	-	Larson_2021_10.15252/msb.202010105	-	
+Weng_iOL_PMID_30982771	-	Larson_2021_10.15252/msb.202010105	-	
+Weng_priOPC_PMID_30982771	-	Larson_2021_10.15252/msb.202010105	-	
+Weng_stemness_PMID_30982771	-	Larson_2021_10.15252/msb.202010105	-	
+Zhang_astrocyte_PMID_25186741	-	Larson_2021_10.15252/msb.202010105	-	
+Zhang_neuron_PMID_25186741	-	Larson_2021_10.15252/msb.202010105	-	
+Zhang_opc_PMID_25186741	-	Larson_2021_10.15252/msb.202010105	-	
+Shi_Post-MitoticCells_GanglionicEminences	Shi_2021_10.1126/science.abj6641	Shi_2021_10.1126/science.abj6641	Genes that best distinguish dividing progenitors from postmitotic cells in the ganglionic eminences. Table S4: DEGs between progenitors and postmitotic cells in the human ganglionic eminences.	
+Shi_Progenitor_GanglionicEminences	Shi_2021_10.1126/science.abj6641	Shi_2021_10.1126/science.abj6642	Genes that best distinguish dividing progenitors from postmitotic cells in the ganglionic eminences. Table S4: DEGs between progenitors and postmitotic cells in the human ganglionic eminences.	
+Shi_CGE	Shi_2021_10.1126/science.abj6643	Shi_2021_10.1126/science.abj6641	"Caudal ganglionic eminences. DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_Endothelial	Shi_2021_10.1126/science.abj6644	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_ExcitatoryIPC	Shi_2021_10.1126/science.abj6645	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_ExcitatoryNeurons	Shi_2021_10.1126/science.abj6646	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_LGE	Shi_2021_10.1126/science.abj6647	Shi_2021_10.1126/science.abj6641	"Lateral ganglionic eminences. DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_MGE	Shi_2021_10.1126/science.abj6648	Shi_2021_10.1126/science.abj6641	"Medial ganglionic eminences. DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_Microglia	Shi_2021_10.1126/science.abj6649	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_OPC	Shi_2021_10.1126/science.abj6650	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_Progenitor	Shi_2021_10.1126/science.abj6651	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+Shi_ThalamicNeurons	Shi_2021_10.1126/science.abj6652	Shi_2021_10.1126/science.abj6641	"DEGs among major cell types in the MGE, LGE, and CGE. Table S3: DEGs among major cell types."	
+deJong2025_Gliosis	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495 		
+deJong2025_OPC-AC-like 1	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495 		
+deJong2025_NPC-neuronal-like 1	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_NPC-neuronal-like 2	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_AC-gliosis-like 1	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_AC-neuronal-like	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_OPC-NPC-like	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_Proliferative	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_Gliosis-hypoxia	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_Proliferative 2	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_AC-gliosis-like 2	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_OPC-like 1	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_NPC-neuronal-like 3	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_OPC-like 2	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+deJong2025_OPC-AC-like 2	"de Jong et al. (BioArxiv), 2025, A spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity"	10.1101/2025.05.13.653495		
+Greenwald2024_Neuron	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Vasc	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_MES.Hyp (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Mac	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Oligo	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_MES (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Prolif.Metab (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_MES.Ast (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Reactive.Ast	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_NPC (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_InflammatoryMac	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Chromatin.reg (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_OPC (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_AC (malig.)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_L1	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_L2	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_L3	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_L4	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_L5	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Vasc1 (Vasc-Ang)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Vasc2 (Vasc-IMEC)	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Vasc-Ang_unique	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Greenwald2024_Vasc-IMEC_MP2_unique	"Greenwald et al. (Cell),  2024, Integrative spatial analysis reveals a multi-layered organization of glioblastoma"	10.1016/j.cell.2024.03.029		
+Nomura2025_MP_1_RP	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_2_OPC	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_3_CC	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_4_AC	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_5_Hypoxia	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_6_MES	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_7_NPC	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_8_GPC	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_9_ExN	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_10_Stress1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_11_MIC	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_12_LQ	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_13_Cilia	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_14_NRGN	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_MP_15_Stress2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_BP ECM	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_BP Neuronal	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_BP Glial	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Tcell_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Tcell_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Tcell_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Tcell_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Tcell_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Tcell_MP_6	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_6	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_7	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_8	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_9	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_10	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_11	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_12	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_13	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_14	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_15	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Macrophage_MP_16	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Bcell_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Bcell_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_6	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Astrocyte_MP_7	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_6	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_7	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_8	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Oligodendrocyte_MP_9	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_OPC_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Endothel_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Endothel_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Endothel_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Endothel_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Endothel_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Endothel_MP_6	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Pericyte_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Pericyte_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Pericyte_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Pericyte_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_Pericyte_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_ExN_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_ExN_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_ExN_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_ExN_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_ExN_MP_5	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_ExN_MP_6	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_InN_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_InN_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_InN_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_InN_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_IPC_MP_1	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_IPC_MP_2	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_IPC_MP_3	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Nomura2025_IPC_MP_4	"Nomura et al. (Nat. Gen.), 2025, The multilayered transcriptional architecture of glioblastoma ecosystems"	10.1038/s41588-025-02167-5		
+Venkataramani2022_gbm_invasive_unconnected_anticorrelated	"Venkataramani et al. (Cell), 2022, Glioblastoma hijacks neuronal mechanisms for brain invasion"	10.1016/j.cell.2022.06.054 		
+Venkataramani2022_gbm_invasive_unconnected_correlated	"Venkataramani et al. (Cell), 2022, Glioblastoma hijacks neuronal mechanisms for brain invasion"	10.1016/j.cell.2022.06.054 		
+Tanner2024_JARID_LE50	"Tanner et al. (Gen. Bio.), 2024, IDHwt glioblastomas can be stratified by their transcriptional response to standard treatment, with implications for targeted therapy"	10.1186/s13059-024-03172-3		
+Tanner2024_JARID_LE70	"Tanner et al. (Gen. Bio.), 2024, IDHwt glioblastomas can be stratified by their transcriptional response to standard treatment, with implications for targeted therapy"	10.1186/s13059-024-03172-3		
